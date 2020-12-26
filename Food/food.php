@@ -1,0 +1,193 @@
+<html>
+<body>
+<?php
+    include "foodSQL.php";
+
+    if(!isset($_SESSION)) { session_start(); }
+
+    if(empty($_SESSION['AccountID']) || empty($_SESSION['UserName'])) {
+        // A user needs to be selected first
+        header('Location: ../User/user.php');
+        //exit("Sorry, the current session has expired. Please log in again.");
+    }
+
+    echo $_SESSION['AccountID'];
+    TestFood();
+    echo "<br><br>";
+?>
+
+<?php
+    // Hold nutrient info
+    if(!array_key_exists('NutrientValueArray', $_SESSION)) {
+        $_SESSION["NutrientValueArray"] = array();
+
+        // Initialize micronutrients
+        $MicroData = SelectMicro();
+        foreach($MicroData as $key) {
+            $_SESSION["NutrientValueArray"][$key["NutrientName"]] = 0;
+        }
+    }
+
+    // Initialize food info
+    $FoodInfo = array('FoodNameInput' => '',
+                      'ServingSizeInput' => 0,
+                      'ServingSizeUOM' => 'Grams',
+                      'CaloriesInput' => 0,
+                      'FatInput' => 0,
+                      'CarbsInput' => 0,
+                      'ProteinInput' => 0);
+?>
+
+<?php
+if($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // If the user submitted the form, process it
+	if(isset($_POST['NewFoodSubmit']) && !empty($_POST['FoodNameInput'])) {
+
+            // Food Info
+            $FoodName = $_POST['FoodNameInput'];
+            $SizeUOM = $_POST['ServingSizeUOM'];
+            $ServingSize = $_POST['ServingSizeInput'];
+            $Calories = $_POST['CaloriesInput'];
+            $FoodID = RandomID();
+
+            AddFood($FoodID, $FoodName, $SizeUOM, $ServingSize, $Calories);
+
+            // Nutrient Info
+            $UOMname = "Grams"; // Hard coded as grams
+
+            $MacroArray = array();
+            $MacroArray['Fat'] = $_POST['FatInput'];
+            $MacroArray['Carbohydrates'] = $_POST['CarbsInput'];
+            $MacroArray['Protein'] = $_POST['ProteinInput'];
+
+            // Insert amounts into Food Nutrient table
+            foreach($MacroArray as $key => $value) {
+                AddNutrients($key, $FoodID, $SizeUOM, $value);
+            }
+
+            foreach($_SESSION["NutrientValueArray"] as $key => $value) {
+                // Only commit micros if they have a value above zero
+                if($value > 0) {
+                    AddNutrients($key, $FoodID, $SizeUOM, $value);
+                }
+	        }   
+
+	    // Reset the micronutrient array
+        $MicroReset = SelectMicro();
+        foreach($MicroReset as $key) {
+            $_SESSION["NutrientValueArray"][$key["NutrientName"]] = 0;
+	    }	    
+	    
+    }
+
+	else if(isset($_POST['MicroSubmit']) && !empty($_POST['MicroSelect'])) {
+	    // Retain the values in the form
+	    $FoodInfo['FoodNameInput'] = $_POST['FoodNameInput'];
+	    $FoodInfo['CaloriesInput'] = $_POST['CaloriesInput'];
+	    $FoodInfo['ServingSizeInput'] = $_POST['ServingSizeInput'];
+	    $FoodInfo['FatInput'] = $_POST['FatInput'];
+	    $FoodInfo['CarbsInput'] = $_POST['CarbsInput'];
+	    $FoodInfo['ProteinInput'] = $_POST['ProteinInput'];
+	    
+        $key = $_POST['MicroSelect'];
+        $value = $_POST['MicroInput'];
+
+	    $_SESSION["NutrientValueArray"]["$key"] = $value;
+    }
+    
+    else if(isset($_POST['DeleteFoodSubmit'])) {
+        echo "Food ID = " . $_POST['DeleteFood'];
+        
+        if(DeleteFoodConfirm($_POST['DeleteFood'])) {
+            DeleteFood($_POST['DeleteFood']);
+            echo "Food Deleted Successfully.";
+        }
+        else { echo "Food is already stored in a meal!"; }
+    }
+
+	else { echo "Must enter a name for the food!"; }
+}
+?>
+
+<form method="POST">
+    <label>Food Name: </label>
+    <!-- Check for valid food names including no white spaces in beginning or end -->
+    <input name="FoodNameInput" type="text" value="<?php echo $FoodInfo['FoodNameInput']; ?>" pattern="^[-a-zA-Z0-9-()]+(\s+[-a-zA-Z0-9-()]+)*$" title="This field is required">
+    <br>
+    <label>Serving Size: </label>
+    <input name="ServingSizeInput" type="number" value="<?php echo $FoodInfo['ServingSizeInput']; ?>" min="0" step="0.01">
+    <select name="ServingSizeUOM">
+        <?php 
+            $Selector = $FoodInfo['ServingSizeUOM'];
+            $UOMdata = SelectUOM();
+            
+            // Start Unit of Measurement on Grams
+            foreach($UOMdata as $row) {
+                if($row["UOMname"] == $Selector) {
+                    echo "<option selected='selected' value=" . $row['UOMname'] . ">";
+                        echo $row['UOMname'];
+                    echo "</option>";
+                } else {
+                    echo "<option value=" . $row['UOMname'] . ">";
+                        echo $row['UOMname'];
+                    echo "</option>";
+                }
+            }
+            
+        ?>
+    </select>
+
+    <!-- Macronutrients -->
+    <label>Calories per Serving: </label>
+    <input name="CaloriesInput" type="number" min="0" value="<?php echo $FoodInfo['CaloriesInput']; ?>">   
+    <br>
+    <label>Fat per Serving (grams): </label>
+    <input name="FatInput" type="number" min="0" value="<?php echo $FoodInfo['FatInput']; ?>">
+    <br>
+    <label>Carbs per Serving (grams): </label>
+    <input name="CarbsInput" type="number" min="0" value="<?php echo $FoodInfo['CarbsInput']; ?>">
+    <br>
+    <label>Protein per Serving (grams): </label>
+    <input name="ProteinInput" type="number" min="0" value="<?php echo $FoodInfo['ProteinInput']; ?>">
+    <br>
+
+    <!-- Micronutrients -->
+    <label>Micronutrient: </label>
+    <select name="MicroSelect" size="10">
+        <?php
+	    $MicroChart = SelectMicro();
+	    foreach($MicroChart as $row) {
+                $key = $row["NutrientName"];
+                $value = $_SESSION["NutrientValueArray"][$key];
+                echo "<option value='" . $key . "'>" . $key . ": " . $value . "</option>"; 
+            }
+        ?>
+    </select>
+    <label>Quantity (Grams): </label>
+    <input name="MicroInput" type="number" min="0" value="0" step="0.00000001">
+    <br>
+    <input name="MicroSubmit" type="submit" value="Add/Update Micronutrient">
+    <br>
+    <input name="NewFoodSubmit" type="submit" value="Add New Food">
+    <br>
+    <br>
+    <label>Choose a food to delete: </label>
+    <select name="DeleteFood">
+    <option disabled selected value> -- select a food -- </option>
+        <?php 
+            $DeleteFood = DeleteFoodSelect();
+            
+            // Start Unit of Measurement on Grams
+            foreach($DeleteFood as $row) {
+                echo "<option value=" . $row['FoodID'] . ">";
+                    echo $row['FoodName'];
+                echo "</option>";
+            } 
+        ?>
+    </select>
+    <br>
+    <input name="DeleteFoodSubmit" type="submit" value="Delete Food">
+
+</form>
+</body>
+</html>
