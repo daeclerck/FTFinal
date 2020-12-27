@@ -11,7 +11,6 @@
         //exit("Sorry, the current session has expired. Please log in again.");
     }
 
-    TestFood();
     echo "<br><br>";
 ?>
 

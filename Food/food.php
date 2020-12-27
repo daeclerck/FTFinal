@@ -10,10 +10,6 @@
         header('Location: ../User/user.php');
         //exit("Sorry, the current session has expired. Please log in again.");
     }
-
-    echo $_SESSION['AccountID'];
-    TestFood();
-    echo "<br><br>";
 ?>
 
 <?php
