@@ -8,7 +8,8 @@ function SelectWeight($AccountID) {
     $stmt = $conn->prepare("SELECT * FROM Weight WHERE FKAccountID = ?");
     $stmt->bind_param('s', $AccountID);
     $stmt->execute();
-    $result = $stmt->get_result();
+    $data = $stmt->get_result();
+    $result = $data->fetch_all(MYSQLI_ASSOC);
     $conn->close();
     return $result;
 }
