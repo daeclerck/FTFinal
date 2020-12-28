@@ -18,7 +18,8 @@ function SelectDate($Weight, $AccountID) {
     $stmt = $conn->prepare("SELECT Recorded FROM Weight WHERE FKAccountID = ? AND CurrentWeight = ?");
     $stmt->bind_param('sd', $AccountID, $Weight);
     $stmt->execute();
-    $result = $stmt->get_result();
+    $data = $stmt->get_result();
+    $result = $data->fetch_array(MYSQLI_ASSOC);
     $conn->close();
     return $result;
 }
