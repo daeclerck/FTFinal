@@ -53,10 +53,10 @@
     <input type="text" name="NewWeight">
     <br>
     <input type="submit" name="NewWeightSubmit" value="Submit New Weight">
-</form>
+
 
 <?php
-    if(isset($_POST['NewWeightSubmit']) && !empty($_POST['NewWeight'])) {
+    if(isset($_POST['NewWeightSubmit']) && !empty($_POST['NewWeight']) && is_numeric($_POST['NewWeight'])) {
         // Fetch the correct date to corresponding weight
         $FetchDate = SelectDate($_POST['WeightChange'], $_SESSION['AccountID']);
 
@@ -67,6 +67,7 @@
         PrintWeight($_SESSION['AccountID']);
     }
 ?>
+</form>
 
 </body>
 </html>
