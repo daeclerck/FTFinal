@@ -34,7 +34,7 @@
     }
 ?>
 
-<form method="POST">
+<form method="POST" action="">
     <h1>Change Previous Weight</h1>
     <label>Choose the weight to change: </label>
     <select name="WeightChange">
@@ -42,15 +42,9 @@
             $WeightResult = SelectWeight($_SESSION['AccountID']);
 
             foreach($WeightResult as $row) {
-                if(isset($_POST['NewWeightSubmit'])) {
                 echo "<option value='" . $row['CurrentWeight'] . "'>";
                     echo $row['CurrentWeight'] . " " . $row['FKUOMname'] . " Recorded at " . $row['Recorded'];
                 echo "</option>";
-                } else {
-                echo "<option value='" . $row['CurrentWeight'] . "'>";
-                    echo $row['CurrentWeight'] . " " . $row['FKUOMname'] . " Recorded at " . $row['Recorded'];
-                echo "</option>";
-                }
             }
         ?>
     </select>
