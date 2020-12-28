@@ -43,7 +43,7 @@
 
             foreach($WeightResult as $row) {
                 echo "<option value='" . $row['CurrentWeight'] . "'>";
-                    echo $row['CurrentWeight'] . "  " . $row['Recorded'];
+                    echo $row['CurrentWeight'] . " " . $row['FKUOMname'] . " Recorded at " . $row['Recorded'];
                 echo "</option>";
             }
         ?>
