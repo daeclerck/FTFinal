@@ -13,6 +13,19 @@
     }
 ?>
 
+<?php
+    if(isset($_POST['NewWeightSubmit']) && !empty($_POST['NewWeight']) && is_numeric($_POST['NewWeight'])) {
+        // Fetch the correct date to corresponding weight
+        $FetchDate = SelectDate($_POST['WeightChange'], $_SESSION['AccountID']);
+
+        // Update the database with the new weight and send success message
+        UpdateWeight($_POST['NewWeight'], $_SESSION['AccountID'], $FetchDate['Recorded']);
+        echo "Weight updated succesfully!";
+        echo "<br>";
+        PrintWeight($_SESSION['AccountID']);
+    }
+?>
+
 <form method="POST">
     <h1>Update Weight</h1>
     <label>New Weight: </label>
@@ -54,20 +67,6 @@
     <br>
     <input type="submit" name="NewWeightSubmit" value="Submit New Weight">
 </form>
-
-<?php
-    if(isset($_POST['NewWeightSubmit']) && !empty($_POST['NewWeight']) && is_numeric($_POST['NewWeight'])) {
-        // Fetch the correct date to corresponding weight
-        $FetchDate = SelectDate($_POST['WeightChange'], $_SESSION['AccountID']);
-
-        // Update the database with the new weight and send success message
-        UpdateWeight($_POST['NewWeight'], $_SESSION['AccountID'], $FetchDate['Recorded']);
-        echo "Weight updated succesfully!";
-        echo "<br>";
-        PrintWeight($_SESSION['AccountID']);
-    }
-?>
-
 
 </body>
 </html>
