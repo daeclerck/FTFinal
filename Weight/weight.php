@@ -57,6 +57,7 @@
 
 <?php
     if(isset($_POST['NewWeightSubmit']) && !empty($_POST['NewWeight']) && is_numeric($_POST['NewWeight'])) {
+        echo "<meta http-equiv='refresh' content='0'>";
         // Fetch the correct date to corresponding weight
         $FetchDate = SelectDate($_POST['WeightChange'], $_SESSION['AccountID']);
 
