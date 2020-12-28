@@ -57,10 +57,10 @@
 
 <?php
     if(isset($_POST['NewWeightSubmit']) && !empty($_POST['NewWeight'])) {
-        echo "Weight change: " . $_POST['WeightChange'];
-        $FetchDate = SelectDate($_POST['NewWeight'], $_SESSION['AccountID']);
+        $_POST['WeightChange']
+        $FetchDate = SelectDate($_POST['WeightChange'], $_SESSION['AccountID']);
 
-        UpdateWeight($_POST['NewWeight'], $_SESSION['AccountID'], $FetchDate['Recorded']);
+        UpdateWeight($_POST['WeightChange'], $_SESSION['AccountID'], $FetchDate['Recorded']);
         echo "Weight updated succesfully!";
         echo "<br>";
         PrintWeight($_SESSION['AccountID']);
