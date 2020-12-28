@@ -64,7 +64,7 @@
     <input type="text" name="NewWeight">
     <br>
     <input type="submit" name="NewWeightSubmit" value="Submit New Weight">
-</form>
+
 
 <?php
     if(isset($_POST['NewWeightSubmit']) && !empty($_POST['NewWeight']) && is_numeric($_POST['NewWeight'])) {
@@ -78,7 +78,7 @@
         PrintWeight($_SESSION['AccountID']);
     }
 ?>
-
+</form>
 
 </body>
 </html>
