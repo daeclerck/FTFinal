@@ -114,7 +114,7 @@
 
 <form method="POST">
     <?php
-        if(isset($_POST['SelectedFoodSubmit'])) {
+        if(isset($_POST['SelectedFoodSubmit']) && !empty($_POST['SearchFoodResults'])) {
             $FoodData = SelectFoodID($_POST['SearchFoodResults']);
 
             $FoodName = $FoodData["FoodName"];
