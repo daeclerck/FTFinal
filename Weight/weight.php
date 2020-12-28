@@ -42,8 +42,8 @@
             $WeightResult = SelectWeight($_SESSION['AccountID']);
 
             foreach($WeightResult as $row) {
-                echo "<option value='" . $row['Weight'] . "'>";
-                    echo $row['Weight'] . "  " . $row['Date Recorded'];
+                echo "<option value='" . $row['CurrentWeight'] . "'>";
+                    echo $row['CurrentWeight'] . "  " . $row['Recorded'];
                 echo "</option>";
             }
         ?>
