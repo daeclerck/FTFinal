@@ -16,17 +16,17 @@
 <form method="POST">
     <h1>Update Weight</h1>
     <label>New Weight: </label>
-    <input type="text" name="Weight"/>
+    <input type="text" name="Weight">
     <label>Unit of Measurement: </label>
     <select name="UnitMeasure">
         <option value="Pounds">Pounds</option>
         <option value="Kilograms">Kilograms</option>
     </select>
-    <input type="submit" name="WeightSubmit" value="Submit Weight"/>
+    <input type="submit" name="WeightSubmit" value="Submit Weight">
 </form>
 
 <?php
-    if(isset($_POST['WeightSubmit'])) {
+    if(isset($_POST['WeightSubmit']) && !empty($_POST['Weight'])) {
         $CurrentDate = date("Y-m-d H:i:s");
         AddWeight($_SESSION['AccountID'], $CurrentDate, $_POST['UnitMeasure'], $_POST['Weight']);
         echo "Weight added to " . $_SESSION['UserName'] . "'s account<br>";
@@ -36,7 +36,7 @@
 
 <form method="POST">
     <h1>Change Previous Weight</h1>
-    <label>Choose the weight to change: <label>
+    <label>Choose the weight to change: </label>
     <select name="WeightChange">
         <?php
             $WeightResult = SelectWeight($_SESSION['AccountID']);
@@ -48,7 +48,23 @@
             }
         ?>
     </select>
+    <br>
+    <label>Change selected weight to: </label>
+    <input type="text" name="NewWeight">
+    <br>
+    <input type="submit" name="NewWeightSubmit" value="Submit New Weight">
 </form>
+
+<?php
+    if(isset($_POST['NewWeightSubmit']) && !empty($_POST['NewWeight'])) {
+        $FetchDate = SelectWeight($_SESSION['AccountID']);
+
+        UpdateWeight($_POST['NewWeightSubmit'], $_SESSION['AccountID'], $FetchDate['Recorded']);
+        echo "Weight updated succesfully!";
+        echo "<br>";
+        PrintWeight($_SESSION['AccountID']);
+    }
+?>
 
 </body>
 </html>

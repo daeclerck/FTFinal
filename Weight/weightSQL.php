@@ -22,6 +22,15 @@ function AddWeight($AccountID, $Date, $Unit, $Weight) {
     $conn->close();
 }
 
+// Change existing weight to new weight
+function UpdateWeight($Weight, $AccountID, $Date) {
+    $conn = connect();
+    $stmt = conn->prepare("UPDATE Weight SET CurrentWeight = ? WHERE FKAccountID = ? AND Recorded = ?");
+    $stmt->bind_param('dss', $Weight, $AccountID, $Date);
+    $stmt->execute();
+    $conn->close();
+}
+
 // Print weight table for selected user
 function PrintWeight($AccountID) {
     $result = SelectWeight($AccountID);
