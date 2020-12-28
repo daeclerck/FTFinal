@@ -57,8 +57,10 @@
 
 <?php
     if(isset($_POST['NewWeightSubmit']) && !empty($_POST['NewWeight'])) {
+        // Fetch the correct date to corresponding weight
         $FetchDate = SelectDate($_POST['WeightChange'], $_SESSION['AccountID']);
 
+        // Update the database with the new weight and send success message
         UpdateWeight($_POST['NewWeight'], $_SESSION['AccountID'], $FetchDate['Recorded']);
         echo "Weight updated succesfully!";
         echo "<br>";
