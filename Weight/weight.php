@@ -42,9 +42,15 @@
             $WeightResult = SelectWeight($_SESSION['AccountID']);
 
             foreach($WeightResult as $row) {
+                if(isset($_POST['NewWeightSubmit'])) {
                 echo "<option value='" . $row['CurrentWeight'] . "'>";
                     echo $row['CurrentWeight'] . " " . $row['FKUOMname'] . " Recorded at " . $row['Recorded'];
                 echo "</option>";
+                } else {
+                echo "<option value='" . $row['CurrentWeight'] . "'>";
+                    echo $row['CurrentWeight'] . " " . $row['FKUOMname'] . " Recorded at " . $row['Recorded'];
+                echo "</option>";
+                }
             }
         ?>
     </select>
@@ -57,7 +63,6 @@
 
 <?php
     if(isset($_POST['NewWeightSubmit']) && !empty($_POST['NewWeight']) && is_numeric($_POST['NewWeight'])) {
-        echo "<meta http-equiv='refresh' content='0'>";
         // Fetch the correct date to corresponding weight
         $FetchDate = SelectDate($_POST['WeightChange'], $_SESSION['AccountID']);
 
