@@ -36,7 +36,7 @@
 </form>
 
 <?php
-    if(isset($_POST['WeightSubmit']) && !empty($_POST['Weight'])) {
+    if(isset($_POST['WeightSubmit']) && !empty($_POST['Weight']) && is_numeric($_POST['Weight'])) {
         $CurrentDate = date("Y-m-d H:i:s");
         AddWeight($_SESSION['AccountID'], $CurrentDate, $_POST['UnitMeasure'], $_POST['Weight']);
         echo "Weight added to " . $_SESSION['UserName'] . "'s account<br>";
