@@ -160,7 +160,7 @@
 
 <br>  
 <label>Calories Burned: </label>
-<input name="CaloriesBurned" type="number" min="0" max="1000" step="1">	
+<input name="CaloriesBurned" type="number" min="0" max="9999" step="1">	
 <br>
 <input type="submit" name="WorkoutSubmit" value="Log Workout">";
 </form>
