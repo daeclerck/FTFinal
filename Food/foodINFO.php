@@ -86,7 +86,7 @@
 
 <form method="POST">
     <label>Food Name: </label>
-    <input name="SearchFoodInput" type="text">
+    <input name="SearchFoodInput" type="text" pattern="^[-a-zA-Z0-9-()]+(\s+[-a-zA-Z0-9-()]+)*$" >
     <br>
     <input name="SearchFoodSubmit" type="submit" value="Search for Food">
 </form>
