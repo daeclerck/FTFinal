@@ -1,6 +1,6 @@
+<?php include "../header.php"; ?>
 <html>
 <body>
-
 <?php 
     include "weightSQL.php"; 
     
