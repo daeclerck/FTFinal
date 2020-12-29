@@ -41,6 +41,8 @@
         AddWeight($_SESSION['AccountID'], $CurrentDate, $_POST['UnitMeasure'], $_POST['Weight']);
         echo "Weight added to " . $_SESSION['UserName'] . "'s account<br>";
         PrintWeight($_SESSION['AccountID']);
+    } else {
+        echo "<br>Entry needs to be a number.";
     }
 ?>
 
@@ -70,6 +72,8 @@
         echo "Weight updated succesfully!";
         echo "<br>";
         PrintWeight($_SESSION['AccountID']);
+    } else {
+        echo "<br>Entry needs to be a number.";
     }
 ?>
 </body>
