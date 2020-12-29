@@ -112,7 +112,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     <input name="FoodNameInput" type="text" value="<?php echo $FoodInfo['FoodNameInput']; ?>" pattern="^[-a-zA-Z0-9-()]+(\s+[-a-zA-Z0-9-()]+)*$" title="This field is required">
     <br>
     <label>Serving Size: </label>
-    <input name="ServingSizeInput" type="number" value="<?php echo $FoodInfo['ServingSizeInput']; ?>" min="0" step="0.01">
+    <input name="ServingSizeInput" type="number" value="<?php echo $FoodInfo['ServingSizeInput']; ?>" min="0" max="999.99" step="0.01">
     <select name="ServingSizeUOM">
         <?php 
             $Selector = $FoodInfo['ServingSizeUOM'];
@@ -136,16 +136,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <!-- Macronutrients -->
     <label>Calories per Serving: </label>
-    <input name="CaloriesInput" type="number" min="0" value="<?php echo $FoodInfo['CaloriesInput']; ?>">   
+    <input name="CaloriesInput" type="number" min="0" max="99999" value="<?php echo $FoodInfo['CaloriesInput']; ?>">   
     <br>
     <label>Fat per Serving (grams): </label>
-    <input name="FatInput" type="number" min="0" value="<?php echo $FoodInfo['FatInput']; ?>">
+    <input name="FatInput" type="number" min="0" max="99999" value="<?php echo $FoodInfo['FatInput']; ?>">
     <br>
     <label>Carbs per Serving (grams): </label>
-    <input name="CarbsInput" type="number" min="0" value="<?php echo $FoodInfo['CarbsInput']; ?>">
+    <input name="CarbsInput" type="number" min="0" max="99999" value="<?php echo $FoodInfo['CarbsInput']; ?>">
     <br>
     <label>Protein per Serving (grams): </label>
-    <input name="ProteinInput" type="number" min="0" value="<?php echo $FoodInfo['ProteinInput']; ?>">
+    <input name="ProteinInput" type="number" min="0" max="99999" value="<?php echo $FoodInfo['ProteinInput']; ?>">
     <br>
 
     <!-- Micronutrients -->
@@ -161,7 +161,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         ?>
     </select>
     <label>Quantity (Grams): </label>
-    <input name="MicroInput" type="number" min="0" value="0" step="0.00000001">
+    <input name="MicroInput" type="number" min="0" max="99999" value="0" step="0.00000001">
     <br>
     <input name="MicroSubmit" type="submit" value="Add/Update Micronutrient">
     <br>
