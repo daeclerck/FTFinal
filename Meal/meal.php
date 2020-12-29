@@ -98,7 +98,7 @@
 
 <form method="POST">
     <label>Food Name: </label>
-    <input name="SearchFoodInput" type="text">
+    <input name="SearchFoodInput" type="text" pattern="^[-a-zA-Z0-9-()]+(\s+[-a-zA-Z0-9-()]+)*$">
     <br>
     <input name="SearchFoodSubmit" type="submit" value="Search For Food">
     <br>
@@ -121,7 +121,7 @@
     <br>
     <br>
     <label>Amount Eaten: </label>
-    <input name="AddFoodQuantity" type="number" min="0" value="0">
+    <input name="AddFoodQuantity" type="number" min="0" max="999.99" value="0">
     <select name="UOMSelector" size="1">
         <?php
             $UnitData = SelectUOM();
