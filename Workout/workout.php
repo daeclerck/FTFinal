@@ -75,7 +75,7 @@
     <label><b>Insert New Workout: </b></label>
     <br>
     <label>Routine Name: </label>
-    <input name="RoutineName" type="text">
+    <input name="RoutineName" type="text" pattern="^[-a-zA-Z0-9-()]+(\s+[-a-zA-Z0-9-()]+)*$">
     <br>
     <label>Workout Type: </label>
     <select name="WorkoutType">
@@ -160,7 +160,7 @@
 
 <br>  
 <label>Calories Burned: </label>
-<input name="CaloriesBurned" type="text">	
+<input name="CaloriesBurned" type="number" min="0" max="1000" step="1">	
 <br>
 <input type="submit" name="WorkoutSubmit" value="Log Workout">";
 </form>
