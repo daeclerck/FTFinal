@@ -19,10 +19,10 @@ body, html {
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
     <?php 
-    if(stripos($_SERVER['REQUEST_URI'], 'user.php')) {
-        echo '<a class="w3-bar-item w3-button"><i class="fa fa-user"></i> USERS</a>';
+    if(stripos($_SERVER['REQUEST_URI'], 'index.php')) {
+        echo '<a href="./User/user.php" class="w3-bar-item w3-button"><i class="fa fa-user"></i> USERS</a>';
     } else {
-        echo '<a href="./User/user.php" class="w3-bar-item w3-button"><i class="fa fa-user"></i> USERS</a>'; 
+        echo '<a href="../User/user.php" class="w3-bar-item w3-button"><i class="fa fa-user"></i> USERS</a>'; 
     }
     ?>
         <a href="./Food/food.php" class="w3-bar-item w3-button"><i class="fa fa-glass"></i> FOOD</a>
