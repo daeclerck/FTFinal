@@ -37,13 +37,13 @@ body, html {
     <a href="#home" class="w3-bar-item w3-button w3-wide">HOME</a>
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
-      <a href="User/user.php" class="w3-bar-item w3-button"><i class="fa fa-user"></i> USERS</a>
-      <a href="Food/food.php" class="w3-bar-item w3-button"><i class="fa fa-glass"></i> FOOD</a>
-      <a href="Food/foodINFO.php" class="w3-bar-item w3-button"><i class="fa fa-heart"></i> FOOD INFO</a>
-      <a href="Meal/meal.php" class="w3-bar-item w3-button"><i class="fa fa-cutlery"></i> MEAL</a>
-      <a href="Meal/mealINFO.php" class="w3-bar-item w3-button"><i class="fa fa-history"></i> MEAL HISTORY</a>
-      <a href="Weight/weight.php" class="w3-bar-item w3-button"><i class="fa fa-area-chart"></i> WEIGHT</a>
-      <a href="Workout/workout.php" class="w3-bar-item w3-button"><i class="fa fa-heartbeat"></i> WORKOUT</a>
+      <a href="FTFinal/User/user.php" class="w3-bar-item w3-button"><i class="fa fa-user"></i> USERS</a>
+      <a href="FTFinal/Food/food.php" class="w3-bar-item w3-button"><i class="fa fa-glass"></i> FOOD</a>
+      <a href="FTFinal/Food/foodINFO.php" class="w3-bar-item w3-button"><i class="fa fa-heart"></i> FOOD INFO</a>
+      <a href="FTFinal/Meal/meal.php" class="w3-bar-item w3-button"><i class="fa fa-cutlery"></i> MEAL</a>
+      <a href="FTFinal/Meal/mealINFO.php" class="w3-bar-item w3-button"><i class="fa fa-history"></i> MEAL HISTORY</a>
+      <a href="FTFinal/Weight/weight.php" class="w3-bar-item w3-button"><i class="fa fa-area-chart"></i> WEIGHT</a>
+      <a href="FTFinal/Workout/workout.php" class="w3-bar-item w3-button"><i class="fa fa-heartbeat"></i> WORKOUT</a>
       
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
