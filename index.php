@@ -21,7 +21,7 @@ body, html {
 .bgimg-1 {
   background-position: center;
   background-size: cover;
-  background-image: url("/w3images/mac.jpg");
+  background-image: url("/Fitness-Tracker-Home-Image.jpg");
   min-height: 100%;
 }
 
