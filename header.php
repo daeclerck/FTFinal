@@ -29,6 +29,7 @@ body, html {
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
         <?php 
+            // Check if user is on the home page or a user specific page
             if(!stripos($_SERVER['REQUEST_URI'], 'index') && stripos($_SERVER['REQUEST_URI'], '.php')) {
                 echo '<a href="../User/user.php" class="w3-bar-item w3-button"><i class="fa fa-user"></i> USERS</a>';
                 echo '<a href="../Food/food.php" class="w3-bar-item w3-button"><i class="fa fa-glass"></i> FOOD</a>';
