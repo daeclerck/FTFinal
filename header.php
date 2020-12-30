@@ -30,8 +30,7 @@ body, html {
     <div class="w3-right w3-hide-small">
         <?php 
             $url = "http://localhost/GitHub/FTFinal/";
-            echo "TESTING URL: " . var_dump(parse_url($url));
-            if(stripos($_SERVER['REQUEST_URI'], 'index.php') || parse_url($url)['path'] == '') {
+            if(stripos($_SERVER['REQUEST_URI'], 'index.php') || parse_url($url)['path'] == '/GitHub/FTFinal/') {
                 echo '<a href="./User/user.php" class="w3-bar-item w3-button"><i class="fa fa-user"></i> USERS</a>';
                 echo '<a href="./Food/food.php" class="w3-bar-item w3-button"><i class="fa fa-glass"></i> FOOD</a>';
                 echo '<a href="./Food/foodINFO.php" class="w3-bar-item w3-button"><i class="fa fa-heart"></i> FOOD INFO</a>';
