@@ -14,8 +14,14 @@ body, html {
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
-  <div class="w3-bar w3-white w3-card" id="myNavbar">
-    <a href="./index.php" class="w3-bar-item w3-button w3-wide">HOME</a>
+    <div class="w3-bar w3-white w3-card" id="myNavbar">
+        <?php
+        if(stripos($_SERVER['REQUEST_URI'], 'index.php')) {
+            echo '<a href="./index.php" class="w3-bar-item w3-button w3-wide">HOME</a>';
+        } else {
+            echo '<a href="../index.php" class="w3-bar-item w3-button w3-wide">HOME</a>';
+        }
+    ?>
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
     <?php 
