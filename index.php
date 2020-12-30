@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 
-
 /* Full height image header */
 .bgimg-1 {
   background-position: center;
@@ -14,9 +13,6 @@
   min-height: 100%;
 }
 
-.w3-bar .w3-button {
-  padding: 16px;
-}
 </style>
 <body>
 

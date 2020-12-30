@@ -10,6 +10,10 @@ body, html {
   height: 100%;
   line-height: 1.8;
 }
+
+.w3-bar .w3-button {
+  padding: 16px;
+}
 </style>
 
 <!-- Navbar (sit on top) -->
@@ -25,7 +29,7 @@ body, html {
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
         <?php 
-            if(stripos($_SERVER['REQUEST_URI'], 'index.php')) {
+            if(stripos($_SERVER['REQUEST_URI'], '')) {
                 echo '<a href="./User/user.php" class="w3-bar-item w3-button"><i class="fa fa-user"></i> USERS</a>';
                 echo '<a href="./Food/food.php" class="w3-bar-item w3-button"><i class="fa fa-glass"></i> FOOD</a>';
                 echo '<a href="./Food/foodINFO.php" class="w3-bar-item w3-button"><i class="fa fa-heart"></i> FOOD INFO</a>';
