@@ -1,15 +1,8 @@
 <html>
-<div>
-    <a href="../Weight/weight.php">Weight</a>
-    <a href="../Food/food.php">Food</a>
-    <a href="../Food/foodINFO.php">Food info</a>
-    <a href="../Meal/meal.php">Meal</a>
-    <a href="../Meal/mealINFO.php">Meal Info</a>
-    <a href="../Workout/workout.php">Workout</a>   
-</div>
 <body>
 <?php 
     include "userSQL.php";
+    include "../header.php";
  
     if(!isset($_SESSION)) { session_start(); }
 ?>

@@ -1,7 +1,8 @@
-<?php include "../header.php"; ?>
 <html>
+<?php include "../header.php"; ?>
 <body>
 <?php
+
     include "mealSQL.php";
     include "../Food/foodSQL.php";
 
