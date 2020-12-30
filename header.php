@@ -29,7 +29,8 @@ body, html {
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
         <?php 
-            if(stripos($_SERVER['REQUEST_URI'], '')) {
+            $url = "http://localhost/GitHub/FTFinal/";
+            if(stripos($_SERVER['REQUEST_URI'], 'index.php') || parse_url($url)['path'] == '') {
                 echo '<a href="./User/user.php" class="w3-bar-item w3-button"><i class="fa fa-user"></i> USERS</a>';
                 echo '<a href="./Food/food.php" class="w3-bar-item w3-button"><i class="fa fa-glass"></i> FOOD</a>';
                 echo '<a href="./Food/foodINFO.php" class="w3-bar-item w3-button"><i class="fa fa-heart"></i> FOOD INFO</a>';
