@@ -21,22 +21,29 @@ body, html {
         } else {
             echo '<a href="../index.php" class="w3-bar-item w3-button w3-wide">HOME</a>';
         }
-    ?>
+        ?>
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
-    <?php 
-    if(stripos($_SERVER['REQUEST_URI'], 'index.php')) {
-        echo '<a href="./User/user.php" class="w3-bar-item w3-button"><i class="fa fa-user"></i> USERS</a>';
-    } else {
-        echo '<a href="../User/user.php" class="w3-bar-item w3-button"><i class="fa fa-user"></i> USERS</a>'; 
-    }
+        <?php 
+            if(stripos($_SERVER['REQUEST_URI'], 'index.php')) {
+                echo '<a href="./User/user.php" class="w3-bar-item w3-button"><i class="fa fa-user"></i> USERS</a>';
+                echo '<a href="./Food/food.php" class="w3-bar-item w3-button"><i class="fa fa-glass"></i> FOOD</a>';
+                echo '<a href="./Food/foodINFO.php" class="w3-bar-item w3-button"><i class="fa fa-heart"></i> FOOD INFO</a>';
+                echo '<a href="./Meal/meal.php" class="w3-bar-item w3-button"><i class="fa fa-cutlery"></i> MEAL</a>';
+                echo '<a href="./Meal/mealINFO.php" class="w3-bar-item w3-button"><i class="fa fa-history"></i> MEAL HISTORY</a>';
+                echo '<a href="./Weight/weight.php" class="w3-bar-item w3-button"><i class="fa fa-area-chart"></i> WEIGHT</a>';
+                echo '<a href="./Workout/workout.php" class="w3-bar-item w3-button"><i class="fa fa-heartbeat"></i> WORKOUT</a>';
+            } else {
+                echo '<a href="../User/user.php" class="w3-bar-item w3-button"><i class="fa fa-user"></i> USERS</a>';
+                echo '<a href="../Food/food.php" class="w3-bar-item w3-button"><i class="fa fa-glass"></i> FOOD</a>';
+                echo '<a href="../Food/foodINFO.php" class="w3-bar-item w3-button"><i class="fa fa-heart"></i> FOOD INFO</a>';
+                echo '<a href="../Meal/meal.php" class="w3-bar-item w3-button"><i class="fa fa-cutlery"></i> MEAL</a>';
+                echo '<a href="../Meal/mealINFO.php" class="w3-bar-item w3-button"><i class="fa fa-history"></i> MEAL HISTORY</a>';
+                echo '<a href="../Weight/weight.php" class="w3-bar-item w3-button"><i class="fa fa-area-chart"></i> WEIGHT</a>';
+                echo '<a href="../Workout/workout.php" class="w3-bar-item w3-button"><i class="fa fa-heartbeat"></i> WORKOUT</a>';
+            }
     ?>
-        <a href="./Food/food.php" class="w3-bar-item w3-button"><i class="fa fa-glass"></i> FOOD</a>
-        <a href="./Food/foodINFO.php" class="w3-bar-item w3-button"><i class="fa fa-heart"></i> FOOD INFO</a>
-        <a href="./Meal/meal.php" class="w3-bar-item w3-button"><i class="fa fa-cutlery"></i> MEAL</a>
-        <a href="./Meal/mealINFO.php" class="w3-bar-item w3-button"><i class="fa fa-history"></i> MEAL HISTORY</a>
-        <a href="./Weight/weight.php" class="w3-bar-item w3-button"><i class="fa fa-area-chart"></i> WEIGHT</a>
-        <a href="./Workout/workout.php" class="w3-bar-item w3-button"><i class="fa fa-heartbeat"></i> WORKOUT</a>
+
       
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
