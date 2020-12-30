@@ -8,7 +8,7 @@
 /* Full height image header */
 .bgimg-1 {
   background-position: center;
-  background-size: auto;
+  background-size: 100% 80%;
   background-image: url("Fitness-Tracker-Home-Image.jpg");
   min-height: 100%;
 }
