@@ -37,7 +37,7 @@ body, html {
     <a href="#home" class="w3-bar-item w3-button w3-wide">HOME</a>
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
-      <a href="User/user.php" class="w3-bar-item w3-button"><i class="fa fa-user"></i> USERS</a>
+      <a href="./User/user.php" class="w3-bar-item w3-button"><i class="fa fa-user"></i> USERS</a>
       <a href="Food/food.php" class="w3-bar-item w3-button"><i class="fa fa-glass"></i> FOOD</a>
       <a href="Food/foodINFO.php" class="w3-bar-item w3-button"><i class="fa fa-heart"></i> FOOD INFO</a>
       <a href="Meal/meal.php" class="w3-bar-item w3-button"><i class="fa fa-cutlery"></i> MEAL</a>
