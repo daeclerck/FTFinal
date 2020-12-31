@@ -15,6 +15,7 @@
     <!-- Check for valid user names including no white spaces in beginning or end -->
     <input type="text" name="UserName" required pattern="^[-a-zA-Z0-9-()]+(\s+[-a-zA-Z0-9-()]+)*$" title="This field is required"><br>
     <input type="submit" name="UserNameSubmit" value="Add User">  
+    </div>
 </header>
 </form> 
 
