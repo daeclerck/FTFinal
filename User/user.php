@@ -1,5 +1,5 @@
 <html>
-<body>
+<body class="bgimg-2">
 <?php 
     include "userSQL.php";
     include "../header.php";
