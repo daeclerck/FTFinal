@@ -42,9 +42,8 @@
                     }    
                 ?>  
                 </select>
-                <input type="submit" name="ViewOptions" value="View Options"> 
+                <input type="submit" name="ViewOptions" value="Select User"> 
             </form>    
-        </div>
 <?php
     if(isset($_POST['ViewOptions']) && !empty($_POST['AccountID'])) {
         $confirm = $_POST['AccountID'];
@@ -56,7 +55,7 @@
         echo ConfirmUser($confirm) . " has been selected!";
     }  
 ?>
-
+        </div>
         <div class="w3-col m2">
             <form method="POST">
                 <h1>Delete a User</h1>
