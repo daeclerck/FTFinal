@@ -13,7 +13,7 @@
     <div class="w3-row-padding">
         <div class="w3-col m5">
             <form method="POST">
-                <h1>Add a User <i class="fa fa-plus w3-xxlarge"></h1>
+                <h1>Add a User <i class="fa fa-plus w3-xxlarge"></i></h1>
                 <label>User Name: </label>
                 <!-- Check for valid user names including no white spaces in beginning or end -->
                 <input type="text" name="UserName" required pattern="^[-a-zA-Z0-9-()]+(\s+[-a-zA-Z0-9-()]+)*$" title="This field is required" placeholder="Enter Valid Name">
@@ -33,7 +33,7 @@
 
         <div class="w3-col m5">
             <form method="POST">   
-                <h1>Select a User <i class="fa fa-mouse-pointe w3-xxlarge"></h1>
+                <h1>Select a User <i class="fa fa-mouse-pointe w3-xxlarge"></i></h1>
                 <select name="AccountID">
                 <option disabled selected value> -- select a user -- </option>
                 <?php
