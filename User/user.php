@@ -1,5 +1,5 @@
 <html>
-<body class="bgimg-2">
+<body>
 <?php 
     include "userSQL.php";
     include "../header.php";
@@ -7,6 +7,7 @@
     if(!isset($_SESSION)) { session_start(); }
 ?>
 <br><br><br>
+<header class="bgimg-2">
 <form method="POST">
     <h1>Add a new User</h1><br>
     <label>User Name: </label>
@@ -78,6 +79,6 @@
     }  
 ?>
 
-    
+</header>
 </body>
 </html>
