@@ -60,7 +60,7 @@
         <div class="w3-col m2">
             <form method="POST">
                 <h1><i class="fa fa-times w3-xxlarge"></i> Delete a User</h1> 
-                <select name="DeleteID" style="Padding: 0px 16px">
+                <select name="DeleteID">
                 <option disabled selected value> -- select a user -- </option>
                 <?php
                     $account = SelectUser();
