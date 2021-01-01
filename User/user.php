@@ -1,19 +1,5 @@
 <html>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <body>
-<style>
-
-/* Full height image header */
-.bgimg-1 {
-  background-position: center;
-  background-size: cover;
-  background-image: url("Fitness-Index-Image.jpg");
-  min-height: 100%;
-}
-
-
-</style>
 <?php 
     include "userSQL.php";
     include "../header.php";
@@ -21,7 +7,15 @@
     if(!isset($_SESSION)) { session_start(); }
 ?>
 <br><br><br>
-<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+<style>
+.bgimg-2 {
+  background-position: center;
+  background-size: cover;
+  background-image: url("../Fitness-Tracker-Home-Image.jpg");
+  min-height: 100%;
+}
+</style>
+<header class="bgimg-2">
 <form method="POST">
     <h1>Add a new User</h1><br>
     <label>User Name: </label>
@@ -93,6 +87,6 @@
     }  
 ?>
 
-</header>
+</header>  
 </body>
 </html>
