@@ -8,7 +8,7 @@
 ?>
 <br>
 <header class="bgimg-2">
-<h1 class="w3-center" style="Padding:32">Get started by selecting a user</h1>
+<h1 class="w3-center" style="Padding:64px">Get started by selecting a user</h1>
 <div class="w3-container" style="Padding:176px 32px">
     <div class="w3-row-padding">
         <div class="w3-col m5">
