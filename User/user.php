@@ -8,8 +8,8 @@
 ?>
 <br>
 <header class="bgimg-2">
+<h1 class="w3-center">Get started by selecting a user</h1>
 <div class="w3-container" style="Padding:176 32px">
-<h3 class="w3-center">Get started by selecting a user</h3>
     <div class="w3-row-padding">
         <div class="w3-col m5">
             <form method="POST">
@@ -59,7 +59,7 @@
         </div>
         <div class="w3-col m2">
             <form method="POST">
-                <h1>Delete a User</h1> <i class="fa fa-times"></i>
+                <h1>Delete a User <i class="fa fa-times w3-xxxlarge"></i></h1> 
                 <select name="DeleteID">
                 <option disabled selected value> -- select a user -- </option>
                 <?php
