@@ -10,6 +10,7 @@
 <header class="bgimg-2">
 <div class="w3-container w3-light-grey w3-padding-64">
     <div class="w3-row-padding">
+        <div class="w3-col m6">
 <form method="POST">
     <h1>Add a User</h1>
     <label>User Name: </label>
@@ -17,7 +18,7 @@
     <input type="text" name="UserName" required pattern="^[-a-zA-Z0-9-()]+(\s+[-a-zA-Z0-9-()]+)*$" title="This field is required">
     <input type="submit" name="UserNameSubmit" value="Add User"> 
 </form> 
-
+        </div>
 <?php
     if(isset($_POST['UserNameSubmit']) && !empty($_POST['UserName'])) {
         // Add a new user with a randomly generated ID
@@ -30,6 +31,7 @@
     else { echo "Please enter a valid name."; }
 ?>  
 
+        <div class="w3-col m6">
 <form method="POST">   
     <h1>Select a User</h1>
     <select name="AccountID">
@@ -43,7 +45,7 @@
     </select>
     <input type="submit" name="ViewOptions" value="View Options"> 
 </form>    
-
+        </div>
 <?php
     if(isset($_POST['ViewOptions']) && !empty($_POST['AccountID'])) {
         $confirm = $_POST['AccountID'];
