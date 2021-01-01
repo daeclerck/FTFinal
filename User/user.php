@@ -30,7 +30,7 @@
     }
 ?>  
 
-        <div class="w3-col m5">
+        <div class="w3-col m4">
             <form method="POST">   
                 <h1>Select a User</h1>
                 <select name="AccountID">
