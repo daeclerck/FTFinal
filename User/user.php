@@ -7,14 +7,6 @@
     if(!isset($_SESSION)) { session_start(); }
 ?>
 <br><br><br>
-<style>
-.bgimg-2 {
-  background-position: center;
-  background-size: cover;
-  background-image: url("../Fitness-Tracker-Home-Image.jpg");
-  min-height: 100%;
-}
-</style>
 <header class="bgimg-2">
 <form method="POST">
     <h1>Add a new User</h1><br>

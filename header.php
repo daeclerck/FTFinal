@@ -14,6 +14,13 @@ body, html {
 .w3-bar .w3-button {
   padding: 16px;
 }
+
+.bgimg-2 {
+  background-position: center;
+  background-size: cover;
+  background-image: url("../Fitness-Tracker-Home-Image.jpg");
+  min-height: 100%;
+}
 </style>
 
 <!-- Navbar (sit on top) -->
