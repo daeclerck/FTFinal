@@ -12,7 +12,7 @@ body, html {
 }
 
 select {
-  height: 10%;
+  height: 2%;
 }
 
 .w3-bar .w3-button {
