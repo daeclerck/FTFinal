@@ -8,7 +8,7 @@
 ?>
 <br><br><br>
 <form method="POST">
-    <h1>Add a new User</h1><br>
+    <h1 class="w3-jumbo w3-hide-small">Add a new User</h1><br>
     <label>User Name: </label>
     <!-- Check for valid user names including no white spaces in beginning or end -->
     <input type="text" name="UserName" required pattern="^[-a-zA-Z0-9-()]+(\s+[-a-zA-Z0-9-()]+)*$" title="This field is required"><br>
