@@ -7,7 +7,7 @@
     if(!isset($_SESSION)) { session_start(); }
 ?>
 <br><br><br>
-<header class="bgimg-2">
+<header class="bgimg-2 w3-display-container w3-grayscale-min" id="home">
 <form method="POST">
     <h1>Add a new User</h1><br>
     <label>User Name: </label>
