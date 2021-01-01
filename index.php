@@ -3,18 +3,6 @@
 <?php include "./header.php"; ?>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-
-/* Full height image header */
-.bgimg-1 {
-  background-position: center;
-  background-size: cover;
-  background-image: url("Fitness-Index-Image.jpg");
-  min-height: 100%;
-}
-
-
-</style>
 <body>
 
 <!-- Header with full-height image -->

@@ -15,6 +15,15 @@ body, html {
   padding: 16px;
 }
 
+/* Full height image header */
+.bgimg-1 {
+  background-position: center;
+  background-size: cover;
+  background-image: url("Fitness-Index-Image.jpg");
+  min-height: 100%;
+}
+
+/* Full heigh image for user pages */
 .bgimg-2 {
   background-position: center;
   background-size: cover;
