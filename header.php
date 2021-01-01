@@ -35,7 +35,7 @@ body, html {
         ?>
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
-        <?php 
+      <?php 
             // Check if user is on the home page or a user specific page
             if(!stripos($_SERVER['REQUEST_URI'], 'index') && stripos($_SERVER['REQUEST_URI'], '.php')) {
                 echo '<a href="../User/user.php" class="w3-bar-item w3-button"><i class="fa fa-user"></i> USERS</a>';
@@ -54,9 +54,7 @@ body, html {
                 echo '<a href="./Weight/weight.php" class="w3-bar-item w3-button"><i class="fa fa-area-chart"></i> WEIGHT</a>';
                 echo '<a href="./Workout/workout.php" class="w3-bar-item w3-button"><i class="fa fa-heartbeat"></i> WORKOUT</a>';
             }
-    ?>
-
-      
+      ?>
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
@@ -69,13 +67,26 @@ body, html {
 <!-- Sidebar on small screens when clicking the menu icon -->
 <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
     <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
-    <a href="./User/user.php" class="w3-bar-item w3-button"><i class="fa fa-user"></i> USERS</a>
-    <a href="./Food/food.php" class="w3-bar-item w3-button"><i class="fa fa-glass"></i> FOOD</a>
-    <a href="./Food/foodINFO.php" class="w3-bar-item w3-button"><i class="fa fa-heart"></i> FOOD INFO</a>
-    <a href="./Meal/meal.php" class="w3-bar-item w3-button"><i class="fa fa-cutlery"></i> MEAL</a>
-    <a href="./Meal/mealINFO.php" class="w3-bar-item w3-button"><i class="fa fa-history"></i> MEAL HISTORY</a>
-    <a href="./Weight/weight.php" class="w3-bar-item w3-button"><i class="fa fa-area-chart"></i> WEIGHT</a>
-    <a href="./Workout/workout.php" class="w3-bar-item w3-button"><i class="fa fa-heartbeat"></i> WORKOUT</a>
+    <?php 
+            // Check if user is on the home page or a user specific page
+            if(!stripos($_SERVER['REQUEST_URI'], 'index') && stripos($_SERVER['REQUEST_URI'], '.php')) {
+                echo '<a href="../User/user.php" class="w3-bar-item w3-button"><i class="fa fa-user"></i> USERS</a>';
+                echo '<a href="../Food/food.php" class="w3-bar-item w3-button"><i class="fa fa-glass"></i> FOOD</a>';
+                echo '<a href="../Food/foodINFO.php" class="w3-bar-item w3-button"><i class="fa fa-heart"></i> FOOD INFO</a>';
+                echo '<a href="../Meal/meal.php" class="w3-bar-item w3-button"><i class="fa fa-cutlery"></i> MEAL</a>';
+                echo '<a href="../Meal/mealINFO.php" class="w3-bar-item w3-button"><i class="fa fa-history"></i> MEAL HISTORY</a>';
+                echo '<a href="../Weight/weight.php" class="w3-bar-item w3-button"><i class="fa fa-area-chart"></i> WEIGHT</a>';
+                echo '<a href="../Workout/workout.php" class="w3-bar-item w3-button"><i class="fa fa-heartbeat"></i> WORKOUT</a>';
+            } else {
+                echo '<a href="./User/user.php" class="w3-bar-item w3-button"><i class="fa fa-user"></i> USERS</a>';
+                echo '<a href="./Food/food.php" class="w3-bar-item w3-button"><i class="fa fa-glass"></i> FOOD</a>';
+                echo '<a href="./Food/foodINFO.php" class="w3-bar-item w3-button"><i class="fa fa-heart"></i> FOOD INFO</a>';
+                echo '<a href="./Meal/meal.php" class="w3-bar-item w3-button"><i class="fa fa-cutlery"></i> MEAL</a>';
+                echo '<a href="./Meal/mealINFO.php" class="w3-bar-item w3-button"><i class="fa fa-history"></i> MEAL HISTORY</a>';
+                echo '<a href="./Weight/weight.php" class="w3-bar-item w3-button"><i class="fa fa-area-chart"></i> WEIGHT</a>';
+                echo '<a href="./Workout/workout.php" class="w3-bar-item w3-button"><i class="fa fa-heartbeat"></i> WORKOUT</a>';
+            }
+      ?>
 </nav>
 
 <script>
