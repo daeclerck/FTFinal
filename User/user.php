@@ -8,7 +8,7 @@
 ?>
 <br>
 <header class="bgimg-2">
-<div class="w3-container" style="Padding:128px 16px">
+<div class="w3-container" style="Padding:128px 160px">
     <div class="w3-row-padding">
         <div class="w3-col m5">
             <form method="POST">
