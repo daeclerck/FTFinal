@@ -13,7 +13,7 @@
     <div class="w3-row-padding">
         <div class="w3-col m5">
             <form method="POST">
-                <h1 style="Padding:0px 15px"><i class="fa fa-plus w3-xxlarge"></i> Add a User</h1>
+                <h1 style="Padding:0px 32px"><i class="fa fa-plus w3-xxlarge"></i> Add a User</h1>
                 <label>User Name: </label>
                 <!-- Check for valid user names including no white spaces in beginning or end -->
                 <input type="text" name="UserName" required pattern="^[-a-zA-Z0-9-()]+(\s+[-a-zA-Z0-9-()]+)*$" title="This field is required" placeholder="Enter Valid Name">
