@@ -11,6 +11,10 @@ body, html {
   line-height: 1.8;
 }
 
+select {
+  height: 10%;
+}
+
 .w3-bar .w3-button {
   padding: 16px;
 }

@@ -35,7 +35,7 @@
             <form method="POST">   
                 <h1><i class="fa fa-mouse-pointer w3-xxlarge"></i> Select a User</h1>
                 <select name="AccountID">
-                <option class="w3-button" disabled selected value> -- select a user -- </option>
+                <option disabled selected value> -- select a user -- </option>
                 <?php
                     $account = SelectUser();
                     foreach($account as $result) {
