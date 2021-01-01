@@ -10,12 +10,12 @@
 <header class="bgimg-2">
 <div class="w3-container w3-light-grey w3-padding-64">
     <div class="w3-row-padding">
-        <div class="w3-col m4">
+        <div class="w3-col m5">
             <form method="POST">
                 <h1>Add a User</h1>
                 <label>User Name: </label>
                 <!-- Check for valid user names including no white spaces in beginning or end -->
-                <input type="text" name="UserName" required pattern="^[-a-zA-Z0-9-()]+(\s+[-a-zA-Z0-9-()]+)*$" title="This field is required">
+                <input type="text" name="UserName" required pattern="^[-a-zA-Z0-9-()]+(\s+[-a-zA-Z0-9-()]+)*$" title="This field is required" placeholder="Enter Valid Name">
                 <input type="submit" name="UserNameSubmit" value="Add User"> 
             </form> 
         </div>
@@ -28,10 +28,9 @@
     else if(isset($_POST['UserNameSubmit']) && empty($_POST['UserName'])) { 
         echo "Username can not be empty!"; 
     }
-    else { echo "Please enter a valid name."; }
 ?>  
 
-        <div class="w3-col m4">
+        <div class="w3-col m5">
             <form method="POST">   
                 <h1>Select a User</h1>
                 <select name="AccountID">
@@ -58,7 +57,7 @@
     }  
 ?>
 
-        <div class="w3-col m4">
+        <div class="w3-col m5">
             <form method="POST">
                 <h1>Delete a User</h1>
                 <select name="DeleteID">
