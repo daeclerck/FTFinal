@@ -77,4 +77,22 @@ body, html {
     <a href="./Weight/weight.php" class="w3-bar-item w3-button"><i class="fa fa-area-chart"></i> WEIGHT</a>
     <a href="./Workout/workout.php" class="w3-bar-item w3-button"><i class="fa fa-heartbeat"></i> WORKOUT</a>
 </nav>
+
+<script>
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+  } else {
+    mySidebar.style.display = 'block';
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+}
+</script>
 </html>
