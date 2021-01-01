@@ -57,7 +57,7 @@
         echo ConfirmUser($confirm) . " has been selected!";
     }  
 ?>
-
+<div class="w3-col m6">
 <form method="POST">
     <h1>Delete a User</h1>
     <select name="DeleteID">
@@ -71,7 +71,7 @@
     </select>
     <input type="submit" name="DeleteUser" value="Delete User">   
 </form>    
-
+</div>
 <?php
     if(isset($_POST['DeleteUser']) && !empty($_POST['DeleteID'])) {
         // Remove the chosen AccountID and delete from database
