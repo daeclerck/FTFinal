@@ -135,20 +135,20 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         ?>
     </select>
 
-    
+    <div class="w3-justify">
     <!-- Macronutrients -->
-    <br><label>Calories per Serving </label><br>
+    <br><label><b>Calories per Serving </b></label>
     <input class="w3-right-align" name="CaloriesInput" type="number" min="0" max="99999" value="<?php echo $FoodInfo['CaloriesInput']; ?>">   
     <br>
-    <label>Fat per Serving </label><br>
+    <label><b>Fat per Serving </b></label>
     <input class="w3-right-align" name="FatInput" type="number" min="0" max="99999" value="<?php echo $FoodInfo['FatInput']; ?>">
     <br>
-    <label>Carbs per Serving </label><br>
+    <label><b>Carbs per Serving </b></label>
     <input class="w3-right-align" name="CarbsInput" type="number" min="0" max="99999" value="<?php echo $FoodInfo['CarbsInput']; ?>">
     <br>
-    <label>Protein per Serving </label><br>
+    <label><b>Protein per Serving </b></label>
     <input class="w3-right-align" name="ProteinInput" type="number" min="0" max="99999" value="<?php echo $FoodInfo['ProteinInput']; ?>">
-    
+    </div>
 </div>
 <div class="w3-col m6">
     <!-- Micronutrients -->
