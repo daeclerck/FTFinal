@@ -3,8 +3,17 @@
 <?php 
     include "userSQL.php";
     include "../header.php";
+
+    $DeleteSuccess = False;
  
     if(!isset($_SESSION)) { session_start(); }
+
+    if(isset($_POST['DeleteUser']) && !empty($_POST['DeleteID'])) {
+        // Remove the chosen AccountID and delete from database
+	    $delete = $_POST['DeleteID'];
+        DeleteUser($delete);
+        $DeleteSuccess = True;	
+    } 
 ?>
 <header class="bgimg-2">
 <h1 class="w3-center" style="Padding:80px"><b><em>Begin tracking your fitness today</em></b></h1>
@@ -70,13 +79,9 @@
             </form>    
         </div>
 <?php
-    if(isset($_POST['DeleteUser']) && !empty($_POST['DeleteID'])) {
-        // Remove the chosen AccountID and delete from database
-	    $delete = $_POST['DeleteID'];
-        DeleteUser($delete);
-        
-	    // Refresh the page to update the options
-        // header('Location: user.php');	
+    if($DeleteSuccess) {
+        // Print message on success
+        echo "User successfully removed!";
     }  
 ?>
     </div>
