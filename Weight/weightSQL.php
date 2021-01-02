@@ -47,7 +47,7 @@ function PrintWeight($AccountID) {
     $result = SelectWeight($AccountID);
     
     if($result->num_rows > 0) {
-        echo "<table border class='w3-table'>";
+        echo "<table border>";
             echo "<tr>";
             echo "<th>Weight</th>";
             echo "<th>Date Recorded</th>";
