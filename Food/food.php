@@ -97,10 +97,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             DeleteFood($_POST['DeleteFood']);
             echo "Food Deleted Successfully.";
         }
-        else { $AlreadyStored = True; echo "Food is already stored in a meal!"; }
+        else { $AlreadyStored = True; }
     }
-
-	else { echo "Must enter a name for the food!"; }
 }
 ?>
 
@@ -194,6 +192,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 </div>
 
+<!-- Script to remove scientific notation -->
 <script>
   function precise(elem) {
     elem.value = Number(elem.value).toFixed(8);
