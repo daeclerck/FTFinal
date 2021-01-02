@@ -31,7 +31,7 @@ select {
 .bgimg-2 {
   background-position: center;
   background-size: cover;
-  background-image: url("../Fitness-Menu-Alt.jpg");
+  background-image: url("../Fitness-Menu-BG.jpg");
   min-height: 100%;
 }
 </style>
