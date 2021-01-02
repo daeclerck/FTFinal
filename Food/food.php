@@ -7,6 +7,8 @@
         include "../header.php"; 
 
         // Initialize necessary variables
+        $AddSuccess = False;
+        $DeleteSuccess = False;
         $AlreadyStored = False;
 
         // Begin session
@@ -70,7 +72,8 @@
                 foreach($MicroReset as $key) {
                     $_SESSION["NutrientValueArray"][$key["NutrientName"]] = 0;
                 }	    
-                    
+                
+                $AddSuccess = True;
             }
 
 	        else if(isset($_POST['MicroSubmit']) && !empty($_POST['MicroSelect'])) {
@@ -91,9 +94,11 @@
             else if(isset($_POST['DeleteFoodSubmit'])) {
                 if(DeleteFoodConfirm($_POST['DeleteFood'])) {
                     DeleteFood($_POST['DeleteFood']);
-                    echo "Food Deleted Successfully.";
+                    $DeleteSuccess = True;
                 }
-                else { $AlreadyStored = True; }
+                else { 
+                    $AlreadyStored = True; 
+                }
             }
         }
     ?>
@@ -145,6 +150,12 @@
             <input class="w3-right-align" name="ProteinInput" type="number" min="0" max="99999" value="<?php echo $FoodInfo['ProteinInput']; ?>">
             <br><h6><em>Calories / Fat / Carbs / Protein <b>must</b> be in grams!</em></h6>
             <input class="w3-button w3-black" name="NewFoodSubmit" type="submit" value="Add New Food">
+
+            <?php
+                if($AddSuccess) {
+                    echo $_POST['FoodNameInput'] . " Added Successfully!";
+                }
+            ?>
         </div>
         <div class="w3-col m6 w3-left-align" style="Padding:16px 0px" id="test">
             <!-- Micronutrients -->
@@ -183,7 +194,14 @@
             </select><br>
             <input name="DeleteFoodSubmit" type="submit" value="Delete Food">
 
-                <?php if($AlreadyStored) { echo "That food is stored in a meal!"; } ?>
+                <?php 
+                    if($AlreadyStored) { 
+                        echo "That food is stored in a meal!"; 
+                        } 
+                    if($DeleteSuccess) {
+                        echo "Food Deleted Successfully!";
+                    }
+                ?>
 
             <br><h6><b>NOTE:</b><em> Food already in a user's meal can not be removed!</em></h6>
         </div>
