@@ -1,6 +1,7 @@
 <?php include "../header.php"; ?>
 <html>
 <body>
+<header class="bgimg-2">
 <?php
     include "mealSQL.php";
     include "../Food/foodSQL.php";
@@ -159,5 +160,6 @@
     <input name="ClearMealSubmit" type="submit" value="Clear Meal">
     <input name="AddMealSubmit" type="submit" value="Add This Meal">
 </form>
+</header>
 </body>
 </html>

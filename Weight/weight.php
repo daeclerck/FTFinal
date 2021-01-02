@@ -1,6 +1,7 @@
 <?php include "../header.php"; ?>
 <html>
 <body>
+<header class="bgimg-2">
 <?php 
     include "weightSQL.php"; 
     
@@ -72,5 +73,6 @@
         PrintWeight($_SESSION['AccountID']);
     } 
 ?>
+</header>
 </body>
 </html>

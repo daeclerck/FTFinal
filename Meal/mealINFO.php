@@ -1,6 +1,7 @@
 <html>
 <?php include "../header.php"; ?>
 <body>
+<header class="bgimg-2">
 <?php
 
     include "mealSQL.php";
@@ -188,5 +189,6 @@
 	<br>
 	<input type="text" disabled value=<?php echo $RecommendChosen; ?>>
 </form>
+</header>
 </body>
 </html>

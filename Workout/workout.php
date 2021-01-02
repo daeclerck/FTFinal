@@ -1,6 +1,7 @@
 <?php include "../header.php"; ?>
 <html>
 <body>
+<header class="bgimg-2">
 <?php
     include "workoutSQL.php";
 
@@ -196,5 +197,6 @@
         }
     ?>
 </table>
+</header>
 </body>
 </html>
