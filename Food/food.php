@@ -113,7 +113,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         title="This field is required" placeholder="Enter Valid Name">
     <br>
     <label>Serving Size: </label>
-    <input class="w3-right-align" style="Padding:0px 5px" name="ServingSizeInput" type="number" value="<?php echo $FoodInfo['ServingSizeInput']; ?>" min="0" max="999.99" step="0.01">
+    <input class="w3-right-align" style="Padding:0px 16px" name="ServingSizeInput" type="number" value="<?php echo $FoodInfo['ServingSizeInput']; ?>" min="0" max="999.99" step="0.01">
     <select name="ServingSizeUOM">
         <?php 
             $Selector = $FoodInfo['ServingSizeUOM'];
