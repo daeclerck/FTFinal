@@ -10,11 +10,11 @@ body, html {
   height: 100%;
   line-height: 1.8;
 }
-/*
+
 label {
-  font-size: 150%
+  font-size: 125%
 }
-*/
+
 select {
   height: 3.4%;
 }
