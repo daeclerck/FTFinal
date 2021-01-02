@@ -17,7 +17,6 @@ label {
 
 select {
   height: 3.4%;
-  size: 4;
 }
 
 .w3-bar .w3-button {
