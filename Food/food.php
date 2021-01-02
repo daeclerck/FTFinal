@@ -101,8 +101,8 @@
 <header class="bgimg-2">
 <h1 class="w3-center title"><b><em>Add Your Favorite Foods Here</em></b></h1>
 <form method="POST">
-<div class="w3-container" style="Padding:16px 64px">
-    <div class="w3-col m6 w3-right-align" style="Padding:16px 128px"> 
+    <div class="w3-container" style="Padding:16px 64px">
+        <div class="w3-col m6 w3-right-align" style="Padding:16px 128px"> 
 
             <label><b>Food Name </b></label>
             <!-- Check for valid food names including no white spaces in beginning or end -->
@@ -145,8 +145,8 @@
             <input class="w3-right-align" name="ProteinInput" type="number" min="0" max="99999" value="<?php echo $FoodInfo['ProteinInput']; ?>">
             <br><h6><em>Calories / Fat / Carbs / Protein <b>must</b> be in grams!</em></h6>
             <input class="w3-button w3-black" name="NewFoodSubmit" type="submit" value="Add New Food">
-    </div>
-    <div class="w3-col m6 w3-left-align" style="Padding:16px 0px" id="test">
+        </div>
+        <div class="w3-col m6 w3-left-align" style="Padding:16px 0px" id="test">
             <!-- Micronutrients -->
             <label><b>Micronutrient</b></label>
             <select name="MicroSelect">
@@ -186,17 +186,15 @@
                 <?php if($AlreadyStored) { echo "That food is stored in a meal!"; } ?>
 
             <br><h6><b>NOTE:</b><em> Food already in a user's meal can not be removed!</em></h6>
-        </form>
+        </div>
     </div>
-</div>
-        
+</form>      
 <!-- Script to remove scientific notation -->
 <script>
     function precise(elem) {
         elem.value = Number(elem.value).toFixed(8);
     }
 </script>
-
 </header>
 </body>
 </html>
