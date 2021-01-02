@@ -166,7 +166,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 </div>
 
 <div>
-    <input class="w3-button w3-black" name="NewFoodSubmit" type="submit" value="Add New Food">
+    <i class="fa fa-check-circle-o"></i><input class="w3-button w3-black" name="NewFoodSubmit" type="submit" value="Add New Food">
 </div>
 
 <div>
