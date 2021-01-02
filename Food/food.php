@@ -139,13 +139,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     <br><label>Calories per Serving </label>
     <input class="w3-right-align" name="CaloriesInput" type="number" min="0" max="99999" value="<?php echo $FoodInfo['CaloriesInput']; ?>">   
     <br>
-    <label>    Fat per Serving </label>
+    <label class="w3-right-align">Fat per Serving </label>
     <input class="w3-right-align" name="FatInput" type="number" min="0" max="99999" value="<?php echo $FoodInfo['FatInput']; ?>">
     <br>
-    <label>  Carbs per Serving </label>
+    <label class="w3-right-align">Carbs per Serving </label>
     <input class="w3-right-align" name="CarbsInput" type="number" min="0" max="99999" value="<?php echo $FoodInfo['CarbsInput']; ?>">
     <br>
-    <label>Protein per Serving </label>
+    <label class="w3-right-align">Protein per Serving </label>
     <input class="w3-right-align" name="ProteinInput" type="number" min="0" max="99999" value="<?php echo $FoodInfo['ProteinInput']; ?>">
 
 </div>
