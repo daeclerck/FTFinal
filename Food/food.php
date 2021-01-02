@@ -104,7 +104,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 <form method="POST">
-    <label>Food Name: </label>
+    <h3>Food Name: </h3>
     <!-- Check for valid food names including no white spaces in beginning or end -->
     <input name="FoodNameInput" type="text" value="<?php echo $FoodInfo['FoodNameInput']; ?>" pattern="^[-a-zA-Z0-9-()]+(\s+[-a-zA-Z0-9-()]+)*$" title="This field is required">
     <br>
