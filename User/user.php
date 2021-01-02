@@ -60,7 +60,7 @@
                             echo "<option value='" . $result['AccountID'] . "'>" . $result['UserName'] . "</option>";
                         }    
                     ?> 
-                     
+
                 </select>
                 <input type="submit" name="ViewOptions" value="Select User"> 
             </form>    
@@ -101,6 +101,9 @@
                 if($DeleteSuccess) {
                     // Print message on success
                     echo "User successfully removed!";
+                    unset($_SESSION['AccountID']);
+                    unset($_SESSION['UserName']);
+
                 }  
             ?>
 
