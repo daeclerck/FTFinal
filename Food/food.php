@@ -112,8 +112,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     <input name="FoodNameInput" type="text" value="<?php echo $FoodInfo['FoodNameInput']; ?>" pattern="^[-a-zA-Z0-9-()]+(\s+[-a-zA-Z0-9-()]+)*$" 
         title="This field is required" placeholder="Enter Valid Name">
     <br>
-    <label>Serving Size: </label>
-    <input class="w3-right-align" style="Padding:0px 16px" name="ServingSizeInput" type="number" value="<?php echo $FoodInfo['ServingSizeInput']; ?>" min="0" max="999.99" step="0.01">
+    <label>Serving Size </label>
+    <input class="w3-right-align" name="ServingSizeInput" type="number" value="<?php echo $FoodInfo['ServingSizeInput']; ?>" min="0" max="999.99" step="0.01">
     <select name="ServingSizeUOM">
         <?php 
             $Selector = $FoodInfo['ServingSizeUOM'];
@@ -136,16 +136,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     </select>
 
     <!-- Macronutrients -->
-    <br><label>Calories per Serving: </label>
+    <br><label>Calories per Serving </label>
     <input class="w3-right-align" name="CaloriesInput" type="number" min="0" max="99999" value="<?php echo $FoodInfo['CaloriesInput']; ?>">   
     <br>
-    <label>Fat per Serving (grams): </label>
+    <label>    Fat per Serving </label>
     <input class="w3-right-align" name="FatInput" type="number" min="0" max="99999" value="<?php echo $FoodInfo['FatInput']; ?>">
     <br>
-    <label>Carbs per Serving (grams): </label>
+    <label>  Carbs per Serving </label>
     <input class="w3-right-align" name="CarbsInput" type="number" min="0" max="99999" value="<?php echo $FoodInfo['CarbsInput']; ?>">
     <br>
-    <label>Protein per Serving (grams): </label>
+    <label>Protein per Serving </label>
     <input class="w3-right-align" name="ProteinInput" type="number" min="0" max="99999" value="<?php echo $FoodInfo['ProteinInput']; ?>">
 
 </div>
