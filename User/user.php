@@ -23,7 +23,7 @@
 
 <style>
     .shadow {
-        text-shadow: 2px 2px #000000;
+        text-shadow: 2px 4px #696969;
     }
 </style>
 
