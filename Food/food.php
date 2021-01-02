@@ -107,13 +107,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <div class="w3-col m6"> 
 <form method="POST">
-    <label><b>Food Name</b></label>
+    <label><b>Food Name </b></label>
     <!-- Check for valid food names including no white spaces in beginning or end -->
     <input name="FoodNameInput" type="text" value="<?php echo $FoodInfo['FoodNameInput']; ?>" pattern="^[-a-zA-Z0-9-()]+(\s+[-a-zA-Z0-9-()]+)*$" 
         title="This field is required" placeholder="Enter Valid Name">
     <br>
     <label>Serving Size: </label>
-    <input name="ServingSizeInput" type="number" value="<?php echo $FoodInfo['ServingSizeInput']; ?>" min="0" max="999.99" step="0.01">
+    <input class="w3-right-align" name="ServingSizeInput" type="number" value="<?php echo $FoodInfo['ServingSizeInput']; ?>" min="0" max="999.99" step="0.01">
     <select name="ServingSizeUOM">
         <?php 
             $Selector = $FoodInfo['ServingSizeUOM'];
