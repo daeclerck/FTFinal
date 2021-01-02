@@ -100,9 +100,10 @@
 
 <header class="bgimg-2">
 <h1 class="w3-center title"><b><em>Add Your Favorite Foods Here</em></b></h1>
+<form method="POST">
 <div class="w3-container" style="Padding:16px 64px">
     <div class="w3-col m6 w3-right-align" style="Padding:16px 128px"> 
-        <form method="POST">
+
             <label><b>Food Name </b></label>
             <!-- Check for valid food names including no white spaces in beginning or end -->
             <input name="FoodNameInput" type="text" value="<?php echo $FoodInfo['FoodNameInput']; ?>" pattern="^[-a-zA-Z0-9-()]+(\s+[-a-zA-Z0-9-()]+)*$" 
@@ -191,9 +192,9 @@
         
 <!-- Script to remove scientific notation -->
 <script>
-  function precise(elem) {
-    elem.value = Number(elem.value).toFixed(8);
-  }
+    function precise(elem) {
+        elem.value = Number(elem.value).toFixed(8);
+    }
 </script>
 
 </header>
