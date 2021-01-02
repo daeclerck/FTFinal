@@ -156,7 +156,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 <div class="w3-col m6" style="Padding:16px 0px">
     <!-- Micronutrients -->
     <label><b>Micronutrient</b></label>
-    <select name="MicroSelect" >
+    <select name="MicroSelect">
         <?php
 	    $MicroChart = SelectMicro();
 	    foreach($MicroChart as $row) {
@@ -165,10 +165,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                 echo "<option value='" . $key . "'>" . $key . ": " . $value . "</option>"; 
             }
         ?>
-    </select>
-    <label>Quantity (Grams): </label>
-    <input name="MicroInput" type="number" min="0" max="99999" value="0" step="0.00000001">
-    <br>
+    </select><br>
+    <label><b>Quantity</b></label>
+    <input class="w3-right-align" name="MicroInput" type="number" min="0" max="99999" value="0" step="0.00000001">
+    <br><h6><em>Micronutrients <b>must</b> be in grams!</em></h6><br>
     <input name="MicroSubmit" type="submit" value="Add/Update Micronutrient">
 </div>
 
