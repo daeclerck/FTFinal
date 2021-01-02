@@ -90,12 +90,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
     
     else if(isset($_POST['DeleteFoodSubmit'])) {
+        $AlreadyStored = False;
         
         if(DeleteFoodConfirm($_POST['DeleteFood'])) {
             DeleteFood($_POST['DeleteFood']);
             echo "Food Deleted Successfully.";
         }
-        else { echo "<div class='wc-col m5'>" . "Food is already stored in a meal!" . "</div>"; }
+        else { $AlreadyStored = True; echo "Food is already stored in a meal!"; }
     }
 
 	else { echo "Must enter a name for the food!"; }
@@ -152,7 +153,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 </div>
 
-<div class="w3-col m6 w3-left-align" style="Padding:16px 0px">
+<div class="w3-col m6 w3-left-align" style="Padding:16px 0px" id="test">
     <!-- Micronutrients -->
     <label><b>Micronutrient</b></label>
     <select name="MicroSelect">
@@ -186,6 +187,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     </select>
     <br>
     <input name="DeleteFoodSubmit" type="submit" value="Delete Food">
+    <?php if($AlreadyStored) { echo "Food is stored in a meal!"; } ?>
     <br><h6><b>NOTE:</b><em> Food already in a user's meal can not be removed!</em></h6>
 </div>
 
