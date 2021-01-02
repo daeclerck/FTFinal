@@ -105,6 +105,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <div class="w3-container" style="Padding:32px 64px">
 
+<div class="w3 col m6">
+</div>
+
 <div class="w3-col m6"> 
 <form method="POST">
     <label><b>Food Name </b></label>
@@ -135,7 +138,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         ?>
     </select>
 
-    <div class="w3-col s10 w3-right-align" style="Padding:0px 64px">
+    <div class="w3-col m6 w3-right-align" style="Padding:0px 64px">
     <!-- Macronutrients -->
     <br><label><b>Calories per Serving </b></label>
     <input class="w3-right-align" name="CaloriesInput" type="number" min="0" max="99999" value="<?php echo $FoodInfo['CaloriesInput']; ?>">   
