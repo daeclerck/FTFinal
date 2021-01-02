@@ -2,7 +2,7 @@
 <html>
 <body>
 <header class="bgimg-2">
-<br><br><br>
+
 <?php
     include "foodSQL.php";
 
