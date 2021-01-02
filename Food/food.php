@@ -169,7 +169,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     <label><b>Quantity</b></label>
     <input class="w3-right-align" name="MicroInput" type="number" min="0" max="99999" value="0" step="0.00000001">
     <br><h6><em>Micronutrients <b>must</b> be in grams!</em></h6>
-    <input name="MicroSubmit" type="submit" value="Add/Update Micronutrient"><br><br>
+    <input name="MicroSubmit" type="submit" value="Add/Update Micronutrient"><br><br><br>
 
     <label>Choose a food to delete</label>
     <select name="DeleteFood">
@@ -185,7 +185,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             } 
         ?>
     </select>
-    <br><br><br>
+    <br><
     <input name="DeleteFoodSubmit" type="submit" value="Delete Food">
     <br><h6><b>NOTE:</b><em> Food already in a user's meal can not be removed!</em></h6>
 </div>
