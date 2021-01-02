@@ -76,7 +76,7 @@
         DeleteUser($delete);
         
 	    // Refresh the page to update the options
-        header('Location: user.php');	
+        // header('Location: user.php');	
     }  
 ?>
     </div>
