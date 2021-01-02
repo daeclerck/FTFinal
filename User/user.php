@@ -6,7 +6,6 @@
  
     if(!isset($_SESSION)) { session_start(); }
 ?>
-<br>
 <header class="bgimg-2">
 <h1 class="w3-center" style="Padding:64px"><b><em>Begin tracking your fitness today</em></b></h1>
 <div class="w3-container" style="Padding:32px 32px">
