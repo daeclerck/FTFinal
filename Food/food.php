@@ -168,7 +168,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     </select><br>
     <label><b>Quantity</b></label>
     <input class="w3-right-align" name="MicroInput" type="number" min="0" max="99999" value="0" step="0.00000001">
-    <br><h6><em>Micronutrients <b>must</b> be in grams!</em></h6><br>
+    <br><h6><em>Micronutrients <b>must</b> be in grams!</em></h6>
     <input name="MicroSubmit" type="submit" value="Add/Update Micronutrient">
 </div>
 
