@@ -90,7 +90,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
     
     else if(isset($_POST['DeleteFoodSubmit'])) {
-        echo "Food ID = " . $_POST['DeleteFood'];
         
         if(DeleteFoodConfirm($_POST['DeleteFood'])) {
             DeleteFood($_POST['DeleteFood']);
