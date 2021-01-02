@@ -11,6 +11,10 @@ body, html {
   line-height: 1.8;
 }
 
+label {
+  height: 40%
+}
+
 select {
   height: 3.4%;
 }
