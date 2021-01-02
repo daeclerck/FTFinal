@@ -1,39 +1,39 @@
-<?php include "../header.php"; ?>
 <html>
 <body>
-<header class="bgimg-2">
 
-<?php
-    include "foodSQL.php";
+    <?php
+        // Include SQL methods and header
+        include "foodSQL.php";
+        include "../header.php"; 
 
-    if(!isset($_SESSION)) { session_start(); }
+        // Initialize necessary variables
+        $AlreadyStored = False;
 
-    $AlreadyStored = False;
+        // Begin session
+        if(!isset($_SESSION)) { session_start(); }
 
-?>
-
-<?php
-    // Hold nutrient info
-    if(!array_key_exists('NutrientValueArray', $_SESSION)) {
-        $_SESSION["NutrientValueArray"] = array();
-
-        // Initialize micronutrients
-        $MicroData = SelectMicro();
-        foreach($MicroData as $key) {
-            $_SESSION["NutrientValueArray"][$key["NutrientName"]] = 0;
+        // Hold nutrient info
+        if(!array_key_exists('NutrientValueArray', $_SESSION)) {
+            $_SESSION["NutrientValueArray"] = array();
+        
+            // Initialize micronutrients
+            $MicroData = SelectMicro();
+            foreach($MicroData as $key) {
+                $_SESSION["NutrientValueArray"][$key["NutrientName"]] = 0;
+            }
         }
-    }
+        
+        // Initialize food info
+        $FoodInfo = array('FoodNameInput' => '',
+                        'ServingSizeInput' => 0,
+                        'ServingSizeUOM' => 'Grams',
+                        'CaloriesInput' => 0,
+                        'FatInput' => 0,
+                        'CarbsInput' => 0,
+                        'ProteinInput' => 0);
+    ?>
 
-    // Initialize food info
-    $FoodInfo = array('FoodNameInput' => '',
-                      'ServingSizeInput' => 0,
-                      'ServingSizeUOM' => 'Grams',
-                      'CaloriesInput' => 0,
-                      'FatInput' => 0,
-                      'CarbsInput' => 0,
-                      'ProteinInput' => 0);
-?>
-
+<header class="bgimg-2">
 <?php
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     // If the user submitted the form, process it
