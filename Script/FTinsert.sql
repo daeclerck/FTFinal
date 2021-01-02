@@ -1,6 +1,6 @@
---Static Values
+/* Static Values */
 
---Units Of Measurement
+/* Units Of Measurement */
 INSERT INTO UnitsOfMeasurement(UOMname) VALUES("Grams");
 INSERT INTO UnitsOfMeasurement(UOMname) VALUES("Ounces");
 INSERT INTO UnitsOfMeasurement(UOMname) VALUES("Tablespoons");
@@ -9,8 +9,8 @@ INSERT INTO UnitsOfMeasurement(UOMname) VALUES("Pounds");
 INSERT INTO UnitsOfMeasurement(UOMname) VALUES("Kilograms");
 INSERT INTO UnitsOfMeasurement(UOMname) VALUES("Teaspoons");
 
---Nutrients
---NOTE: Recommended daily intake values are in grams
+/* Nutrients */
+/* NOTE: Recommended daily intake values are in grams */
 INSERT INTO Nutrients(NutrientName, NutrientType, DailyIntake) VALUES ("Protein", "Macronutrient", "56");
 INSERT INTO Nutrients(NutrientName, NutrientType, DailyIntake) VALUES ("Fat", "Macronutrient", "77");
 INSERT INTO Nutrients(NutrientName, NutrientType, DailyIntake) VALUES ("Carbohydrates", "Macronutrient", "325");
@@ -19,12 +19,12 @@ INSERT INTO Nutrients(NutrientName, NutrientType, DailyIntake) VALUES ("Vitamin 
 INSERT INTO Nutrients(NutrientName, NutrientType, DailyIntake) VALUES ("Vitamin C", "Micronutrient", "0.09");
 INSERT INTO Nutrients(NutrientName, NutrientType, DailyIntake) VALUES ("Caffeine", "Micronutrient", "0.4");
 
---Workout Types
+/* Workout Types */
 INSERT INTO WorkoutTypes(WorkoutName) VALUES("Strength");
 INSERT INTO WorkoutTypes(WorkoutName) VALUES("Endurance");
 INSERT INTO WorkoutTypes(WorkoutName) VALUES("Flexibility");
 
---Unit Conversion
+/* Unit Conversion */
 INSERT INTO UnitConversion(FKUnitFrom, FKUnitTo, Conversion) VALUES("Grams", "Kilograms", "0.001");
 INSERT INTO UnitConversion(FKUnitFrom, FKUnitTo, Conversion) VALUES("Grams", "Pounds", "0.002205");
 INSERT INTO UnitConversion(FKUnitFrom, FKUnitTo, Conversion) VALUES("Grams", "Ounces", "0.035274");
@@ -76,45 +76,45 @@ INSERT INTO UnitConversion(FKUnitFrom, FKUnitTo, Conversion) VALUES("Teaspoons",
 INSERT INTO UnitConversion(FKUnitFrom, FKUnitTo, Conversion) VALUES("Teaspoons", "Teaspoons", "1");
 
 
---Dynamic Values
+/* Dynamic Values */
 
---User
-INSERT INTO User(AccountID, UserName) VALUES("12345678", "John");
-INSERT INTO User(AccountID, UserName) VALUES("87654321", "Troy");
+/* User */
+INSERT INTO `User`(AccountID, UserName) VALUES("12345678", "John");
+INSERT INTO `User`(AccountID, UserName) VALUES("87654321", "Troy");
 
---Workout Routines
+/* Workout Routines */
 INSERT INTO WorkoutRoutines(RoutineID, RoutineName, FKWorkoutName) VALUES("Workout1", "Planks", "Strength");
 INSERT INTO WorkoutRoutines(RoutineID, RoutineName, FKWorkoutName) VALUES("Workout2", "Walking", "Endurance");
 INSERT INTO WorkoutRoutines(RoutineID, RoutineName, FKWorkoutName) VALUES("Workout3", "Shoulder Stretch", "Endurance");
 
---Workout History
+/* Workout History */
 INSERT INTO WorkoutHistory(FKRoutineID, FKAccountID, StartTime, EndTime, Intensity, Calories) VALUES("Workout1", "12345678", "2019-12-02 12:00:00", "2019-12-02 13:00:00", "Mediocre", "221");
 INSERT INTO WorkoutHistory(FKRoutineID, FKAccountID, StartTime, EndTime, Intensity, Calories) VALUES("Workout2", "12345678", "2019-12-02 13:01:00", "2019-12-02 14:00:00", "Mediocre", "356");
 INSERT INTO WorkoutHistory(FKRoutineID, FKAccountID, StartTime, EndTime, Intensity, Calories) VALUES("Workout3", "12345678", "2019-12-02 14:01:00", "2019-12-02 15:00:00", "Mediocre", "124");
 INSERT INTO WorkoutHistory(FKRoutineID, FKAccountID, StartTime, EndTime, Intensity, Calories) VALUES("Workout3", "87654321", "2020-12-05 16:01:00", "2020-12-05 17:00:00", "Mediocre", "500");
 
---Weight
+/* Weight */
 INSERT INTO Weight(FKAccountID, Recorded, FKUOMname, CurrentWeight) VALUES("12345678", "2019-11-28 13:00:00", "Pounds", "150");
 INSERT INTO Weight(FKAccountID, Recorded, FKUOMname, CurrentWeight) VALUES("12345678", "2019-12-02 13:00:00", "Pounds", "98");
 INSERT INTO Weight(FKAccountID, Recorded, FKUOMname, CurrentWeight) VALUES("12345678", "2019-12-24 13:00:00", "Pounds", "123");
 INSERT INTO Weight(FKAccountID, Recorded, FKUOMname, CurrentWeight) VALUES("87654321", "2020-12-24 13:00:00", "Pounds", "220");
 
---Meal
+/* Meal */
 INSERT INTO Meal(MealID, FKAccountID, TimeEaten) VALUES("Meal0001", "12345678", "2020-06-10 8:00:00");
 INSERT INTO Meal(MealID, FKAccountID, TimeEaten) VALUES("Meal0002", "12345678", "2020-06-15 9:00:00");
 INSERT INTO Meal(MealID, FKAccountID, TimeEaten) VALUES("Meal0003", "87654321", "2020-12-30 9:00:00");
 
---Food
+/* Food */
 INSERT INTO Food(FoodID, FoodName, FKUOMname, ServingSize, CalPerServing) VALUES("587e7373", "Lasagna", "Cups", "2.00", "500.00");
 INSERT INTO Food(FoodID, FoodName, FKUOMname, ServingSize, CalPerServing) VALUES("5ec249ae", "Watermelons", "Cups", "0.66", "30.00");
 INSERT INTO Food(FoodID, FoodName, FKUOMname, ServingSize, CalPerServing) VALUES("chicken1", "Chicken", "Pounds", "1", "100.00");
 
---Food In Meal
+/* Food In Meal */
 INSERT INTO FoodInMeal(FKMealID, FKFoodID, Servings, FKUOMname) VALUES("Meal0001", "587e7373", "3", "Pounds");
 INSERT INTO FoodInMeal(FKMealID, FKFoodID, Servings, FKUOMname) VALUES("Meal0002", "5ec249ae", "1", "Pounds");
 INSERT INTO FoodInMeal(FKMealID, FKFoodID, Servings, FKUOMname) VALUES("Meal0003", "chicken1", "5", "Pounds");
 
---Food Nutrients
+/* Food Nutrients */
 INSERT INTO FoodNutrients(FKNutrientName, FKFoodID, FKUOMname, PerServing) VALUES("Carbohydrates", "587e7373", "Grams", "27");
 INSERT INTO FoodNutrients(FKNutrientName, FKFoodID, FKUOMname, PerServing) VALUES("Protein", "587e7373", "Grams", "1.3");
 INSERT INTO FoodNutrients(FKNutrientName, FKFoodID, FKUOMname, PerServing) VALUES("Fat", "587e7373", "Grams", "0.4");

@@ -1,8 +1,8 @@
---Set Foreign Key Check To 0
+/* Set Foreign Key Check To 0 */
 SET FOREIGN_KEY_CHECKS = 0;
 
---Delete Existing Tables To Prevent Errors
-DROP TABLE IF EXISTS User;
+/* Delete Existing Tables To Prevent Errors */
+DROP TABLE IF EXISTS `User`;
 DROP TABLE IF EXISTS UnitsOfMeasurement;
 DROP TABLE IF EXISTS Nutrients;
 DROP TABLE IF EXISTS WorkoutTypes;
@@ -15,8 +15,8 @@ DROP TABLE IF EXISTS Food;
 DROP TABLE IF EXISTS FoodInMeal;
 DROP TABLE IF EXISTS FoodNutrients;
 
---Create Tables
-CREATE TABLE IF NOT EXISTS User (
+/* Create Tables */
+CREATE TABLE IF NOT EXISTS `User` (
   AccountID     CHAR(8)        NOT NULL,
   UserName      VARCHAR(20)    NOT NULL,
     PRIMARY KEY(AccountID)
@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS WorkoutHistory (
   Calories      INT(4)         NOT NULL,
     PRIMARY KEY(FKRoutineID, FKAccountID, StartTime),
     FOREIGN KEY(FKRoutineID) REFERENCES WorkoutRoutines(RoutineID),
-    FOREIGN KEY(FKAccountID) REFERENCES User(AccountID)
+    FOREIGN KEY(FKAccountID) REFERENCES `User`(AccountID)
     ON DELETE CASCADE
 );
 
@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS Weight (
   FKUOMname     VARCHAR(20)      NOT NULL,
   CurrentWeight DECIMAL(5, 2)    NOT NULL,
     PRIMARY KEY(Recorded, FKAccountID),
-    FOREIGN KEY(FKAccountID) REFERENCES User(AccountID)
+    FOREIGN KEY(FKAccountID) REFERENCES `User`(AccountID)
     ON DELETE CASCADE,
     FOREIGN KEY(FKUOMname) REFERENCES UnitsOfMeasurement(UOMname)
 );
@@ -86,7 +86,7 @@ CREATE TABLE IF NOT EXISTS Meal (
   FKAccountID   CHAR(8)          NOT NULL,
   TimeEaten     DATETIME         NOT NULL,
     PRIMARY KEY(MealID),
-    FOREIGN KEY(FKAccountID) REFERENCES User(AccountID)
+    FOREIGN KEY(FKAccountID) REFERENCES `User`(AccountID)
     ON DELETE CASCADE
 );
 
@@ -126,5 +126,5 @@ CREATE TABLE IF NOT EXISTS FoodNutrients (
     ON DELETE CASCADE
 );
 
---Return Foreign Key Check To 1
+/*  Return Foreign Key Check To 1 */
 SET FOREIGN_KEY_CHECKS = 1; 
