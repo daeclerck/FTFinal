@@ -12,7 +12,7 @@ body, html {
 }
 
 label {
-  height: 40%
+  font-size: 200%
 }
 
 select {
