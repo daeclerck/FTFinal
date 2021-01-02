@@ -153,9 +153,10 @@
 
             <?php
                 if($AddSuccess) {
-                    echo $_POST['FoodNameInput'] . " Added Successfully!";
+                    echo "<br>" . $_POST['FoodNameInput'] . " Added Successfully!";
                 }
             ?>
+
         </div>
         <div class="w3-col m6 w3-left-align" style="Padding:16px 0px" id="test">
             <!-- Micronutrients -->
