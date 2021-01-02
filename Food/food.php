@@ -148,7 +148,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     <label><b>Protein per Serving </b></label>
     <input class="w3-right-align" name="ProteinInput" type="number" min="0" max="99999" value="<?php echo $FoodInfo['ProteinInput']; ?>">
     <br>
-    <i class="fa fa-check-square-o w3-xxxlarge"></i> <input class="w3-button w3-black" name="NewFoodSubmit" type="submit" value="Add New Food">
+    <i class="fa fa-check-square-o w3-jumbo" style="Padding:16px"></i><input class="w3-button w3-black" name="NewFoodSubmit" type="submit" value="Add New Food">
 
 </div>
 <div class="w3-col m6">
