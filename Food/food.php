@@ -152,10 +152,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     <input class="w3-button w3-black" name="NewFoodSubmit" type="submit" value="Add New Food">
 
 </div>
+
 <div class="w3-col m6">
     <!-- Micronutrients -->
-    <label>Micronutrient: </label>
-    <select name="MicroSelect" size="10">
+    <label><b>Micronutrient</b></label>
+    <select name="MicroSelect" size="25">
         <?php
 	    $MicroChart = SelectMicro();
 	    foreach($MicroChart as $row) {
