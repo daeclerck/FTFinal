@@ -150,13 +150,6 @@
             <input class="w3-right-align" name="ProteinInput" type="number" min="0" max="99999" value="<?php echo $FoodInfo['ProteinInput']; ?>">
             <br><h6><em>Calories / Fat / Carbs / Protein <b>must</b> be in grams!</em></h6>
             <input class="w3-button w3-black" name="NewFoodSubmit" type="submit" value="Add New Food">
-
-            <?php
-                if($AddSuccess) {
-                    echo "<br>" . $_POST['FoodNameInput'] . " Added Successfully!";
-                }
-            ?>
-
         </div>
         <div class="w3-col m6 w3-left-align" style="Padding:16px 0px" id="test">
             <!-- Micronutrients -->
@@ -206,6 +199,16 @@
 
             <br><h6><b>NOTE:</b><em> Food already in a user's meal can not be removed!</em></h6>
         </div>
+    </div>
+
+    <div class="wc-center">
+
+    <?php
+        if($AddSuccess) {
+            echo "<br><h4>" . $_POST['FoodNameInput'] . " Added Successfully!</h4>";
+        }
+    ?>
+
     </div>
 </form>      
 <!-- Script to remove scientific notation -->
