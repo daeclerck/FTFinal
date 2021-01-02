@@ -101,7 +101,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
-<h1 class="w3-center" style="Padding:16px"><b><em>Add Your Favorite Foods Here</em></b></h1>
+<h1 class="w3-center" style="Padding:8px"><b><em>Add Your Favorite Foods Here</em></b></h1>
 <div class="w3-container" style="Padding:32px 64px">
 
 <div class="w3-col m6 w3-right-align" style="Padding:16px 128px"> 
