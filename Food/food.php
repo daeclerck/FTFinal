@@ -153,7 +153,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 </div>
 
-<div class="w3-col m6" style="Padding:16px 0px">
+<div class="w3-col m6 w3-left-align" style="Padding:16px 0px">
     <!-- Micronutrients -->
     <label><b>Micronutrient</b></label>
     <select name="MicroSelect">
