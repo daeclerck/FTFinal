@@ -162,5 +162,5 @@
 </form>
 </header>
 </body>
-<?php echo "Session Account ID = " . $_SESSION['AccountID'] . "<br>Session User Name = " . $_SESSION['UserName'];
+<?php echo "Session Account ID = " . $_SESSION['AccountID'] . "<br>Session User Name = " . $_SESSION['UserName']; ?>
 </html>
