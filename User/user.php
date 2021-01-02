@@ -1,5 +1,6 @@
 <html>
 <body>
+
     <?php
         // Include SQL methods and header
         include "userSQL.php";
@@ -32,6 +33,7 @@
                 <input type="text" name="UserName" required pattern="^[-a-zA-Z0-9-()]+(\s+[-a-zA-Z0-9-()]+)*$" title="This field is required" placeholder="Enter Valid Name">
                 <input type="submit" name="UserNameSubmit" value="Add User"> 
             </form>
+
             <?php
                 if(isset($_POST['UserNameSubmit']) && !empty($_POST['UserName'])) {
                     // Add a new user with a randomly generated ID
@@ -41,7 +43,8 @@
                 else if(isset($_POST['UserNameSubmit']) && empty($_POST['UserName'])) { 
                     echo "Username can not be empty!"; 
                 }
-            ?>  
+            ?> 
+
         </div>
         <!-- Select a User Section -->
         <div class="w3-col m5">
@@ -49,16 +52,19 @@
                 <h1><i class="fa fa-mouse-pointer w3-xxlarge"></i> Select a User</h1>
                 <select name="AccountID">
                     <option disabled selected value> -- select a user -- </option>
+
                     <?php
                         $account = SelectUser();
                         // Print each User in the database
                         foreach($account as $result) {
                             echo "<option value='" . $result['AccountID'] . "'>" . $result['UserName'] . "</option>";
                         }    
-                    ?>  
+                    ?> 
+                     
                 </select>
                 <input type="submit" name="ViewOptions" value="Select User"> 
             </form>    
+
             <?php
                 if(isset($_POST['ViewOptions']) && !empty($_POST['AccountID'])) {
                     $confirm = $_POST['AccountID'];
@@ -70,6 +76,7 @@
                     echo ConfirmUser($confirm) . " has been selected!";
                 }  
             ?>
+
         </div>
         <!-- Delete a User Section -->
         <div class="w3-col m2">
@@ -77,6 +84,7 @@
                 <h1><i class="fa fa-times w3-xxlarge"></i> Delete a User</h1> 
                 <select name="DeleteID">
                 <option disabled selected value> -- select a user -- </option>
+
                 <?php
                     $account = SelectUser();
                     // Print each User in the database
@@ -84,15 +92,18 @@
                         echo "<option value='" . $result['AccountID'] . "'>" . $result['UserName'] . "</option>";
                     }    
                 ?>  
+
                 </select>
                 <input type="submit" name="DeleteUser" value="Delete User">   
-            </form>   
+            </form>  
+
             <?php
                 if($DeleteSuccess) {
                     // Print message on success
                     echo "User successfully removed!";
                 }  
             ?>
+
         </div>
     </div>
 </div>
