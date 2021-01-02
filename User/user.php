@@ -16,8 +16,7 @@
                 <!-- Check for valid user names including no white spaces in beginning or end -->
                 <input type="text" name="UserName" required pattern="^[-a-zA-Z0-9-()]+(\s+[-a-zA-Z0-9-()]+)*$" title="This field is required" placeholder="Enter Valid Name">
                 <input type="submit" name="UserNameSubmit" value="Add User"> 
-            </form> 
-        </div>
+            </form>
 <?php
     if(isset($_POST['UserNameSubmit']) && !empty($_POST['UserName'])) {
         // Add a new user with a randomly generated ID
@@ -28,7 +27,7 @@
         echo "Username can not be empty!"; 
     }
 ?>  
-
+        </div>
         <div class="w3-col m5">
             <form method="POST">   
                 <h1><i class="fa fa-mouse-pointer w3-xxlarge"></i> Select a User</h1>
