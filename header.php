@@ -38,6 +38,11 @@ select {
   background-image: url("../Fitness-Menu-BG.jpg");
   min-height: 100%;
 }
+
+/* Title for each page */
+.title {
+  margin-top: 80px;
+}
 </style>
 
 <!-- Navbar (sit on top) -->
