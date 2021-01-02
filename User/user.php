@@ -77,13 +77,14 @@
                 </select>
                 <input type="submit" name="DeleteUser" value="Delete User">   
             </form>    
-        </div>
+        
 <?php
     if($DeleteSuccess) {
         // Print message on success
         echo "User successfully removed!";
     }  
 ?>
+        </div>
     </div>
 </div>
 
