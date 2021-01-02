@@ -147,6 +147,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     <br>
     <label><b>Protein per Serving </b></label>
     <input class="w3-right-align" name="ProteinInput" type="number" min="0" max="99999" value="<?php echo $FoodInfo['ProteinInput']; ?>">
+    <input class="w3-button w3-black" name="NewFoodSubmit" type="submit" value="Add New Food">
 
 </div>
 <div class="w3-col m6">
@@ -168,9 +169,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     <input name="MicroSubmit" type="submit" value="Add/Update Micronutrient">
 </div>
 
-<div>
-    <input class="w3-button w3-black" name="NewFoodSubmit" type="submit" value="Add New Food">
-</div>
+
+
+
 
 <div>
     <label>Choose a food to delete: </label>
