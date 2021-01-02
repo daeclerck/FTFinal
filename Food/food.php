@@ -103,7 +103,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 
-<div class="w3-container" style="Padding:64px 16px">
+<div class="w3-container" style="Padding:32px 64px">
 
 <div class="w3-col m6"> 
 <form method="POST">
