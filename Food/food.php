@@ -103,9 +103,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 
+<div class="w3-container" style="Padding:32px 16px">
+
 <div class="w3-col m6"> 
 <form method="POST">
-    <h6>Food Name: </h6>
+    <h6><b>Food Name</b></h6>
     <!-- Check for valid food names including no white spaces in beginning or end -->
     <input name="FoodNameInput" type="text" value="<?php echo $FoodInfo['FoodNameInput']; ?>" pattern="^[-a-zA-Z0-9-()]+(\s+[-a-zA-Z0-9-()]+)*$" title="This field is required">
     <br>
@@ -186,6 +188,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     </select>
     <br>
     <input name="DeleteFoodSubmit" type="submit" value="Delete Food">
+</div>
+
 </div>
 
 </form>
