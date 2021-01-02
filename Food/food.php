@@ -1,16 +1,12 @@
 <?php include "../header.php"; ?>
 <html>
 <body>
+<header class="bgimg-2">
 <?php
     include "foodSQL.php";
 
     if(!isset($_SESSION)) { session_start(); }
 
-    if(empty($_SESSION['AccountID']) || empty($_SESSION['UserName'])) {
-        // A user needs to be selected first
-        header('Location: ../User/user.php');
-        //exit("Sorry, the current session has expired. Please log in again.");
-    }
 ?>
 
 <?php
@@ -186,5 +182,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     <input name="DeleteFoodSubmit" type="submit" value="Delete Food">
 
 </form>
+</header>
 </body>
 </html>
