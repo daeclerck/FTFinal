@@ -113,7 +113,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         title="This field is required" placeholder="Enter Valid Name">
     <br>
     <label>Serving Size: </label>
-    <input class="w3-justify" name="ServingSizeInput" type="number" value="<?php echo $FoodInfo['ServingSizeInput']; ?>" min="0" max="999.99" step="0.01">
+    <input class="w3-right-align" style="Padding:0px 5px" name="ServingSizeInput" type="number" value="<?php echo $FoodInfo['ServingSizeInput']; ?>" min="0" max="999.99" step="0.01">
     <select name="ServingSizeUOM">
         <?php 
             $Selector = $FoodInfo['ServingSizeUOM'];
@@ -137,16 +137,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <!-- Macronutrients -->
     <br><label>Calories per Serving: </label>
-    <input class="w3-justify" name="CaloriesInput" type="number" min="0" max="99999" value="<?php echo $FoodInfo['CaloriesInput']; ?>">   
+    <input class="w3-right-align" name="CaloriesInput" type="number" min="0" max="99999" value="<?php echo $FoodInfo['CaloriesInput']; ?>">   
     <br>
     <label>Fat per Serving (grams): </label>
-    <input class="w3-justify" name="FatInput" type="number" min="0" max="99999" value="<?php echo $FoodInfo['FatInput']; ?>">
+    <input class="w3-right-align" name="FatInput" type="number" min="0" max="99999" value="<?php echo $FoodInfo['FatInput']; ?>">
     <br>
     <label>Carbs per Serving (grams): </label>
-    <input class="w3-justify" name="CarbsInput" type="number" min="0" max="99999" value="<?php echo $FoodInfo['CarbsInput']; ?>">
+    <input class="w3-right-align" name="CarbsInput" type="number" min="0" max="99999" value="<?php echo $FoodInfo['CarbsInput']; ?>">
     <br>
     <label>Protein per Serving (grams): </label>
-    <input class="w3-justify" name="ProteinInput" type="number" min="0" max="99999" value="<?php echo $FoodInfo['ProteinInput']; ?>">
+    <input class="w3-right-align" name="ProteinInput" type="number" min="0" max="99999" value="<?php echo $FoodInfo['ProteinInput']; ?>">
 
 </div>
 <div class="w3-col m6">
