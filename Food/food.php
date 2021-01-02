@@ -153,10 +153,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 </div>
 
-<div class="w3-col m6">
+<div class="w3-col m6" style="Padding:16px 128px">
     <!-- Micronutrients -->
     <label><b>Micronutrient</b></label>
-    <select name="MicroSelect" size="25">
+    <select name="MicroSelect" size="35">
         <?php
 	    $MicroChart = SelectMicro();
 	    foreach($MicroChart as $row) {
