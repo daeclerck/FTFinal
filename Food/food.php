@@ -8,6 +8,8 @@
 
     if(!isset($_SESSION)) { session_start(); }
 
+    $AlreadyStored = False;
+
 ?>
 
 <?php
@@ -90,7 +92,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
     
     else if(isset($_POST['DeleteFoodSubmit'])) {
-        $AlreadyStored = False;
         
         if(DeleteFoodConfirm($_POST['DeleteFood'])) {
             DeleteFood($_POST['DeleteFood']);
