@@ -104,7 +104,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 <h1 class="w3-center" style="Padding:8px"><b><em>Add Your Favorite Foods Here</em></b></h1>
 <div class="w3-container" style="Padding:32px 64px">
 
-<div class="w3-col m6 w3-left-align" style="Padding:16px 128px"> 
+<div class="w3-col m6 w3-left-align" style="margin-left:16px Padding:16px 128px"> 
 <form method="POST">
     <label><b>Food Name </b></label>
     <!-- Check for valid food names including no white spaces in beginning or end -->
@@ -138,7 +138,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     <br><label><b>Calories per Serving </b></label>
     <input class="w3-right-align" name="CaloriesInput" type="number" min="0" max="99999" value="<?php echo $FoodInfo['CaloriesInput']; ?>">   
     <br>
-    <label><b>Fat per Serving                                 </b></label>
+    <label><b>Fat per Serving </b></label>
     <input class="w3-right-align" name="FatInput" type="number" min="0" max="99999" value="<?php echo $FoodInfo['FatInput']; ?>">
     <br>
     <label><b>Carbs per Serving </b></label>
