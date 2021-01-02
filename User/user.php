@@ -21,15 +21,8 @@
         } 
     ?>
 
-<style>
-    .shadow {
-        text-shadow: 2px 4px #696969;
-    }
-</style>
-
-
 <header class="bgimg-2">
-<h1 class="w3-center shadow" style="Padding:80px"><b><em>Begin tracking your fitness today</em></b></h1>
+<h1 class="w3-center w3-hover-shadow" style="Padding:80px"><b><em>Begin tracking your fitness today</em></b></h1>
 <div class="w3-container" style="Padding:0px 32px">
     <div class="w3-row-padding">
         <!-- Add a User Section -->
