@@ -103,6 +103,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 
+<div class="w3-col m6"> 
 <form method="POST">
     <h6>Food Name: </h6>
     <!-- Check for valid food names including no white spaces in beginning or end -->
@@ -143,8 +144,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     <br>
     <label>Protein per Serving (grams): </label>
     <input name="ProteinInput" type="number" min="0" max="99999" value="<?php echo $FoodInfo['ProteinInput']; ?>">
-    <br>
 
+</div>
+<div class="w3-col m6">
     <!-- Micronutrients -->
     <label>Micronutrient: </label>
     <select name="MicroSelect" size="10">
@@ -161,10 +163,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     <input name="MicroInput" type="number" min="0" max="99999" value="0" step="0.00000001">
     <br>
     <input name="MicroSubmit" type="submit" value="Add/Update Micronutrient">
-    <br>
+</div>
+
+<div>
     <input name="NewFoodSubmit" type="submit" value="Add New Food">
-    <br>
-    <br>
+</div>
+
+<div>
     <label>Choose a food to delete: </label>
     <select name="DeleteFood">
     <option disabled selected value> -- select a food -- </option>
@@ -181,6 +186,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     </select>
     <br>
     <input name="DeleteFoodSubmit" type="submit" value="Delete Food">
+</div>
 
 </form>
 </header>
