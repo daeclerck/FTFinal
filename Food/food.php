@@ -186,7 +186,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     </select>
     <br>
     <input name="DeleteFoodSubmit" type="submit" value="Delete Food">
-    <?php if($AlreadyStored) { echo "Food is stored in a meal!"; } ?>
+    <?php if($AlreadyStored) { echo "That food is stored in a meal!"; } ?>
     <br><h6><b>NOTE:</b><em> Food already in a user's meal can not be removed!</em></h6>
 </div>
 
