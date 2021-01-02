@@ -105,7 +105,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <div class="w3-container" style="Padding:32px 64px">
 
-<div class="w3-col m6 w3-right-align"> 
+<div class="w3-col m6 w3-right-align" style="Padding:16px 128px"> 
 <form method="POST">
     <label><b>Food Name </b></label>
     <!-- Check for valid food names including no white spaces in beginning or end -->
