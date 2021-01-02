@@ -95,7 +95,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             DeleteFood($_POST['DeleteFood']);
             echo "Food Deleted Successfully.";
         }
-        else { echo "<div id='test'>" . "Food is already stored in a meal!" . "</div>"; }
+        else { echo "<div class='wc-col m5'>" . "Food is already stored in a meal!" . "</div>"; }
     }
 
 	else { echo "Must enter a name for the food!"; }
@@ -152,7 +152,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 </div>
 
-<div class="w3-col m6 w3-left-align" style="Padding:16px 0px" id="test">
+<div class="w3-col m6 w3-left-align" style="Padding:16px 0px">
     <!-- Micronutrients -->
     <label><b>Micronutrient</b></label>
     <select name="MicroSelect">
