@@ -185,7 +185,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             } 
         ?>
     </select>
-    <br>
+    <br><br><br>
     <input name="DeleteFoodSubmit" type="submit" value="Delete Food">
     <br><h6><b>NOTE:</b><em> Food already in a user's meal can not be removed!</em></h6>
 </div>
