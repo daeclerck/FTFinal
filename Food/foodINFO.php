@@ -1,9 +1,11 @@
-<?php include "../header.php"; ?>
+include "../header.php";
 <html>
 <body>
-<header class="bgimg-2">
-<?php
-    include "foodSQL.php";
+
+    <?php
+        // Include SQL methods and header
+        include "foodSQL.php";
+        include "../header.php";
 
     if(!isset($_SESSION)) { session_start(); }
 
@@ -78,7 +80,7 @@
 
     }
 ?>
-
+<header class="bgimg-2">
 <h1 class="w3-center title"><b><em>Find Nutrient Information For Registered Food</em></b></h1>
 <form method="POST">
     <label>Food Name: </label>
