@@ -1,4 +1,3 @@
-include "../header.php";
 <html>
 <body>
 
@@ -7,79 +6,75 @@ include "../header.php";
         include "foodSQL.php";
         include "../header.php";
 
-    if(!isset($_SESSION)) { session_start(); }
+        // Begin session
+        if(!isset($_SESSION)) { session_start(); }
 
-    echo "<br><br>";
-?>
-
-<?php
-    if(!array_key_exists('NutrientArray', $_SESSION)) {   
-        $_SESSION['NutrientArray'] = array();  
-    }
-
-    if(!array_key_exists('RecommendArray', $_SESSION)) { 	
-        $_SESSION['RecommendArray'] = array(); 
-    }
-      
-    if(!array_key_exists('FoodID', $_SESSION)) {   
-        $_SESSION['FoodID'] = 0;  
-    }
-
-    if(!array_key_exists('ServingSize', $_SESSION)) {   
-        $_SESSION['ServingSize'] = 0;  
-    }
-
-    if(!array_key_exists('FoodName', $_SESSION)) {   
-        $_SESSION['FoodName'] = "''"; 
-    }
-
-    if(!array_key_exists('Calories', $_SESSION)) {   
-        $_SESSION['Calories'] = 0;  
-    }
-
-    if(!array_key_exists('FKUOMname', $_SESSION)) {
-        $_SESSION['FKUOMname'] = "Grams";
-    }
-
-    $FoodName = $_SESSION['FoodName'];
-    $Calories = $_SESSION['Calories'];
-    $FoodID = $_SESSION['FoodID'];
-    $ServingSize = $_SESSION['ServingSize'];
-    $DefaultUnit = "Grams";
-    $SelectedUnit = $DefaultUnit;
-    $Selector = $DefaultUnit;
-    $Conversion = 1;
-?>
-
-<?php
-    if(isset($_POST['ChangeUnitSubmit'])) {
-	    $SelectedUnit = $_POST['UnitsSelected'];
-
-        if($SelectedUnit != $_SESSION['FKUOMname']) {
-            $UnitsFrom = $_SESSION['FKUOMname'];
-            $UnitsTo = $SelectedUnit;
-
-	    $Convert = ConvertUnits($UnitsFrom, $UnitsTo);
-	    $ServingSize = floatval($ServingSize) * $Convert['Conversion'];
+        if(!array_key_exists('NutrientArray', $_SESSION)) {   
+            $_SESSION['NutrientArray'] = array();  
         }
+
+        if(!array_key_exists('RecommendArray', $_SESSION)) { 	
+            $_SESSION['RecommendArray'] = array(); 
+        }
+        
+        if(!array_key_exists('FoodID', $_SESSION)) {   
+            $_SESSION['FoodID'] = 0;  
+        }
+
+        if(!array_key_exists('ServingSize', $_SESSION)) {   
+            $_SESSION['ServingSize'] = 0;  
+        }
+
+        if(!array_key_exists('FoodName', $_SESSION)) {   
+            $_SESSION['FoodName'] = "''"; 
+        }
+
+        if(!array_key_exists('Calories', $_SESSION)) {   
+            $_SESSION['Calories'] = 0;  
+        }
+
+        if(!array_key_exists('FKUOMname', $_SESSION)) {
+            $_SESSION['FKUOMname'] = "Grams";
+        }
+
+        $FoodName = $_SESSION['FoodName'];
+        $Calories = $_SESSION['Calories'];
+        $FoodID = $_SESSION['FoodID'];
+        $ServingSize = $_SESSION['ServingSize'];
+        $DefaultUnit = "Grams";
+        $SelectedUnit = $DefaultUnit;
+        $Selector = $DefaultUnit;
+        $Conversion = 1;
+
+        if(isset($_POST['ChangeUnitSubmit'])) {
+	        $SelectedUnit = $_POST['UnitsSelected'];
+
+            if($SelectedUnit != $_SESSION['FKUOMname']) {
+                $UnitsFrom = $_SESSION['FKUOMname'];
+                $UnitsTo = $SelectedUnit;
+
+	            $Convert = ConvertUnits($UnitsFrom, $UnitsTo);
+	            $ServingSize = floatval($ServingSize) * $Convert['Conversion'];
+            }
 	
-	echo "   Serving size is " . $ServingSize;
-	$_SESSION['ServingSize'] = $ServingSize;
-	$_SESSION['FKUOMname'] = $SelectedUnit;
-    }
+	        echo "   Serving size is " . $ServingSize;
+	        $_SESSION['ServingSize'] = $ServingSize;
+	        $_SESSION['FKUOMname'] = $SelectedUnit;
+        }
 
-    if(isset($_POST['ResetUnitSubmit'])) {
-	$_SESSION['FKUOMname'] = $_SESSION['Reset'];
-	$Reset = ResetUnits($_SESSION['FKUOMname'], $_SESSION['FoodName']);
+        if(isset($_POST['ResetUnitSubmit'])) {
+	        $_SESSION['FKUOMname'] = $_SESSION['Reset'];
+	        $Reset = ResetUnits($_SESSION['FKUOMname'], $_SESSION['FoodName']);
 
-	$ResetServing = $Reset['ServingSize'];
-	$DefaultUnit = $Reset['FKUOMname'];
-        $ServingSize = $ResetServing;
-	$_SESSION['ServingSize'] = $ServingSize;
-	$_SESSION['FKUOMname'] = $DefaultUnit;
+	        $ResetServing = $Reset['ServingSize'];
+	        $DefaultUnit = $Reset['FKUOMname'];
+            $ServingSize = $ResetServing;
+            $_SESSION['ServingSize'] = $ServingSize;
+            $_SESSION['FKUOMname'] = $DefaultUnit;
 
-    }
-?>
+        }
+    ?>
+    
 <header class="bgimg-2">
 <h1 class="w3-center title"><b><em>Find Nutrient Information For Registered Food</em></b></h1>
 <form method="POST">
