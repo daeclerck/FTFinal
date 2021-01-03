@@ -74,7 +74,7 @@
 
         }
     ?>
-    
+
 <header class="bgimg-2">
 <h1 class="w3-center title"><b><em>Find Nutrient Information For Registered Food</em></b></h1>
 <form method="POST">
@@ -153,7 +153,7 @@
     <label>Calories: </label>
     <input disabled type="text" value="<?php echo $Calories; ?>">
 
-    <table style="border:solid;">
+    <table class="wc-table" style="border:solid;">
         <?php
             if(!empty($FoodID)) {
                 $Build = BuildNutrients($FoodID);
