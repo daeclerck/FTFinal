@@ -123,14 +123,14 @@
         }
     ?>
     
-    <label>Name: </label>
+    <label>Name </label>
     <select name="FoodDisplay" size="1" disabled>
         <option value="<?php echo $FoodID; ?>">
             <?php echo $FoodName; ?>
         </option>
     </select>
     <br>
-    <label>Serving Size: </label>
+    <label>Serving Size </label>
     <input disabled type="number" value="<?php echo $ServingSize; ?>">
     <select name="UnitsSelected">
         <?php
@@ -145,7 +145,7 @@
     <input name="ChangeUnitSubmit" type="submit" value="Update">
     <input name="ResetUnitSubmit" type="submit" value="Reset">
     <br>
-    <label>Calories: </label>
+    <label>Calories </label>
     <input disabled type="text" value="<?php echo $Calories; ?>">
     </div>
     <table style="border:solid;">
