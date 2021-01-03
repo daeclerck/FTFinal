@@ -63,6 +63,10 @@ td {
   border: 1px solid #ddd;
   padding: 8px;
 }
+
+tr:last-of-type {
+  border-bottom: 2px solid #000000
+}
 </style>
 
 <!-- Navbar (sit on top) -->
