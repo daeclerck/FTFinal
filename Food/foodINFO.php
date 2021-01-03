@@ -82,7 +82,7 @@
         <label><b>Food Name </b></label>
         <input name="SearchFoodInput" type="text" pattern="^[-a-zA-Z0-9-()]+(\s+[-a-zA-Z0-9-()]+)*$">
         <input name="SearchFoodSubmit" type="submit" value="Search for Food">
-        <select name="SearchFoodResults" style="width:10%;">
+        <br><select name="SearchFoodResults" style="width:10%;">
 
             <?php
                 if(isset($_POST['SearchFoodSubmit'])) {
@@ -98,7 +98,6 @@
             ?>
 
         </select>
-        <br>
         <input name="SelectedFoodSubmit" type="submit" value="Fetch Food Info">
 
 

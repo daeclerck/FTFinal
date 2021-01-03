@@ -163,12 +163,12 @@
                     }
                 ?>
 
-            </select><br>
-            <label><b>Quantity</b></label>
+            </select>
+            <br><label><b>Quantity</b></label>
             <input class="w3-right-align" name="MicroInput" type="number" oninput='precise(this)' min="0" max="99999" value="0" step="0.00000001">
             <br><h6><em>Micronutrients <b>must</b> be in grams!</em></h6>
-            <input name="MicroSubmit" type="submit" value="Add/Update Micronutrient"><br><br><br>
-            <label><b>Choose a food to delete</b></label>
+            <input name="MicroSubmit" type="submit" value="Add/Update Micronutrient">
+            <br><br><br><label><b>Choose a food to delete</b></label>
             <select name="DeleteFood">
                 <option disabled selected value> -- select a food -- </option>
 
@@ -183,8 +183,8 @@
                     } 
                 ?>
 
-            </select><br>
-            <input name="DeleteFoodSubmit" type="submit" value="Delete Food">
+            </select>
+            <br><input name="DeleteFoodSubmit" type="submit" value="Delete Food">
 
                 <?php 
                     if($AlreadyStored) { 
