@@ -123,7 +123,7 @@
         }
     ?>
     
-    <label>Name </label>
+    <br><label>Name </label>
     <select name="FoodDisplay" size="1" disabled>
         <option value="<?php echo $FoodID; ?>">
             <?php echo $FoodName; ?>
