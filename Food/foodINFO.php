@@ -122,7 +122,8 @@
 	        $_SESSION['Reset'] = $DefaultUnit; 
         }
     ?>
-    
+    </div>
+    <div class="w3-col m6" style="Padding:16px 128px"> 
     <br><label>Name </label>
     <select name="FoodDisplay" size="1" disabled>
         <option value="<?php echo $FoodID; ?>">
