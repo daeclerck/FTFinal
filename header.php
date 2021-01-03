@@ -47,22 +47,22 @@ select {
 /* Table style */
 table {
   border-collapse: collapse;
-  margin: 25px 0;
-  font-size: 0.9em;
-  min-width: 400px;
+  width: 75%;
 }
 
-tr {
+th {
+  padding: 8px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
   background-color: #000000;
   color: white;
-  text-align: left;
-  font-weight: bold;
 }
 
-th, td {
-  padding: 12px 15px;
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
 }
-
 </style>
 
 <!-- Navbar (sit on top) -->
