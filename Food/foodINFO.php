@@ -122,7 +122,7 @@
 	        $_SESSION['Reset'] = $DefaultUnit; 
         }
     ?>
-    </div>
+    
     <label>Name: </label>
     <select name="FoodDisplay" size="1" disabled>
         <option value="<?php echo $FoodID; ?>">
@@ -147,7 +147,7 @@
     <br>
     <label>Calories: </label>
     <input disabled type="text" value="<?php echo $Calories; ?>">
-
+    </div>
     <table style="border:solid;">
         <?php
             if(!empty($FoodID)) {
