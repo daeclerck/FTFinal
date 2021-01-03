@@ -77,14 +77,11 @@
 <header class="bgimg-2">
 <h1 class="w3-center title"><b><em>Find Nutrient Information For Registered Food</em></b></h1>
 <form method="POST">
+    <div class="w3-container" style="Padding:16px 64px">
     <label>Food Name: </label>
     <input name="SearchFoodInput" type="text" pattern="^[-a-zA-Z0-9-()]+(\s+[-a-zA-Z0-9-()]+)*$">
     <br>
     <input name="SearchFoodSubmit" type="submit" value="Search for Food">
-
-<br>
-<br>
-
 
     <select name="SearchFoodResults" style="width:10%;">
         <?php
@@ -196,6 +193,7 @@
             }
         ?>
     </table>
+    </div>
 </form>
 </header>
 </body>
