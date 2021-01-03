@@ -78,27 +78,29 @@
 <h1 class="w3-center title"><b><em>Find Nutrient Information For Registered Food</em></b></h1>
 <form method="POST">
     <div class="w3-container" style="Padding:16px 64px">
-    <label>Food Name: </label>
-    <input name="SearchFoodInput" type="text" pattern="^[-a-zA-Z0-9-()]+(\s+[-a-zA-Z0-9-()]+)*$">
-    <br>
-    <input name="SearchFoodSubmit" type="submit" value="Search for Food">
+        <div class="w3-col m6 w3-right-align" style="Padding:16px 128px"> 
+        <label><b>Food Name </b></label>
+        <input name="SearchFoodInput" type="text" pattern="^[-a-zA-Z0-9-()]+(\s+[-a-zA-Z0-9-()]+)*$">
+        <br>
+        <input name="SearchFoodSubmit" type="submit" value="Search for Food">
+        <select name="SearchFoodResults" style="width:10%;">
 
-    <select name="SearchFoodResults" style="width:10%;">
-        <?php
-            if(isset($_POST['SearchFoodSubmit'])) {
-                $FoodSearch = $_POST['SearchFoodInput'];
-                $FoodResult = SelectFood($FoodSearch);
+            <?php
+                if(isset($_POST['SearchFoodSubmit'])) {
+                    $FoodSearch = $_POST['SearchFoodInput'];
+                    $FoodResult = SelectFood($FoodSearch);
 
-                foreach($FoodResult as $row) {
-                    echo "<option value='" . $row['FoodID'] . "'>";
-                        echo $row['FoodName'];
-                    echo "</option>";
+                    foreach($FoodResult as $row) {
+                        echo "<option value='" . $row['FoodID'] . "'>";
+                            echo $row['FoodName'];
+                        echo "</option>";
+                    }
                 }
-            }
-        ?>
-    </select>
-    <br>
-    <input name="SelectedFoodSubmit" type="submit" value="Fetch Food Info">
+            ?>
+
+        </select>
+        <br>
+        <input name="SelectedFoodSubmit" type="submit" value="Fetch Food Info">
 
 
 
@@ -122,7 +124,7 @@
 	        $_SESSION['Reset'] = $DefaultUnit; 
         }
     ?>
-
+    </div>
     <label>Name: </label>
     <select name="FoodDisplay" size="1" disabled>
         <option value="<?php echo $FoodID; ?>">

@@ -108,7 +108,6 @@
 <form method="POST">
     <div class="w3-container" style="Padding:16px 64px">
         <div class="w3-col m6 w3-right-align" style="Padding:16px 128px"> 
-
             <label><b>Food Name </b></label>
             <!-- Check for valid food names including no white spaces in beginning or end -->
             <input name="FoodNameInput" type="text" value="<?php echo $FoodInfo['FoodNameInput']; ?>" pattern="^[-a-zA-Z0-9-()]+(\s+[-a-zA-Z0-9-()]+)*$" 
@@ -138,7 +137,6 @@
                 ?>
 
             </select>
-
             <!-- Macronutrients -->
             <br><label><b>Calories per Serving </b></label>
             <input class="w3-right-align" name="CaloriesInput" type="number" min="0" max="99999" value="<?php echo $FoodInfo['CaloriesInput']; ?>">   
