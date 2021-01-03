@@ -201,13 +201,13 @@
         </div>
     </div>
 
-    <div class="wc-center">
+    <div class="w3-center">
 
-    <?php
-        if($AddSuccess) {
-            echo "<br><h4>" . $_POST['FoodNameInput'] . " Added Successfully!</h4>";
-        }
-    ?>
+        <?php
+            if($AddSuccess) {
+             echo "<br><h4>" . $_POST['FoodNameInput'] . " Added Successfully!</h4>";
+            }
+        ?>
 
     </div>
 </form>      
