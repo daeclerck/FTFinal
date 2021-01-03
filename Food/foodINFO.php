@@ -150,7 +150,7 @@
     </div>
 
     <div class="w3-col m6 w3-left-align" style="Padding:16px 0px">
-    <table class="w3-table">
+    <table class="w3-table td">
         <?php
             if(!empty($FoodID)) {
                 $Build = BuildNutrients($FoodID);
