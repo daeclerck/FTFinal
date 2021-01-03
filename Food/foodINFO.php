@@ -153,7 +153,7 @@
     <label>Calories: </label>
     <input disabled type="text" value="<?php echo $Calories; ?>">
 
-    <table class="wc-table" style="border:solid;">
+    <table class="w3-table" style="border:solid;">
         <?php
             if(!empty($FoodID)) {
                 $Build = BuildNutrients($FoodID);
