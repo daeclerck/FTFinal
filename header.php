@@ -52,6 +52,12 @@ table {
   min-width: 400px;
 }
 
+tr {
+  background-color: #000000;
+  color: white;
+  text-align: left;
+  font-weight: bold;
+}
 th {
   padding: 8px;
   padding-top: 12px;
