@@ -78,7 +78,7 @@
 <h1 class="w3-center title"><b><em>Find Nutrient Information For Registered Food</em></b></h1>
 <form method="POST">
     <div class="w3-container" style="Padding:16px 64px">
-        <div class="w3-col s10 w3-right-align" style="Padding:16px 128px"> 
+        <div class="w3-col m3 w3-right-align" style="Padding:16px 128px"> 
         <label><b>Food Name </b></label>
         <input name="SearchFoodInput" type="text" pattern="^[-a-zA-Z0-9-()]+(\s+[-a-zA-Z0-9-()]+)*$">
         <input name="SearchFoodSubmit" type="submit" value="Search for Food">
