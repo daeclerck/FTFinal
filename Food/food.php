@@ -149,7 +149,7 @@
             <br><h6><em>Calories / Fat / Carbs / Protein <b>must</b> be in grams!</em></h6>
             <input class="w3-button w3-black" name="NewFoodSubmit" type="submit" value="Add New Food">
         </div>
-        <div class="w3-col m6 w3-left-align" style="Padding:16px 0px" id="test">
+        <div class="w3-col m6 w3-left-align" style="Padding:16px 0px">
             <!-- Micronutrients -->
             <label><b>Micronutrient</b></label>
             <select name="MicroSelect">
