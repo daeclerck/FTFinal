@@ -47,7 +47,9 @@ select {
 /* Table style */
 table {
   border-collapse: collapse;
-  width: 75%;
+  margin: 25px 0;
+  font-size: 0.9em;
+  min-width: 400px;
 }
 
 th {
