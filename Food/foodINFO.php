@@ -81,7 +81,6 @@
         <div class="w3-col m6 w3-right-align" style="Padding:16px 128px"> 
         <label><b>Food Name </b></label>
         <input name="SearchFoodInput" type="text" pattern="^[-a-zA-Z0-9-()]+(\s+[-a-zA-Z0-9-()]+)*$">
-        <br>
         <input name="SearchFoodSubmit" type="submit" value="Search for Food">
         <select name="SearchFoodResults" style="width:10%;">
 
