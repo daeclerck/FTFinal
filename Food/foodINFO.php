@@ -81,12 +81,11 @@
     <input name="SearchFoodInput" type="text" pattern="^[-a-zA-Z0-9-()]+(\s+[-a-zA-Z0-9-()]+)*$">
     <br>
     <input name="SearchFoodSubmit" type="submit" value="Search for Food">
-</form>
 
 <br>
 <br>
 
-<form method="POST">
+
     <select name="SearchFoodResults" style="width:10%;">
         <?php
             if(isset($_POST['SearchFoodSubmit'])) {
@@ -103,9 +102,9 @@
     </select>
     <br>
     <input name="SelectedFoodSubmit" type="submit" value="Fetch Food Info">
-</form>
 
-<form method="POST">
+
+
     <?php
         if(isset($_POST['SelectedFoodSubmit']) && !empty($_POST['SearchFoodResults'])) {
             $FoodData = SelectFoodID($_POST['SearchFoodResults']);
