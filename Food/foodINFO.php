@@ -123,7 +123,7 @@
         }
     ?>
     </div>
-    <div class="w3-col m4 w3-center"> " style="Padding:16px 128px"> 
+    <div class="w3-col m4 w3-left-assign">
     <br><label>Name </label>
     <select name="FoodDisplay" size="1" disabled>
         <option value="<?php echo $FoodID; ?>">
