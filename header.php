@@ -50,13 +50,17 @@ table {
   width: 100%;
 }
 
-td, th {
-  border: 1px solid #ddd;
+th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #000000;
+  background-color: #4CAF50;
   color: white;
+}
+
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
 }
 </style>
 
