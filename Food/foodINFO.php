@@ -57,7 +57,6 @@
 	            $ServingSize = floatval($ServingSize) * $Convert['Conversion'];
             }
 	
-	        echo "   Serving size is " . $ServingSize;
 	        $_SESSION['ServingSize'] = $ServingSize;
 	        $_SESSION['FKUOMname'] = $SelectedUnit;
         }
@@ -153,7 +152,7 @@
     <label>Calories: </label>
     <input disabled type="text" value="<?php echo $Calories; ?>">
 
-    <table class="w3-table" style="Padding:16px 16px; border:solid;">
+    <table style="border:solid;">
         <?php
             if(!empty($FoodID)) {
                 $Build = BuildNutrients($FoodID);
