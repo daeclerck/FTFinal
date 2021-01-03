@@ -22,7 +22,7 @@
     ?>
 
 <header class="bgimg-2">
-<h1 class="w3-center title"><b><em>Begin Tracking Your Fitness Today</em></b></h1>
+<h1 class="w3-center" style="Padding:80px 16px"><b><em>Begin Tracking Your Fitness Today</em></b></h1>
 <div class="w3-container" style="Padding:0px 32px">
     <div class="w3-row-padding">
         <!-- Add a User Section -->
