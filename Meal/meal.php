@@ -98,7 +98,6 @@
 <header class="bgimg-2">
 <h1 class="w3-center title"><b><em>Add Food To Meals Throughout The Day</em></b></h1>
 <form method="POST">
-<div class="w3-container" style="Padding:16px 64px">
 <div class="w3-quarter w3-right-align" style="Padding:32px">
     <label>Food Name: </label>
     <input name="SearchFoodInput" type="text" pattern="^[-a-zA-Z0-9-()]+(\s+[-a-zA-Z0-9-()]+)*$">
@@ -161,7 +160,7 @@
     <input name="ClearMealSubmit" type="submit" value="Clear Meal">
     <input name="AddMealSubmit" type="submit" value="Add This Meal">
 </div>
-</div>
+
 
 </form>
 </header>
