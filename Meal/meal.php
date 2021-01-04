@@ -1,4 +1,3 @@
-include "../header.php";
 <html>
 <body>
 
