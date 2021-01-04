@@ -98,12 +98,12 @@
 <header class="bgimg-2">
 <h1 class="w3-center title"><b><em>Add Food To Meals Throughout The Day</em></b></h1>
 <form method="POST">
-<div class="w3-col m4">
+<div class="w3-quarter">
     <label>Food Name: </label>
     <input name="SearchFoodInput" type="text" pattern="^[-a-zA-Z0-9-()]+(\s+[-a-zA-Z0-9-()]+)*$">
     <input name="SearchFoodSubmit" type="submit" value="Search For Food">
 </div>
-<div class="w3-col m4">
+<div class="w3-quarter">
     <label>Search Results: </label>
     <br>
     <select name="SearchFoodResult" size="10" style="height:15%; width:40%;">
@@ -120,7 +120,7 @@
         ?>
     </select>
 </div>
-<div class="w3-col m4">
+<div class="w3-quarter">
     <label>Amount Eaten: </label>
     <input name="AddFoodQuantity" type="number" min="0" max="999" value="0">
     <select name="UOMSelector" size="1">
@@ -143,7 +143,7 @@
     <label>Time Meal was Eaten: </label>
     <input name="TimeEatenInput" type="time" value="<?php echo $FormData['DatetimeEaten']->format('H:i:s'); ?>" step="1">
 </div>
-<div class="w3-col m4">
+<div class="w3-quarter">
     <select name="FoodInMealInput" size="10" style="width:40%;">
         <?php
             foreach($_SESSION['FoodInMeal'] as $key => $value) {
