@@ -149,8 +149,9 @@
             <input class="w3-button w3-black" name="NewFoodSubmit" type="submit" value="Add New Food">
         </div>
         <div class="w3-col m6 w3-left-align" style="Padding:16px 0px">
+            <div style="Margin-bottom: 32px; display:inline-block;">
             <!-- Micronutrients -->
-            <label style="Margin-bottom: 32px; display:inline-block;"><b>Micronutrient</b></label>
+            <label><b>Micronutrient</b></label>
             <select name="MicroSelect" size="4" style="height:8%;">
 
                 <?php
@@ -163,6 +164,7 @@
                 ?>
 
             </select>
+            </div>
             <br><label><b>Quantity</b></label>
             <input class="w3-right-align" name="MicroInput" type="number" oninput='precise(this)' min="0" max="99999" value="0" step="0.00000001">
             <br><h6><em>Micronutrients <b>must</b> be in grams!</em></h6>
