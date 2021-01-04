@@ -104,7 +104,7 @@
     <input name="SearchFoodSubmit" type="submit" value="Search For Food">
 </div>
 <div class="w3-quarter">
-    <label style="Margin-bottom: 164px; display:inline-block;">Search Results </label>
+    <label style="Margin-bottom: 500px; display:inline-block;">Search Results </label>
     <select name="SearchFoodResult" size="10" style="height:15%; width:40%;">
         <?php
             if(isset($_POST['SearchFoodSubmit']) || isset($_POST['AddFoodToMealSubmit'])) {
