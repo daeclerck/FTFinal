@@ -95,7 +95,7 @@
         }
     ?>
 
-<header class="bgimg-2">
+<!--header class="bgimg-2" -->
 <h1 class="w3-center title"><b><em>Add Food To Meals Throughout The Day</em></b></h1>
 <form method="POST">
     <label>Food Name: </label>
@@ -160,6 +160,6 @@
     <input name="ClearMealSubmit" type="submit" value="Clear Meal">
     <input name="AddMealSubmit" type="submit" value="Add This Meal">
 </form>
-</header>
+<!--/header -->
 </body>
 </html>
