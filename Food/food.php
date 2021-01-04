@@ -149,10 +149,8 @@
             <input class="w3-button w3-black" name="NewFoodSubmit" type="submit" value="Add New Food">
         </div>
         <div class="w3-col m6 w3-left-align" style="Padding:16px 0px">
-            <div style="width: 400px; height: 112px;">
             <!-- Micronutrients -->
             <label style="Margin-bottom: 32px; display:inline-block;"><b>Micronutrient</b></label>
-            </div>
             <select name="MicroSelect" size="4" style="height:8%;">
 
                 <?php
