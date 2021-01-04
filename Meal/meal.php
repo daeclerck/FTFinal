@@ -106,7 +106,7 @@
     <br>
     <label>Search Results: </label>
     <br>
-    <select name="SearchFoodResult" style="height:15%; width40%;">
+    <select name="SearchFoodResult" size="10" style="height:15%; width:40%;">
         <?php
             if(isset($_POST['SearchFoodSubmit']) || isset($_POST['AddFoodToMealSubmit'])) {
                 $FoodResult = SelectFood($FoodSearch);
