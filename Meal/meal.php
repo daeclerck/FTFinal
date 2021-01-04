@@ -95,7 +95,7 @@
         }
     ?>
 
-<!--header class="bgimg-2" -->
+<header class="bgimg-2">
 <h1 class="w3-center title"><b><em>Add Food To Meals Throughout The Day</em></b></h1>
 <form method="POST">
     <label>Food Name: </label>
@@ -106,7 +106,7 @@
     <br>
     <label>Search Results: </label>
     <br>
-    <select name="SearchFoodResult" size="80" style="width:40%;">
+    <select name="SearchFoodResult" style="height:200%;">
         <?php
             if(isset($_POST['SearchFoodSubmit']) || isset($_POST['AddFoodToMealSubmit'])) {
                 $FoodResult = SelectFood($FoodSearch);
@@ -160,6 +160,6 @@
     <input name="ClearMealSubmit" type="submit" value="Clear Meal">
     <input name="AddMealSubmit" type="submit" value="Add This Meal">
 </form>
-<!--/header -->
+</header>
 </body>
 </html>
