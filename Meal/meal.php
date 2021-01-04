@@ -141,7 +141,7 @@
     <br>
     <label>Time Meal was Eaten: </label>
     <input name="TimeEatenInput" type="time" value="<?php echo $FormData['DatetimeEaten']->format('H:i:s'); ?>" step="1">
-    <input name="AddFoodToMealSubmit" type="submit" value="Add To Meal">
+    <input name="AddFoodToMealSubmit" type="submit" value="Add Food To Meal">
 </div>
 <div class="w3-quarter">
     <select name="FoodInMealInput" size="10" style="width:40%;">
@@ -158,7 +158,7 @@
 
     <input name="RemoveFoodSubmit" type="submit" value="Remove From Meal">
     <input name="ClearMealSubmit" type="submit" value="Clear Meal">
-    <input name="AddMealSubmit" type="submit" value="Add This Meal">
+    <input class="w3-button w3-black" name="AddMealSubmit" type="submit" value="Add This Meal">
 </div>
 
 
