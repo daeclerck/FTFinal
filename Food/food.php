@@ -152,6 +152,7 @@
             <div style="width: 400px; height: 112px;">
             <!-- Micronutrients -->
             <label style="Margin-bottom: 32px; display:inline-block;"><b>Micronutrient</b></label>
+            </div>
             <select name="MicroSelect" size="4" style="height:8%;">
 
                 <?php
@@ -164,7 +165,6 @@
                 ?>
 
             </select>
-            </div>
             <br><label><b>Quantity</b></label>
             <input class="w3-right-align" name="MicroInput" type="number" oninput='precise(this)' min="0" max="99999" value="0" step="0.00000001">
             <br><h6><em>Micronutrients <b>must</b> be in grams!</em></h6>
