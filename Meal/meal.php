@@ -107,7 +107,7 @@
     <div class="w3-col m4" style="width:135px;">
         <label style="Margin-bottom: 50px; display:inline-block;">Search Results </label>
     </div>
-    <select name="SearchFoodResult" size="10" style="height:15%; width:40%;" id="FoodSelect">
+    <select name="SearchFoodResult" size="10" style="height:15%; width:40%;">
         <?php
             if(isset($_POST['SearchFoodSubmit']) || isset($_POST['AddFoodToMealSubmit'])) {
                 $FoodResult = SelectFood($FoodSearch);
@@ -136,13 +136,12 @@
         ?>
     </select>
     <br>
-    <input name="AddFoodToMealSubmit" type="submit" value="Add To Meal">
-    <br>
     <label>Date Meal was Eaten: </label>
     <input name="DateEatenInput" type="date" value="<?php echo $FormData['DatetimeEaten']->format('Y-m-d'); ?>">
     <br>
     <label>Time Meal was Eaten: </label>
     <input name="TimeEatenInput" type="time" value="<?php echo $FormData['DatetimeEaten']->format('H:i:s'); ?>" step="1">
+    <input name="AddFoodToMealSubmit" type="submit" value="Add To Meal">
 </div>
 <div class="w3-quarter">
     <select name="FoodInMealInput" size="10" style="width:40%;">
@@ -165,13 +164,5 @@
 
 </form>
 </header>
-<script>
-    var FoodSelect = document.getElementById('FoodSelect');
-    var first = FoodSelect.options[FoodSelect.selectedIndex].value;
-    if (first != 0) {
-        alert('Test');
-        document.getElementById('FoodSelect').style.background="$green";
-    };
-</script>
 </body>
 </html>
