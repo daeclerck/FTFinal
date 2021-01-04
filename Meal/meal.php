@@ -102,7 +102,7 @@
     <label>Food Name </label>
     <input name="SearchFoodInput" type="text" pattern="^[-a-zA-Z0-9-()]+(\s+[-a-zA-Z0-9-()]+)*$">
     <input name="SearchFoodSubmit" type="submit" value="Search For Food">
-    <h5><b>NOTE:</b><em> Leaving input blank will show the entire selection!</em></h5>
+    <h6 class="w3-left-align"><b>NOTE:</b><em> Leaving input blank will show the entire selection!</em></h6>
 </div>
 <div class="w3-quarter">
     <label>Search Results: </label>
