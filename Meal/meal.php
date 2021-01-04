@@ -98,7 +98,7 @@
 <header class="bgimg-2">
 <h1 class="w3-center title"><b><em>Add Food To Meals Throughout The Day</em></b></h1>
 <form method="POST">
-<div class="w3-quarter">
+<div style="width:25%;">
 </div>
 <div class="w3-quarter">
     <label>Food Name </label>
