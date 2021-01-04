@@ -78,7 +78,7 @@
 <h1 class="w3-center title"><b><em>Find Nutrient Information For Registered Food</em></b></h1>
 <form method="POST">
     <div class="w3-container" style="Padding:16px 64px">
-        <div class="w3-third w3-right-align" style="margin-left:16px"> 
+        <div class="w3-third w3-right-align" style="margin-right:16px"> 
         <label><b>Food Name </b></label>
         <input name="SearchFoodInput" type="text" pattern="^[-a-zA-Z0-9-()]+(\s+[-a-zA-Z0-9-()]+)*$">
         <input name="SearchFoodSubmit" type="submit" value="Search for Food">
@@ -150,7 +150,7 @@
     <input disabled type="text" value="<?php echo $Calories; ?>">
     </div>
 
-    <div class="w3-third" style="margin-right:16px">
+    <div class="w3-third" style="margin-left:16px">
     <table>
         <?php
             if(!empty($FoodID)) {
