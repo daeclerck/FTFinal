@@ -79,130 +79,136 @@
 <form method="POST">
     <div class="w3-container" style="Padding:16px 64px">
         <div class="w3-col m4">
-        <h6><em>Search for a food to fetch the nutrient information.</em></h6>
-        <h6><b>NOTE:</b><em> Leaving input blank will show the entire selection!</em></h6>
-        <label><b>Food Name </b></label>
-        <input name="SearchFoodInput" type="text" pattern="^[-a-zA-Z0-9-()]+(\s+[-a-zA-Z0-9-()]+)*$">
-        <input name="SearchFoodSubmit" type="submit" value="Search for Food">
-        <br><select name="SearchFoodResults">
+            <h6><em>Search for a food to fetch the nutrient information.</em></h6>
+            <h6><b>NOTE:</b><em> Leaving input blank will show the entire selection!</em></h6>
+            <label><b>Food Name </b></label>
+            <input name="SearchFoodInput" type="text" pattern="^[-a-zA-Z0-9-()]+(\s+[-a-zA-Z0-9-()]+)*$">
+            <input name="SearchFoodSubmit" type="submit" value="Search for Food">
+            <br><select name="SearchFoodResults">
 
-            <?php
-                if(isset($_POST['SearchFoodSubmit'])) {
-                    $FoodSearch = $_POST['SearchFoodInput'];
-                    $FoodResult = SelectFood($FoodSearch);
+                <?php
+                    if(isset($_POST['SearchFoodSubmit'])) {
+                        $FoodSearch = $_POST['SearchFoodInput'];
+                        $FoodResult = SelectFood($FoodSearch);
 
-                    foreach($FoodResult as $row) {
-                        echo "<option value='" . $row['FoodID'] . "'>";
-                            echo $row['FoodName'];
-                        echo "</option>";
+                        foreach($FoodResult as $row) {
+                            echo "<option value='" . $row['FoodID'] . "'>";
+                                echo $row['FoodName'];
+                            echo "</option>";
+                        }
                     }
-                }
-            ?>
+                ?>
 
-        </select>
-        <input name="SelectedFoodSubmit" type="submit" value="Fetch Food Info">
+            </select>
+            <input name="SelectedFoodSubmit" type="submit" value="Fetch Food Info">
 
+                <?php
+                    if(isset($_POST['SelectedFoodSubmit']) && !empty($_POST['SearchFoodResults'])) {
+                        $FoodData = SelectFoodID($_POST['SearchFoodResults']);
 
+                        $FoodName = $FoodData["FoodName"];
+                        $FoodID = $FoodData["FoodID"];
+                        $ServingSize = $FoodData["ServingSize"];
+                        $Calories = $FoodData["CalPerServing"];
+                        $DefaultUnit = $FoodData["FKUOMname"];
+                        $SelectedUnit = $DefaultUnit;
+                        $Selector = $DefaultUnit;
 
-    <?php
-        if(isset($_POST['SelectedFoodSubmit']) && !empty($_POST['SearchFoodResults'])) {
-            $FoodData = SelectFoodID($_POST['SearchFoodResults']);
+                        $_SESSION['FoodID'] = $FoodID;
+                        $_SESSION['ServingSize'] = $ServingSize;
+                        $_SESSION['FoodName'] = $FoodName;
+                        $_SESSION['Calories'] = $Calories;
+                        $_SESSION['FKUOMname'] = $DefaultUnit;
+                        $_SESSION['Reset'] = $DefaultUnit; 
+                    }
+                ?>
+        </div>
+        <div class="w3-col m4">
+            <h6><em>The serving size can be converted into any other unit of measurement.</em></h6>
+            <h6><b>NOTE:</b><em> Resetting will bring the serving size back to the original amount!</em></h6>
+            <label>Name </label>
+            <select name="FoodDisplay" size="1" disabled>
+                <option value="<?php echo $FoodID; ?>">
+                    <?php echo $FoodName; ?>
+                </option>
+            </select>
+            <br><label>Serving Size </label>
+            <input disabled type="number" value="<?php echo $ServingSize; ?>">
+            <select name="UnitsSelected">
 
-            $FoodName = $FoodData["FoodName"];
-            $FoodID = $FoodData["FoodID"];
-            $ServingSize = $FoodData["ServingSize"];
-            $Calories = $FoodData["CalPerServing"];
-            $DefaultUnit = $FoodData["FKUOMname"];
-            $SelectedUnit = $DefaultUnit;
-            $Selector = $DefaultUnit;
-
-            $_SESSION['FoodID'] = $FoodID;
-            $_SESSION['ServingSize'] = $ServingSize;
-            $_SESSION['FoodName'] = $FoodName;
-            $_SESSION['Calories'] = $Calories;
-	        $_SESSION['FKUOMname'] = $DefaultUnit;
-	        $_SESSION['Reset'] = $DefaultUnit; 
-        }
-    ?>
-    </div>
-    <div class="w3-col m4">
-    <h6><em>The serving size can be converted into any other unit of measurement.</em></h6>
-    <h6><b>NOTE:</b><em> Resetting will bring the serving size back to the original amount!</em></h6>
-    <label>Name </label>
-    <select name="FoodDisplay" size="1" disabled>
-        <option value="<?php echo $FoodID; ?>">
-            <?php echo $FoodName; ?>
-        </option>
-    </select>
-    <br>
-    <label>Serving Size </label>
-    <input disabled type="number" value="<?php echo $ServingSize; ?>">
-    <select name="UnitsSelected">
-        <?php
-            $SelectData = SelectUOM();
+                <?php
+                    $SelectData = SelectUOM();
 		
-            foreach($SelectData as $row) { ?>
-	        <option value="<?php echo $row['UOMname']; ?>" <?php if($row['UOMname'] == $_SESSION['FKUOMname']) { echo "selected"; } ?>>
+                    foreach($SelectData as $row) { 
+                ?>
+
+	            <option value="<?php echo $row['UOMname']; ?>" <?php if($row['UOMname'] == $_SESSION['FKUOMname']) { echo "selected"; } ?>>
+
 	            <?php echo $row['UOMname']; ?>
-    	    </option>
-        <?php } ?>
-    </select>
-    <input name="ChangeUnitSubmit" type="submit" value="Update">
-    <input name="ResetUnitSubmit" type="submit" value="Reset">
-    <br>
-    <label>Calories </label>
-    <input disabled type="text" value="<?php echo $Calories; ?>">
-    </div>
 
-    <div class="w3-col m4">
-    <h6><em>Other macro and micronutrients found in the selected food.</em></h6>
-    <h6><b>NOTE:</b><em> If any info is incorrect, delete & re-enter the food in the food tab!</em></h6>
-    <table>
-        <?php
-            if(!empty($FoodID)) {
-                $Build = BuildNutrients($FoodID);
+    	        </option>
 
-                $_SESSION['NutrientArray'] = array();
-                foreach($Build as $row) {
-                    $NutrientName = $row['NutrientName'];
-                    $NutrientQuantity = $row['PerServing'];
+                <?php } ?>
 
-                    $_SESSION['NutrientArray'][$NutrientName] = $NutrientQuantity;
-                }
+            </select>
+            <input name="ChangeUnitSubmit" type="submit" value="Update">
+            <input name="ResetUnitSubmit" type="submit" value="Reset">
+            <br><label>Calories </label>
+            <input disabled type="text" value="<?php echo $Calories; ?>">
+        </div>
+        <div class="w3-col m4">
+            <h6><em>Other macro and micronutrients found in the selected food.</em></h6>
+            <h6><b>NOTE:</b><em> If any info is incorrect, delete & re-enter the food in the food tab!</em></h6>
+            <table>
 
-                $_SESSION['RecommendArray'] = array();
-                foreach($Build as $row) {
-                    $RecommendName = $row['NutrientName'];
-                    $RecommendDaily = $row['DailyIntake'];
+                <?php
+                    if(!empty($FoodID)) {
+                        $Build = BuildNutrients($FoodID);
 
-                    $_SESSION['RecommendArray'][$RecommendName] = $RecommendDaily;
-                }
+                        $_SESSION['NutrientArray'] = array();
+                        foreach($Build as $row) {
+                            $NutrientName = $row['NutrientName'];
+                            $NutrientQuantity = $row['PerServing'];
 
-                foreach($_SESSION['RecommendArray'] as $NutrientName => $RecommendDaily) {
-                    $RecommendArray = $RecommendDaily;
-                }
-            }
-        ?>
-        <tr>
-        <th>Nutrient Name</th>
-        <th>Quantity of Nutrient Per Serving</th>
-        <th>Recommended Daily Intake</th>
-        </tr>
-        <?php 
-            foreach($_SESSION['NutrientArray'] as $NutrientName => $Nutrient) {
-                echo "<tr>";
-                echo "<td>" . $NutrientName . "</td>";
-                echo "<td>" . $Nutrient . "</td>";
-                foreach($_SESSION['RecommendArray'] as $RecommendName => $RecommendDaily) {
-                    if($NutrientName == $RecommendName) {
-                        echo "<td>" . $RecommendDaily . "</td>";
+                            $_SESSION['NutrientArray'][$NutrientName] = $NutrientQuantity;
+                        }
+
+                        $_SESSION['RecommendArray'] = array();
+                        foreach($Build as $row) {
+                            $RecommendName = $row['NutrientName'];
+                            $RecommendDaily = $row['DailyIntake'];
+
+                            $_SESSION['RecommendArray'][$RecommendName] = $RecommendDaily;
+                        }
+
+                        foreach($_SESSION['RecommendArray'] as $NutrientName => $RecommendDaily) {
+                            $RecommendArray = $RecommendDaily;
+                        }
                     }
-                }
-                echo "</tr>";
-            }
-        ?>
-    </table>
-    </div>
+                ?>
+
+                <tr>
+                    <th>Nutrient Name</th>
+                    <th>Quantity of Nutrient Per Serving</th>
+                    <th>Recommended Daily Intake</th>
+                </tr>
+
+                    <?php 
+                        foreach($_SESSION['NutrientArray'] as $NutrientName => $Nutrient) {
+                            echo "<tr>";
+                            echo "<td>" . $NutrientName . "</td>";
+                            echo "<td>" . $Nutrient . "</td>";
+                            foreach($_SESSION['RecommendArray'] as $RecommendName => $RecommendDaily) {
+                                if($NutrientName == $RecommendName) {
+                                    echo "<td>" . $RecommendDaily . "</td>";
+                                }
+                            }
+                        echo "</tr>";
+                        }
+                    ?>
+
+            </table>
+        </div>
     </div>
 </form>
 </header>
