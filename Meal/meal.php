@@ -141,10 +141,11 @@
     <br>
     <label>Time Meal was Eaten: </label>
     <input name="TimeEatenInput" type="time" value="<?php echo $FormData['DatetimeEaten']->format('H:i:s'); ?>" step="1">
-    <input name="AddFoodToMealSubmit" type="submit" value="Add Food To Meal">
+    <br><input name="AddFoodToMealSubmit" type="submit" value="Add Food To Meal">
 </div>
 <div class="w3-quarter">
-    <select name="FoodInMealInput" size="10" style="width:40%;">
+    <select name="FoodInMealInput" size="10" style="height:15%; width:40%;">
+
         <?php
             foreach($_SESSION['FoodInMeal'] as $key => $value) {
                 [$FoodName, $FoodQuantity, $FoodUnit] = $_SESSION['FoodInMeal'][$key];
@@ -154,9 +155,9 @@
                 echo "</option>";
             }
         ?>
-    </select>
 
-    <input name="RemoveFoodSubmit" type="submit" value="Remove From Meal">
+    </select>
+    <br><input name="RemoveFoodSubmit" type="submit" value="Remove From Meal">
     <input name="ClearMealSubmit" type="submit" value="Clear Meal">
     <input class="w3-button w3-black" name="AddMealSubmit" type="submit" value="Add This Meal">
 </div>
