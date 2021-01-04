@@ -127,7 +127,7 @@
     </div>
     <div class="w3-col m4">
     <h6><em>The serving size can be converted into any other unit of measurement.</em></h6>
-    <h6><b>NOTE:</b><em> Resetting will bring the serving size to the original amount.</em></h6>
+    <h6><b>NOTE:</b><em> Resetting will bring the serving size back to the original amount.</em></h6>
     <label>Name </label>
     <select name="FoodDisplay" size="1" disabled>
         <option value="<?php echo $FoodID; ?>">
@@ -154,7 +154,7 @@
     <input disabled type="text" value="<?php echo $Calories; ?>">
     </div>
 
-    <div class="w3-col m4">
+    <div class="w3-col m4" style="margin-left: 30px">
     <table>
         <?php
             if(!empty($FoodID)) {
