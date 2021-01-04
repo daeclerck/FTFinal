@@ -107,7 +107,7 @@
     <div class="w3-col m4" style="width:135px;">
         <label style="Margin-bottom: 50px; display:inline-block;">Search Results </label>
     </div>
-    <select name="SearchFoodResult" size="10" style="height:15%; width:40%;">
+    <select name="SearchFoodResult" size="10" style="height:15%; width:40%;" id="FoodSelect">
         <?php
             if(isset($_POST['SearchFoodSubmit']) || isset($_POST['AddFoodToMealSubmit'])) {
                 $FoodResult = SelectFood($FoodSearch);
@@ -165,5 +165,13 @@
 
 </form>
 </header>
+<script>
+    var FoodSelect = document.getElementById('FoodSelect');
+    var first = FoodSelect.options[FoodSelect.selectedIndex].value;
+    if (first != 0) {
+        alert('Test');
+        document.getElementById('FoodSelect').style.background="$green";
+    };
+</script>
 </body>
 </html>
