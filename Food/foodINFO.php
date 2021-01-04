@@ -80,7 +80,7 @@
     <div class="w3-container" style="Padding:16px 64px">
         <div class="w3-col m4">
         <h6><em>Search for a food to fetch the nutrient information.</em></h6>
-        <h6><b>NOTE:</b><em> Leaving input blank will show the entire selection.</em></h6>
+        <h6><b>NOTE:</b><em> Leaving input blank will show the entire selection!</em></h6>
         <label><b>Food Name </b></label>
         <input name="SearchFoodInput" type="text" pattern="^[-a-zA-Z0-9-()]+(\s+[-a-zA-Z0-9-()]+)*$">
         <input name="SearchFoodSubmit" type="submit" value="Search for Food">
@@ -127,7 +127,7 @@
     </div>
     <div class="w3-col m4">
     <h6><em>The serving size can be converted into any other unit of measurement.</em></h6>
-    <h6><b>NOTE:</b><em> Resetting will bring the serving size back to the original amount.</em></h6>
+    <h6><b>NOTE:</b><em> Resetting will bring the serving size back to the original amount!</em></h6>
     <label>Name </label>
     <select name="FoodDisplay" size="1" disabled>
         <option value="<?php echo $FoodID; ?>">
@@ -155,6 +155,8 @@
     </div>
 
     <div class="w3-col m4">
+    <h6><em>Other macro and micronutrients found in the selected food.</em></h6>
+    <h6><b>NOTE:</b><em> If any info is incorrect, delete & re-enter the food in the food tab!</em></h6>
     <table>
         <?php
             if(!empty($FoodID)) {
