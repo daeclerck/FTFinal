@@ -151,7 +151,7 @@
         <div class="w3-col m6 w3-left-align" style="Padding:16px 0px">
             <!-- Micronutrients -->
             <div class="w3-col m4" style="width:125px;">
-            <label style="Margin-bottom: 48px; display:inline-block;"><b>Micronutrient</b></label>
+            <label style="Margin-bottom: 44px; display:inline-block;"><b>Micronutrient</b></label>
             </div>
             <select name="MicroSelect" size="4" style="height:8%;">
 
