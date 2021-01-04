@@ -126,6 +126,8 @@
     ?>
     </div>
     <div class="w3-col m4">
+    <h6><em>The serving size can be converted into any other unit of measurement</em></h6>
+    <h6><b>NOTE:</b><em> Leaving input blank will show the entire selection.</em></h6>
     <label>Name </label>
     <select name="FoodDisplay" size="1" disabled>
         <option value="<?php echo $FoodID; ?>">
