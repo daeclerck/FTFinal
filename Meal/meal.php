@@ -103,7 +103,7 @@
     <input name="SearchFoodInput" type="text" pattern="^[-a-zA-Z0-9-()]+(\s+[-a-zA-Z0-9-()]+)*$">
     <input name="SearchFoodSubmit" type="submit" value="Search For Food">
 </div>
-<div class="w3-quarter" style="height: 300px;">
+<div class="w3-quarter">
     <label style="Margin-bottom: 164px; display:inline-block;">Search Results </label>
     <select name="SearchFoodResult" size="10" style="height:15%; width:40%;">
         <?php
