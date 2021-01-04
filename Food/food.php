@@ -112,8 +112,7 @@
             <!-- Check for valid food names including no white spaces in beginning or end -->
             <input name="FoodNameInput" type="text" value="<?php echo $FoodInfo['FoodNameInput']; ?>" pattern="^[-a-zA-Z0-9-()]+(\s+[-a-zA-Z0-9-()]+)*$" 
                 title="This field is required" placeholder="Enter Valid Name">
-            <br>
-            <label><b>Serving Size </b></label>
+            <br><label><b>Serving Size </b></label>
             <input class="w3-right-align" name="ServingSizeInput" type="number" value="<?php echo $FoodInfo['ServingSizeInput']; ?>" min="0" max="999.99" step="0.01">
             <select name="ServingSizeUOM">
 
@@ -152,7 +151,7 @@
         <div class="w3-col m6 w3-left-align" style="Padding:16px 0px">
             <!-- Micronutrients -->
             <label><b>Micronutrient</b></label>
-            <select name="MicroSelect">
+            <select name="MicroSelect" size="4" style="height:10%;">
 
                 <?php
                     $MicroChart = SelectMicro();
