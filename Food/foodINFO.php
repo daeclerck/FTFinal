@@ -154,7 +154,7 @@
     <input disabled type="text" value="<?php echo $Calories; ?>">
     </div>
 
-    <div class="w3-col m3" style="margin-left: 48px">
+    <div class="w3-col m4">
     <table>
         <?php
             if(!empty($FoodID)) {
