@@ -1,102 +1,103 @@
-<?php include "../header.php"; ?>
+include "../header.php";
 <html>
 <body>
+
+    <?php
+        // Include SQL methods and header
+        include "mealSQL.php";
+        include "../Food/foodSQL.php";
+        include "../header.php";
+
+        // Begin session
+        if(!isset($_SESSION)) { session_start(); }
+
+        // Send to user page if not selected
+        if(empty($_SESSION['AccountID']) || empty($_SESSION['UserName'])) {
+            // A user needs to be selected first
+            header('Location: ../User/user.php');
+        }
+
+        if(!array_key_exists('FoodInMeal', $_SESSION)) {
+            $_SESSION['FoodInMeal'] = array();
+        }
+
+        $DefaultTime = new DateTime();
+        $FormData = array( 'DatetimeEaten' => $DefaultTime );
+
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            // User searching for food
+            if(isset($_POST['SearchFoodSubmit'])) {
+                $FoodSearch = $_POST['SearchFoodInput'];
+            }
+
+            // User adding food to meal
+            else if(isset($_POST['AddFoodToMealSubmit']) && !empty($_POST['SearchFoodResult'])) {
+                $FoodSearch = $_POST['SearchFoodInput'];
+
+                // Get the new food data
+                $FoodID = $_POST['SearchFoodResult'];
+
+                $Result = SelectFoodForMeal($FoodID);
+
+                $FoodName = $Result['FoodName'];
+                $FoodQuantity = $_POST['AddFoodQuantity'];
+                $FoodUnit = $_POST['UOMSelector'];
+
+                $_SESSION['FoodInMeal'][$FoodID] = [$FoodName, $FoodQuantity, $FoodUnit];
+            }
+
+            // User removing a food from meal
+            else if(isset($_POST['RemoveFoodSubmit'])) {
+                unset($_SESION['FoodInMeal'][$_POST['FoodInMealInput']]);
+            }
+
+            // User cleared meal
+            else if(isset($_POST['ClearMealSubmit'])) {
+                unset($_SESSION['FoodInMeal']);
+
+                if(!array_key_exists('FoodInMeal', $_SESSION)) {
+                    $_SESSION['FoodInMeal'] = array();
+                }
+
+                $DefaultTime = new DateTime();
+                $FormData = array( 'DatetimeEaten' => $DefaultTime );
+            }
+
+            // User submitting the meal
+            else if(isset($_POST['AddMealSubmit'])) {
+                $MealDate = $_POST['DateEatenInput'];
+                $MealTime = $_POST['TimeEatenInput'];
+                $MealDateTime = date('Y-m-d H:i:s', strtotime($MealDate . ' ' . $MealTime));
+
+                $UserID = $_SESSION['AccountID'];
+                $MealID = RandomID();
+
+                // Create new meal
+                AddMeal($MealID, $UserID, $MealDateTime);
+
+                // Add food to meal
+                foreach($_SESSION['FoodInMeal'] as $key => $value) {
+                    // unpack array
+                    [$FoodName, $FoodQuantity, $FoodUnit] = $_SESSION['FoodInMeal'][$key];
+
+                    // Query for each food
+                    AddFoodForMeal($MealID, $key, $FoodQuantity, $FoodUnit);
+                }
+
+                echo "Meal Added Successfully!";
+            }
+
+            // Populate/Restore Form Data
+            foreach($_POST as $key => $value) {
+                if(isset($FormData[$key])) {
+                    $FormData[$key] = htmlspecialchars($value);
+                }
+            }
+        }
+    ?>
+
 <header class="bgimg-2">
-<?php
-    include "mealSQL.php";
-    include "../Food/foodSQL.php";
-
-    if(!isset($_SESSION)) { session_start(); }
-
-    if(empty($_SESSION['AccountID']) || empty($_SESSION['UserName'])) {
-        // A user needs to be selected first
-        header('Location: ../User/user.php');
-        //exit("Sorry, the current session has expired. Please log in again.");
-    }
-?>
-
-<?php
-    if(!array_key_exists('FoodInMeal', $_SESSION)) {
-        $_SESSION['FoodInMeal'] = array();
-    }
-
-    $DefaultTime = new DateTime();
-    $FormData = array( 'DatetimeEaten' => $DefaultTime );
-?>
-
-<?php
-    if($_SERVER['REQUEST_METHOD'] == 'POST') {
-        // User searching for food
-        if(isset($_POST['SearchFoodSubmit'])) {
-            $FoodSearch = $_POST['SearchFoodInput'];
-        }
-
-        // User adding food to meal
-        else if(isset($_POST['AddFoodToMealSubmit']) && !empty($_POST['SearchFoodResult'])) {
-            $FoodSearch = $_POST['SearchFoodInput'];
-
-            // Get the new food data
-            $FoodID = $_POST['SearchFoodResult'];
-
-            $Result = SelectFoodForMeal($FoodID);
-
-            $FoodName = $Result['FoodName'];
-            $FoodQuantity = $_POST['AddFoodQuantity'];
-            $FoodUnit = $_POST['UOMSelector'];
-
-            $_SESSION['FoodInMeal'][$FoodID] = [$FoodName, $FoodQuantity, $FoodUnit];
-        }
-
-        // User removing a food from meal
-        else if(isset($_POST['RemoveFoodSubmit'])) {
-            unset($_SESION['FoodInMeal'][$_POST['FoodInMealInput']]);
-        }
-
-        // User cleared meal
-        else if(isset($_POST['ClearMealSubmit'])) {
-            unset($_SESSION['FoodInMeal']);
-
-            if(!array_key_exists('FoodInMeal', $_SESSION)) {
-                $_SESSION['FoodInMeal'] = array();
-            }
-
-            $DefaultTime = new DateTime();
-            $FormData = array( 'DatetimeEaten' => $DefaultTime );
-        }
-
-        // User submitting the meal
-        else if(isset($_POST['AddMealSubmit'])) {
-            $MealDate = $_POST['DateEatenInput'];
-            $MealTime = $_POST['TimeEatenInput'];
-            $MealDateTime = date('Y-m-d H:i:s', strtotime($MealDate . ' ' . $MealTime));
-
-            $UserID = $_SESSION['AccountID'];
-            $MealID = RandomID();
-
-            // Create new meal
-            AddMeal($MealID, $UserID, $MealDateTime);
-
-            // Add food to meal
-            foreach($_SESSION['FoodInMeal'] as $key => $value) {
-                // unpack array
-                [$FoodName, $FoodQuantity, $FoodUnit] = $_SESSION['FoodInMeal'][$key];
-
-                // Query for each food
-                AddFoodForMeal($MealID, $key, $FoodQuantity, $FoodUnit);
-            }
-
-            echo "Meal Added Successfully!";
-        }
-
-        // Populate/Restore Form Data
-        foreach($_POST as $key => $value) {
-            if(isset($FormData[$key])) {
-                $FormData[$key] = htmlspecialchars($value);
-            }
-        }
-    }
-?>
-
+<h1 class="w3-center title"><b><em>Add Food To Meals Throughout The Day</em></b></h1>
 <form method="POST">
     <label>Food Name: </label>
     <input name="SearchFoodInput" type="text" pattern="^[-a-zA-Z0-9-()]+(\s+[-a-zA-Z0-9-()]+)*$">
