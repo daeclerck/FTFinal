@@ -98,11 +98,11 @@
 <header class="bgimg-2">
 <h1 class="w3-center title"><b><em>Add Food To Meals Throughout The Day</em></b></h1>
 <form method="POST">
-<div class="w3-half w3-right-align" style="Padding:0px 32px">
+<div class="w3-half" style="Padding:0px 32px">
     <label>Food Name </label>
     <input name="SearchFoodInput" type="text" pattern="^[-a-zA-Z0-9-()]+(\s+[-a-zA-Z0-9-()]+)*$">
     <input name="SearchFoodSubmit" type="submit" value="Search For Food">
-    <br><label style="Margin-bottom: 50px; display:inline-block;">Search Results </label>
+    <br><label>Search Results </label>
     <br><select name="SearchFoodResult" size="10" style="height:15%; width:40%;">
 
         <?php
