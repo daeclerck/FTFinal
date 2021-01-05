@@ -139,8 +139,8 @@
     <input type="date" name="MealEndDate">
     <br><input name="FetchHistorySubmit" type="submit" value="Fetch Meal History">
 	</div>
-	<div class="w3-col m6">
-    <table style="border:solid;" style="Padding: 64px;">
+	<div class="w3-col m6" style="Padding: 64px;">
+    <table style="border:solid;">
     <tr>
         <th>Food Eaten</th>
         <th>Protein</th>
@@ -171,7 +171,7 @@
     ?>
     </table>
 	</div>
-	<div class="w3-col m4" style="margin-left: 900px;">
+	<div class="w3-col m4" style="margin-left: 50%;">
 	<label>Nutrient Tracker</label>
 	<select name="NutrientSelector">
 	<option name="Micro1" value="Caffeine"> Caffeine </option>
