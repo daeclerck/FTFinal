@@ -1,6 +1,6 @@
 <html>
 <body>
-<br><br><br><br>
+
 	<?php
 		// Include SQL methods and header
 		include "mealSQL.php";
@@ -134,62 +134,59 @@
 <h1 class="w3-center title"><b><em>Check Your Meal History And Nutrient Intake</em></b></h1>
 <form method="POST">
 	<div class="w3-col m6 w3-center" style="Padding:0px 0px 0px 64px;">
-    <label>Select Start Date (Inclusive): </label>
-    <input type="date" name="MealStartDate">
-    <br><label>Select End Date (Inclusive): </label>
-    <input type="date" name="MealEndDate">
-    <br><input name="FetchHistorySubmit" type="submit" value="Fetch Meal History">
+    	<label>Select Start Date (Inclusive) </label>
+    	<input type="date" name="MealStartDate">
+    	<br><label>Select End Date (Inclusive) </label>
+    	<input type="date" name="MealEndDate">
+    	<br><input name="FetchHistorySubmit" type="submit" value="Fetch Meal History">
 	</div>
 	<div class="w3-col m6">
-    <table style="border:solid; width:60%;">
-    <tr>
-        <th>Food Eaten</th>
-        <th>Protein</th>
-        <th>Carbs</th>
-        <th>Fats</th>
-        <th>Calories</th>
-    </tr>
-    <?php 
-        foreach($_SESSION['MealHistory'] as $FoodID => $FoodData) {
-            echo "<tr>";
-                echo "<td>";
-				    echo $_SESSION['MealHistory'][$FoodID]['FoodName']; 
-				echo "</td>";
-                echo "<td>";
-                    echo $_SESSION['MealHistory'][$FoodID]['Protein']['Consumed'] . ' ' . 'grams';
-                echo "</td>";
-                echo "<td>";
-                    echo $_SESSION['MealHistory'][$FoodID]['Carbohydrates']['Consumed'] . ' ' . 'grams';
-                echo "</td>";
-                echo "<td>";
-                    echo $_SESSION['MealHistory'][$FoodID]['Fat']['Consumed'] . ' ' . 'grams';
-                echo "</td>";
-                echo "<td>";
-                    echo number_format((float)$_SESSION['MealHistory'][$FoodID]['CaloriesConsumed'], 2, '.', '');
-                echo "</td>";
-            echo "</tr>";
-        }
-    ?>
-    </table>
+    	<table style="border:solid; width:60%;">
+    	<tr>
+			<th>Food Eaten</th>
+			<th>Protein</th>
+			<th>Carbs</th>
+			<th>Fats</th>
+			<th>Calories</th>
+    	</tr>
+    
+			<?php 
+
+				foreach($_SESSION['MealHistory'] as $FoodID => $FoodData) {
+					echo "<tr>";
+						echo "<td>";
+							echo $_SESSION['MealHistory'][$FoodID]['FoodName']; 
+						echo "</td>";
+						echo "<td>";
+							echo $_SESSION['MealHistory'][$FoodID]['Protein']['Consumed'] . ' ' . 'grams';
+						echo "</td>";
+						echo "<td>";
+							echo $_SESSION['MealHistory'][$FoodID]['Carbohydrates']['Consumed'] . ' ' . 'grams';
+						echo "</td>";
+						echo "<td>";
+							echo $_SESSION['MealHistory'][$FoodID]['Fat']['Consumed'] . ' ' . 'grams';
+						echo "</td>";
+						echo "<td>";
+							echo number_format((float)$_SESSION['MealHistory'][$FoodID]['CaloriesConsumed'], 2, '.', '');
+						echo "</td>";
+					echo "</tr>";
+				}
+    		?>
+    	</table>
 	</div>
 	<div class="w3-col m4" style="margin-left: 50%;">
-	<label>Nutrient Tracker</label>
-	<select name="NutrientSelector">
-	<option name="Micro1" value="Caffeine"> Caffeine </option>
-	<option name="Micro2" value="Vitamin A"> Vitamin A </option>
-	<option name="Micro3" value="Vitamin C"> Vitamin C </option>
-	<option name="Micro4" value="Vitamin D"> Vitamin D </option>
-    </select>
-    <input name="NutrientUpdateSubmit" type="submit" value="Track It!" />
-    <br>
-    <br>
-    <label>Amount Consumed (grams) </label>
-    <br>
-    <input type="text" disabled value=<?php echo $NutrientTracker; ?>>
-	<br>
-    <label>Amount Recommended (grams) </label>
-	<br>
-	<input type="text" disabled value=<?php echo $RecommendChosen; ?>>
+		<label>Nutrient Tracker</label>
+		<select name="NutrientSelector">
+			<option name="Micro1" value="Caffeine"> Caffeine </option>
+			<option name="Micro2" value="Vitamin A"> Vitamin A </option>
+			<option name="Micro3" value="Vitamin C"> Vitamin C </option>
+			<option name="Micro4" value="Vitamin D"> Vitamin D </option>
+    	</select>
+    	<input name="NutrientUpdateSubmit" type="submit" value="Track It!" />
+		<br><br><label>Amount Consumed (grams)</label>
+		<br><input type="text" disabled value=<?php echo $NutrientTracker; ?>>
+		<br><label>Amount Recommended (grams) </label>
+		<br><input type="text" disabled value=<?php echo $RecommendChosen; ?>>
 	</div>
 </form>
 </header>
