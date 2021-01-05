@@ -131,6 +131,7 @@
 	?>
 
 <header class="bgimg-2">
+<h1 class="w3-center title"><b><em>Check Your Meal History And Nutrient Intake</em></b></h1>
 <form method="POST">
 	<div class="w3-col m6 w3-center" style="Padding:0px 0px 0px 64px;">
     <label>Select Start Date (Inclusive): </label>
