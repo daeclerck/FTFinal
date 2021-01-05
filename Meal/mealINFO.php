@@ -184,16 +184,37 @@
     	</select>
     	<input name="NutrientUpdateSubmit" type="submit" value="Track It!" />
 		<br><br><label>Amount Consumed (grams)</label>
-		<br><input type="text" oninput='precise(this)' disabled value=<?php echo $NutrientTracker; ?>>
+		<?php
+			$NewValue = toFixed($NutrientTracker);
+		?>
+		<br><input type="text" disabled value=
+		
+		<?php
+			echo $NewValue;
+			//echo $NutrientTracker; 
+		?>>
 		<br><label>Amount Recommended (grams) </label>
 		<br><input type="text" disabled value=<?php echo $RecommendChosen; ?>>
 	</div>
 </form>
-<!-- Script to remove scientific notation -->
 <script>
-    function precise(elem) {
-        elem.value = Number(elem.value).toFixed(8);
+function toFixed(x) {
+  if (Math.abs(x) < 1.0) {
+    var e = parseInt(x.toString().split('e-')[1]);
+    if (e) {
+        x *= Math.pow(10,e-1);
+        x = '0.' + (new Array(e)).join('0') + x.toString().substring(2);
     }
+  } else {
+    var e = parseInt(x.toString().split('+')[1]);
+    if (e > 20) {
+        e -= 20;
+        x /= Math.pow(10,e);
+        x += (new Array(e+1)).join('0');
+    }
+  }
+  return x;
+}
 </script>
 </header>
 </body>
