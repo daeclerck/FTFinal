@@ -132,7 +132,7 @@
 
 <header class="bgimg-2">
 <form method="POST">
-	<div class="w3-col m6 w3-center">
+	<div class="w3-col m6 w3-center" style="Padding:0px 0px 0px 32px;">
     <label>Select Start Date (Inclusive): </label>
     <input type="date" name="MealStartDate">
     <br><label>Select End Date (Inclusive): </label>
