@@ -98,7 +98,7 @@
 <header class="bgimg-2">
 <h1 class="w3-center title"><b><em>Add Food To Meals Throughout The Day</em></b></h1>
 <form method="POST">
-<div class="w3-col l6" style="Padding:16px 160px;">
+<div class="w3-col l6" style="margin-left: 320px;">
     <label>Food Name </label>
     <input name="SearchFoodInput" type="text" pattern="^[-a-zA-Z0-9-()]+(\s+[-a-zA-Z0-9-()]+)*$">
     <input name="SearchFoodSubmit" type="submit" value="Search For Food">
@@ -133,7 +133,7 @@
     </select>
     <br><input name="AddFoodToMealSubmit" type="submit" value="Add Food To Meal">
 </div>
-<div class="w3-col l6" style="Padding:16px 160px;">
+<div class="w3-col l6" style="margin-right: 320px;">>
     <select name="FoodInMealInput" size="10" style="height:15%; width:40%;">
 
         <?php
