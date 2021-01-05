@@ -132,7 +132,7 @@
 
 <header class="bgimg-2">
 <form method="POST">
-	<div class="w3-col m6">
+	<div class="w3-col m6 w3-center">
     <label>Select Start Date (Inclusive): </label>
     <input type="date" name="MealStartDate">
     <br><label>Select End Date (Inclusive): </label>
@@ -140,7 +140,7 @@
     <br><input name="FetchHistorySubmit" type="submit" value="Fetch Meal History">
 	</div>
 	<div class="w3-col m6">
-    <table style="border:solid;">
+    <table style="border:solid;" style="Padding: 64px;">
     <tr>
         <th>Food Eaten</th>
         <th>Protein</th>
@@ -171,7 +171,7 @@
     ?>
     </table>
 	</div>
-	<div class="w3-col m4" style="margin-left: 600px;">
+	<div class="w3-col m4" style="margin-left: 900px;">
 	<label>Nutrient Tracker</label>
 	<select name="NutrientSelector">
 	<option name="Micro1" value="Caffeine"> Caffeine </option>
