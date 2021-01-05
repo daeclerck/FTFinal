@@ -139,7 +139,7 @@
     <input type="date" name="MealEndDate">
     <br><input name="FetchHistorySubmit" type="submit" value="Fetch Meal History">
 	</div>
-	<div class="w3-col m6" style="Padding: 64px;">
+	<div class="w3-col m6" style="margin-right: 20%;">
     <table style="border:solid;">
     <tr>
         <th>Food Eaten</th>
