@@ -159,7 +159,7 @@
     <input name="TimeEatenInput" type="time" value="<?php echo $FormData['DatetimeEaten']->format('H:i:s'); ?>" step="1">
     <br><input name="RemoveFoodSubmit" type="submit" value="Remove From Meal">
     <input name="ClearMealSubmit" type="submit" value="Clear Meal">
-    <br><input class="w3-button w3-black" name="AddMealSubmit" type="submit" value="Add This Meal">
+    <br><br><input class="w3-button w3-black" name="AddMealSubmit" type="submit" value="Add This Meal">
 
         <?php
             if($MealSuccess) {
