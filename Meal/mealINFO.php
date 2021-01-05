@@ -138,9 +138,9 @@
     <br><label>Select End Date (Inclusive): </label>
     <input type="date" name="MealEndDate">
     <br><input name="FetchHistorySubmit" type="submit" value="Fetch Meal History">
-    <table style="border:solid;">
 	</div>
 	<div class="w3-col m4">
+    <table style="border:solid;">
     <tr>
         <th>Food Eaten</th>
         <th>Protein</th>
