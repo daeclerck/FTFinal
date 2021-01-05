@@ -121,6 +121,7 @@
     <br><label>Amount Eaten </label>
     <input name="AddFoodQuantity" type="number" min="0" max="999" value="0">
     <select name="UOMSelector" size="1">
+
         <?php
             $UnitData = SelectUOM();
 
@@ -130,6 +131,7 @@
                 echo "</option>";
             }
         ?>
+
     </select>
     <br><input name="AddFoodToMealSubmit" type="submit" value="Add Food To Meal">
 </div>
@@ -156,8 +158,6 @@
     <input name="ClearMealSubmit" type="submit" value="Clear Meal">
     <br><input class="w3-button w3-black" name="AddMealSubmit" type="submit" value="Add This Meal">
 </div>
-
-
 </form>
 </header>
 </body>
