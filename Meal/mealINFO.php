@@ -1,139 +1,136 @@
 <html>
-<?php include "../header.php"; ?>
 <body>
-<header class="bgimg-2">
 <br><br><br><br>
-<?php
+	<?php
+		// Include SQL methods and header
+		include "mealSQL.php";
+		include "../Food/foodSQL.php";
+		include "../header.php"; 
 
-    include "mealSQL.php";
-    include "../Food/foodSQL.php";
+		// Begin session
+    	if(!isset($_SESSION)) { session_start(); }
 
-    if(!isset($_SESSION)) { session_start(); }
+		// Send to user page if not selected
+    	if(empty($_SESSION['AccountID']) || empty($_SESSION['UserName'])) {
+        	// A user needs to be selected first
+        	header('Location: ../User/user.php');
+    	}
 
-    if(empty($_SESSION['AccountID']) || empty($_SESSION['UserName'])) {
-        // A user needs to be selected first
-        header('Location: ../User/user.php');
-        //exit("Sorry, the current session has expired. Please log in again.");
-    }
-?>
+		if(!array_key_exists('MealHistory', $_SESSION)) { 
+			$_SESSION['MealHistory'] = array(); 
+		}
 
-<?php
-	if(!array_key_exists('MealHistory', $_SESSION)) { 
-        $_SESSION['MealHistory'] = array(); 
-    }
+		if(!array_key_exists('NutrientData', $_SESSION)) { 
+			$_SESSION['NutrientData'] = array(); 
+		}
 
-	if(!array_key_exists('NutrientData', $_SESSION)) { 
-        $_SESSION['NutrientData'] = array(); 
-    }
+		$NutrientTracker = 0;
+		$RecommendIntake = 0;
 
-	$NutrientTracker = 0;
-	$RecommendIntake = 0;
-?>
-
-<?php
-    $RecommendChosen = 0;
+		$RecommendChosen = 0;
     
-    if($_SERVER['REQUEST_METHOD'] == 'POST') {
-		// User fetches Meal History
-        if (isset($_POST['FetchHistorySubmit'])) {
-			$NewArray = array();
+		if($_SERVER['REQUEST_METHOD'] == 'POST') {
+			// User fetches Meal History
+			if (isset($_POST['FetchHistorySubmit'])) {
+				$NewArray = array();
 
-            $_SESSION['MealHistory'] = $NewArray;
+				$_SESSION['MealHistory'] = $NewArray;
 
-            unset($_SESSION['MealHistory']);
-			unset($_SESSION['NutrientData']);
+				unset($_SESSION['MealHistory']);
+				unset($_SESSION['NutrientData']);
 
-			if(!array_key_exists('MealHistory', $_SESSION)) { 
-                $_SESSION['MealHistory'] = array(); 
-            }
+				if(!array_key_exists('MealHistory', $_SESSION)) { 
+					$_SESSION['MealHistory'] = array(); 
+				}
 
-			if(!array_key_exists('NutrientData', $_SESSION)){ 
-                $_SESSION['NutrientData'] = array(); 
-            }
+				if(!array_key_exists('NutrientData', $_SESSION)){ 
+					$_SESSION['NutrientData'] = array(); 
+				}
 
-			$NutrientTracker = 0;
-			$RecommendIntake = 0;           
- 
+				$NutrientTracker = 0;
+				$RecommendIntake = 0;           
+	
 
-			// Get Basic Food Info
-			$FoodInfo = array();
+				// Get Basic Food Info
+				$FoodInfo = array();
 
-			$HistoryStartDate = $_POST['MealStartDate'];
-			$HistoryEndDate = $_POST['MealEndDate'];
-			$AccountID = $_SESSION['AccountID'];
-		
-			// Pulls all the necessary information from each table to obtain an accurate calculation
-			// on the servings and calories consumed for each meal in the user's meal history
-            $Result = sqlGiant($AccountID, "$HistoryStartDate", "$HistoryEndDate");
-
-			foreach($Result as $row) {
-				$FoodID = $row["FoodID"];
-				$FoodName = $row["FoodName"];
-				$ServingsEaten = $row["ServingsEaten"];
-				$CaloriesConsumed = $row["CaloriesConsumed"];
-
-				$_SESSION['MealHistory'][$FoodID] = array();
-
-				$_SESSION['MealHistory'][$FoodID]["FoodName"] = $FoodName;
-				$_SESSION['MealHistory'][$FoodID]["ServingsEaten"] = $ServingsEaten;
-				$_SESSION['MealHistory'][$FoodID]["CaloriesConsumed"] = $CaloriesConsumed;
-			}
-
-			// Get Nutrient info using the Food info
-			foreach($_SESSION['MealHistory'] as $FoodID => $FoodInfo) {
-				$NutrientResult = SelectNutrient($FoodID);
-
-				// Populate array with nutrient info
-				foreach ($NutrientResult as $row) {
-					$NutrientName = $row['NutrientName'];
-					$NutrientType = $row['NutrientType'];
-
-					$DailyIntake = $row['DailyIntake'];
-					$PerServing = $row['PerServing'];
-
-					$NutrientConsumed = $_SESSION['MealHistory'][$FoodID]['ServingsEaten'] * $PerServing;
-
-					$_SESSION['MealHistory'][$FoodID][$NutrientName] = array();
-					$_SESSION['MealHistory'][$FoodID][$NutrientName]['NutrientName'] = $NutrientName;
-					$_SESSION['MealHistory'][$FoodID][$NutrientName]['NutrientType'] = $NutrientType;
-					$_SESSION['MealHistory'][$FoodID][$NutrientName]['Consumed'] = $NutrientConsumed;
-
-					if (!array_key_exists($NutrientName, $_SESSION['NutrientData'])) { 
-						$_SESSION['NutrientData'][$NutrientName] = array();
+				$HistoryStartDate = $_POST['MealStartDate'];
+				$HistoryEndDate = $_POST['MealEndDate'];
+				$AccountID = $_SESSION['AccountID'];
 			
-						$TimeStart = strtotime($HistoryStartDate);
-                        $TimeEnd = strtotime($HistoryEndDate);
-                        
-						$Seconds = $TimeEnd - $TimeStart;	
+				// Pulls all the necessary information from each table to obtain an accurate calculation
+				// on the servings and calories consumed for each meal in the user's meal history
+				$Result = sqlGiant($AccountID, "$HistoryStartDate", "$HistoryEndDate");
 
-						$Days = $Seconds / 86400;
-						$TimePeriod = $Days;
+				foreach($Result as $row) {
+					$FoodID = $row["FoodID"];
+					$FoodName = $row["FoodName"];
+					$ServingsEaten = $row["ServingsEaten"];
+					$CaloriesConsumed = $row["CaloriesConsumed"];
 
-						$RecommendIntake = $TimePeriod * $DailyIntake;
+					$_SESSION['MealHistory'][$FoodID] = array();
 
-						$_SESSION['NutrientData'][$NutrientName]['NutrientType'] = $NutrientType;
-						$_SESSION['NutrientData'][$NutrientName]['TotalConsumed'] = $NutrientConsumed;
-						$_SESSION['NutrientData'][$NutrientName]['RecommendIntake'] = $RecommendIntake;	
-					} 
-					else { 
-						$_SESSION['NutrientData'][$NutrientName]['TotalConsumed'] += $NutrientConsumed;
+					$_SESSION['MealHistory'][$FoodID]["FoodName"] = $FoodName;
+					$_SESSION['MealHistory'][$FoodID]["ServingsEaten"] = $ServingsEaten;
+					$_SESSION['MealHistory'][$FoodID]["CaloriesConsumed"] = $CaloriesConsumed;
+				}
+
+				// Get Nutrient info using the Food info
+				foreach($_SESSION['MealHistory'] as $FoodID => $FoodInfo) {
+					$NutrientResult = SelectNutrient($FoodID);
+
+					// Populate array with nutrient info
+					foreach ($NutrientResult as $row) {
+						$NutrientName = $row['NutrientName'];
+						$NutrientType = $row['NutrientType'];
+
+						$DailyIntake = $row['DailyIntake'];
+						$PerServing = $row['PerServing'];
+
+						$NutrientConsumed = $_SESSION['MealHistory'][$FoodID]['ServingsEaten'] * $PerServing;
+
+						$_SESSION['MealHistory'][$FoodID][$NutrientName] = array();
+						$_SESSION['MealHistory'][$FoodID][$NutrientName]['NutrientName'] = $NutrientName;
+						$_SESSION['MealHistory'][$FoodID][$NutrientName]['NutrientType'] = $NutrientType;
+						$_SESSION['MealHistory'][$FoodID][$NutrientName]['Consumed'] = $NutrientConsumed;
+
+						if (!array_key_exists($NutrientName, $_SESSION['NutrientData'])) { 
+							$_SESSION['NutrientData'][$NutrientName] = array();
+				
+							$TimeStart = strtotime($HistoryStartDate);
+							$TimeEnd = strtotime($HistoryEndDate);
+							
+							$Seconds = $TimeEnd - $TimeStart;	
+
+							$Days = $Seconds / 86400;
+							$TimePeriod = $Days;
+
+							$RecommendIntake = $TimePeriod * $DailyIntake;
+
+							$_SESSION['NutrientData'][$NutrientName]['NutrientType'] = $NutrientType;
+							$_SESSION['NutrientData'][$NutrientName]['TotalConsumed'] = $NutrientConsumed;
+							$_SESSION['NutrientData'][$NutrientName]['RecommendIntake'] = $RecommendIntake;	
+						} 
+						else { 
+							$_SESSION['NutrientData'][$NutrientName]['TotalConsumed'] += $NutrientConsumed;
+						}
 					}
 				}
 			}
-		}
 
-        // User submits Nutrient Tracking
-        else if (isset($_POST['NutrientUpdateSubmit'])) {	
-			$ChosenNutrient = $_POST['NutrientSelector'];
-				
-			if (array_key_exists($ChosenNutrient, $_SESSION['NutrientData'])) {   
-				$NutrientTracker = $_SESSION['NutrientData'][$ChosenNutrient]['TotalConsumed'];   
-				$RecommendChosen = $_SESSION['NutrientData'][$ChosenNutrient]['RecommendIntake'];
-			}	
+			// User submits Nutrient Tracking
+			else if (isset($_POST['NutrientUpdateSubmit'])) {	
+				$ChosenNutrient = $_POST['NutrientSelector'];
+					
+				if (array_key_exists($ChosenNutrient, $_SESSION['NutrientData'])) {   
+					$NutrientTracker = $_SESSION['NutrientData'][$ChosenNutrient]['TotalConsumed'];   
+					$RecommendChosen = $_SESSION['NutrientData'][$ChosenNutrient]['RecommendIntake'];
+				}	
+			}
 		}
-    }
-?>
-
+	?>
+	
+<header class="bgimg-2">
 <form method="POST">
     <label>Select Start Date (Inclusive): </label>
     <input type="date" name="MealStartDate">
