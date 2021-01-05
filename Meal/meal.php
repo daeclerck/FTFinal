@@ -7,6 +7,9 @@
         include "../Food/foodSQL.php";
         include "../header.php";
 
+        // Initialize necessary variables
+        $MealSuccess = False;
+
         // Begin session
         if(!isset($_SESSION)) { session_start(); }
 
@@ -83,7 +86,7 @@
                     AddFoodForMeal($MealID, $key, $FoodQuantity, $FoodUnit);
                 }
 
-                echo "Meal Added Successfully!";
+                $MealSuccess = True;
             }
 
             // Populate/Restore Form Data
@@ -157,6 +160,7 @@
     <br><input name="RemoveFoodSubmit" type="submit" value="Remove From Meal">
     <input name="ClearMealSubmit" type="submit" value="Clear Meal">
     <br><input class="w3-button w3-black" name="AddMealSubmit" type="submit" value="Add This Meal">
+    <?php echo "Meal Added Successfully!"; ?>
 </div>
 </form>
 </header>
