@@ -120,6 +120,7 @@
                         $_SESSION['Reset'] = $DefaultUnit; 
                     }
                 ?>
+                
             <h6><em>Search for a food to fetch the nutrient information.</em></h6>
             <h6><b>NOTE:</b><em> Leaving input blank will show the entire selection!</em></h6>
         </div>

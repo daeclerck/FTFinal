@@ -172,20 +172,21 @@
 					echo "</tr>";
 				}
     		?>
+
     	</table>
 	</div>
 	<div class="w3-col m4" style="margin-left: 50%;">
 		<label>Nutrient Tracker</label>
 		<select name="NutrientSelector">
-			<option name="Micro1" value="Caffeine"> Caffeine </option>
-			<option name="Micro2" value="Vitamin A"> Vitamin A </option>
-			<option name="Micro3" value="Vitamin C"> Vitamin C </option>
-			<option name="Micro4" value="Vitamin D"> Vitamin D </option>
+			<option name="Micro1" value="Caffeine" <?php if($ChosenNutrient == "Caffeine") { echo "selected"; } ?>> Caffeine </option>
+			<option name="Micro2" value="Vitamin A" <?php if($ChosenNutrient == "Vitamin A") { echo "selected"; } ?>> Vitamin A </option>
+			<option name="Micro3" value="Vitamin C" <?php if($ChosenNutrient == "Vitamin C") { echo "selected"; } ?>> Vitamin C </option>
+			<option name="Micro4" value="Vitamin D" <?php if($ChosenNutrient == "Vitamin D") { echo "selected"; } ?>> Vitamin D </option>
     	</select>
     	<input name="NutrientUpdateSubmit" type="submit" value="Track It!" />
 		<br><br><label>Amount Consumed (grams)</label>
 		<br><input type="text" disabled value=<?php echo number_format($NutrientTracker, 8); ?>>
-		<br><label>Amount Recommended (grams) </label>
+		<br><label>Amount Recommended (grams)</label>
 		<br><input type="text" disabled value=<?php echo $RecommendChosen; ?>>
 	</div>
 </form>
