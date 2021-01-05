@@ -129,16 +129,18 @@
 			}
 		}
 	?>
-	
+
 <header class="bgimg-2">
 <form method="POST">
+	<div class="w3-col s3">
     <label>Select Start Date (Inclusive): </label>
     <input type="date" name="MealStartDate">
-    <label>Select End Date (Inclusive): </label>
+    <br><label>Select End Date (Inclusive): </label>
     <input type="date" name="MealEndDate">
-    <br>
-    <input name="FetchHistorySubmit" type="submit" value="Fetch Meal History">
+    <br><input name="FetchHistorySubmit" type="submit" value="Fetch Meal History">
     <table style="border:solid;">
+	</div>
+	<div class="w3-col m4">
     <tr>
         <th>Food Eaten</th>
         <th>Protein</th>
@@ -168,7 +170,8 @@
         }
     ?>
     </table>
-
+	</div>
+	<div class="w3-col m4">
 	<label>Nutrient Tracker</label>
 	<select name="NutrientSelector">
 	<option name="Micro1" value="Caffeine"> Caffeine </option>
@@ -186,6 +189,7 @@
     <label>Amount Recommended (grams) </label>
 	<br>
 	<input type="text" disabled value=<?php echo $RecommendChosen; ?>>
+	</div>
 </form>
 </header>
 </body>
