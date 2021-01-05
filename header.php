@@ -23,10 +23,6 @@ select {
   padding: 16px;
 }
 
-.mealdiv {
-  width: 40%;
-}
-
 
 /* Full height image header */
 .bgimg-1 {
