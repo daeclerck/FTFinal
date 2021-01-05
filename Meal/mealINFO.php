@@ -2,6 +2,7 @@
 <?php include "../header.php"; ?>
 <body>
 <header class="bgimg-2">
+<br><br><br><br>
 <?php
 
     include "mealSQL.php";
