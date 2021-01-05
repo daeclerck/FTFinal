@@ -7,6 +7,9 @@
 		include "../Food/foodSQL.php";
 		include "../header.php"; 
 
+		// Initialize necessary variables
+		$ChosenNutrient = "";
+
 		// Begin session
     	if(!isset($_SESSION)) { session_start(); }
 
