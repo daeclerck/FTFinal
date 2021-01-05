@@ -184,7 +184,7 @@
     	</select>
     	<input name="NutrientUpdateSubmit" type="submit" value="Track It!" />
 		<br><br><label>Amount Consumed (grams)</label>
-		<br><input type="text" disabled value=<?php echo sprintf('%f', $NutrientTracker); ?>>
+		<br><input type="text" disabled value=<?php echo number_format($NutrientTracker, 8); ?>>
 		<br><label>Amount Recommended (grams) </label>
 		<br><input type="text" disabled value=<?php echo $RecommendChosen; ?>>
 	</div>
