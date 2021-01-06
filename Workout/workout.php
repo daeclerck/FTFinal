@@ -1,6 +1,6 @@
 <html>
 <body>
-<br><br><br><br><br><br><br>
+<br><br>
 <?php
     // Include SQL methods and header
     include "workoutSQL.php";
