@@ -99,6 +99,46 @@
 
 <div class="w3-half">
 <form method="POST">
+<label><b>Log Workout</b></label>
+<br><label>Workout Routine </label>
+<select name="RoutineID">
+
+    <?php
+        foreach($FilterData as $row) {
+            echo "<option value='" . $row['RoutineID'] . "'>";
+                echo $row['RoutineName'] . "</option>";
+        }
+    ?>
+
+</select>
+
+<br><label>Start Time </label>
+<input name="StartDateInput" type="date" value="<?php echo $FormData['DatetimeWorkout']->format('Y-m-d'); ?>">
+<input name="StartTimeInput" type="time" value="<?php echo $FormData['DatetimeWorkout']->format('H:i:s'); ?>" step="1">
+<br><label>End Time </label>
+<input name="EndDateInput" type="date" value="<?php echo $FormData['DatetimeWorkout']->format('Y-m-d'); ?>">
+<input name="EndTimeInput" type="time" value="<?php echo $FormData['DatetimeWorkout']->format('H:i:s'); ?>" step="1">
+
+<br><label>Workout Intensity </label>
+<select name="WorkoutIntensity">
+    <option value="Calm">Calm</option>
+    <option value="Mediocre">Mediocre</option>
+    <option value="Moderate">Moderate</option>
+    <option value="Intense">Intense</option>
+    <option value="Extreme">Extreme</option>
+</select>
+
+<br>  
+<label>Calories Burned </label>
+<input name="CaloriesBurned" type="number" min="0" max="9999" step="1">	
+<br>
+<input type="submit" name="WorkoutSubmit" value="Log Workout">
+</form>
+</div>
+
+
+<div class="w3-half">
+<form method="POST">
     <label><b>Filter Available Workout Routines</b></label>
     <br>
     <label>Workout Type: </label>
@@ -132,45 +172,7 @@
 </table>
 </div>
 
-<div class="w3-half">>
-<form method="POST">
-<label><b>Log Workout</b></label>
-<label>Workout Routine: </label>
-<select name="RoutineID">
-    <?php
-        foreach($FilterData as $row) {
-            echo "<option value='" . $row['RoutineID'] . "'>";
-                echo $row['RoutineName'] . "</option>";
-        }
-    ?>
-</select>
 
-<br>
-<label>Start Time: </label>
-<input name="StartDateInput" type="date" value="<?php echo $FormData['DatetimeWorkout']->format('Y-m-d'); ?>">
-<input name="StartTimeInput" type="time" value="<?php echo $FormData['DatetimeWorkout']->format('H:i:s'); ?>" step="1">
-<br>
-<label>End Time: </label>
-<input name="EndDateInput" type="date" value="<?php echo $FormData['DatetimeWorkout']->format('Y-m-d'); ?>">
-<input name="EndTimeInput" type="time" value="<?php echo $FormData['DatetimeWorkout']->format('H:i:s'); ?>" step="1">
-
-<br>  
-<label>Workout Intensity: </label>
-<select name="WorkoutIntensity">
-    <option value="Calm">Calm</option>
-    <option value="Mediocre">Mediocre</option>
-    <option value="Moderate">Moderate</option>
-    <option value="Intense">Intense</option>
-    <option value="Extreme">Extreme</option>
-</select>
-
-<br>  
-<label>Calories Burned: </label>
-<input name="CaloriesBurned" type="number" min="0" max="9999" step="1">	
-<br>
-<input type="submit" name="WorkoutSubmit" value="Log Workout">";
-</form>
-</div>
 
 <div class="w3-half">
 <h5><b>Workout History</b></h5>
