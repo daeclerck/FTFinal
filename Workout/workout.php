@@ -73,7 +73,7 @@
 
 <header class="bgimg-2">
 <h1 class="w3-center title"><b><em>Workout Template Header</em></b></h1>
-<div>
+<div class="w3-half">
 <form method="POST">
     <label><b>Insert New Workout </b></label>
     <br>
@@ -97,7 +97,7 @@
 </form>
 </div>
 
-<div>
+<div class="w3-half">>
 <form method="POST">
     <label><b>Filter Available Workout Routines</b></label>
     <br>
@@ -134,7 +134,7 @@
 </table>
 </div>
 
-<div>
+<div class="w3-half">>
 <form method="POST">
 <label><b>Log Workout</b></label>
 <label>Workout Routine: </label>
@@ -174,7 +174,7 @@
 </form>
 </div>
 
-<div>
+<div class="w3-half">>
 <table>
     <tr>
         <th><h2>Workout History</h2></th>
