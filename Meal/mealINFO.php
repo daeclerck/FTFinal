@@ -190,7 +190,7 @@
 		<br><br><label>Amount Consumed (grams)</label>
 		<br><input type="text" disabled value=<?php echo number_format($NutrientTracker, 8); ?>>
 		<br><label>Amount Recommended (grams)</label>
-		<br><input type="text" disabled value=<?php echo $RecommendChosen; ?>>
+		<br><input type="text" disabled value=<?php echo number_format($RecommendChosen, 8); ?>>
 	</div>
 </form>
 </header>
