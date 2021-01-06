@@ -11,9 +11,7 @@
     if(empty($_SESSION['AccountID']) || empty($_SESSION['UserName'])) {
         // A user needs to be selected first
         // header('Location: ../User/user.php');
-        if(confirm('Please select a user!')) {
-            header('Location: ../User/user.php');
-        } else { header('Location: ../index.php'); }
+        alert("TEST?");
     }
 
     $CurrentUser = $_SESSION['AccountID'];
