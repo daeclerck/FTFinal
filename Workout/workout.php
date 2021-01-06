@@ -73,13 +73,14 @@
 
 <header class="bgimg-2">
 <h1 class="w3-center title"><b><em>Workout Template Header</em></b></h1>
+<div>
 <form method="POST">
-    <label><b>Insert New Workout: </b></label>
+    <label><b>Insert New Workout </b></label>
     <br>
-    <label>Routine Name: </label>
+    <label>Routine Name </label>
     <input name="RoutineName" type="text" pattern="^[-a-zA-Z0-9-()]+(\s+[-a-zA-Z0-9-()]+)*$">
     <br>
-    <label>Workout Type: </label>
+    <label>Workout Type </label>
     <select name="WorkoutType">
 
         <?php
@@ -94,7 +95,9 @@
     </select>
     <input name="RoutineSubmit" type="submit" value="Create Routine">
 </form>
+</div>
 
+<div>
 <form method="POST">
     <label><b>Filter Available Workout Routines</b></label>
     <br>
@@ -112,7 +115,7 @@
     <input name="FilterSubmit" type="submit" value="Filter">
 </form>
 
-<table border=5 cellspacing=1>
+<table>
 <tr>
     <th><h2>Available Workout Routines</h2></th>
 </tr>
@@ -129,8 +132,9 @@
     }
 ?>
 </table>
-<br><br>
+</div>
 
+<div>
 <form method="POST">
 <label><b>Log Workout</b></label>
 <label>Workout Routine: </label>
@@ -168,9 +172,10 @@
 <br>
 <input type="submit" name="WorkoutSubmit" value="Log Workout">";
 </form>
-<br>
-<br>
-<table border=5 cellspacing=1>
+</div>
+
+<div>
+<table>
     <tr>
         <th><h2>Workout History</h2></th>
     </tr>
@@ -200,6 +205,7 @@
         }
     ?>
 </table>
+</div>
 </header>
 </body>
 </html>
