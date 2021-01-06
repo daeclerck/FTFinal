@@ -115,14 +115,12 @@
     <input name="FilterSubmit" type="submit" value="Filter">
 </form>
 
+<h5><b>Available Workout Routines</b></h5>
 <table>
 <tr>
-    <th><h2>Available Workout Routines</h2></th>
-</tr>
-<t>
     <th>Routine Name</th>
     <th>Workout Type</th>
-</t>
+</tr>
 <?php
     foreach($FilterData as $row){
       echo "<tr>";
@@ -175,7 +173,7 @@
 </div>
 
 <div class="w3-half">
-<h6>Workout History</h6>
+<h5><b>Workout History</b></h5>
 <table>
     <tr>
         <th>Routine Name</th>
