@@ -9,8 +9,7 @@
 
     if(empty($_SESSION['AccountID']) || empty($_SESSION['UserName'])) {
         // A user needs to be selected first
-        //header('Location: ../User/user.php');
-        echo "<br><br><h3 class='w3-center'><b>Select a user!</b><h3>";
+        echo "<br><br><br><br><h3 class='w3-center'><b>Please Select A User First!</b><h3>";
         exit();
     }
 
