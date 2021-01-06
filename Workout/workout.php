@@ -174,17 +174,15 @@
 </form>
 </div>
 
-<div class="w3-half">>
+<div class="w3-half">
+<h6>Workout History</h6>
 <table>
     <tr>
-        <th><h2>Workout History</h2></th>
-    </tr>
-    <t>
         <th>Routine Name</th>
         <th>Workout Duration</th>
 	    <th>Workout Intensity</th>
 	    <th>Calories Burned</th>
-	</t>
+	</tr>
 
     <?php
         $FilterData = SelectHistory($CurrentUser);
