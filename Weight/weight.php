@@ -12,7 +12,8 @@
         // Send to user page if not selected
         if(empty($_SESSION['AccountID']) || empty($_SESSION['UserName'])) {
             // A user needs to be selected first
-            header('Location: ../User/user.php');
+            echo "<br><br><br><br><h3 class='w3-center'><b>Please Select A User First!</b><h3>";
+            exit();
         }
 
         if(isset($_POST['NewWeightSubmit']) && !empty($_POST['NewWeight']) && is_numeric($_POST['NewWeight'])) {
