@@ -1,6 +1,5 @@
 <html>
 <body>
-<br><br>
 <?php
     // Include SQL methods and header
     include "workoutSQL.php";
@@ -11,7 +10,7 @@
     if(empty($_SESSION['AccountID']) || empty($_SESSION['UserName'])) {
         // A user needs to be selected first
         //header('Location: ../User/user.php');
-        echo "<h5 class='w3-center'><b>Select a user!</b><h5>";
+        echo "<h3 class='w3-center'><b>Select a user!</b><h3>";
         exit();
     }
 
