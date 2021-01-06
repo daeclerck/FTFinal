@@ -12,12 +12,8 @@
         // A user needs to be selected first
         //header('Location: ../User/user.php');
         $message = "Select a user!";
-        echo "<script>
-     
-        alert('$message');
-        window.location.href='../User/user.php';
-        </script>";
-        exit;
+        header('Refresh: 5; url=../User/user.php');
+        exit($message);
     }
 
     $CurrentUser = $_SESSION['AccountID'];
