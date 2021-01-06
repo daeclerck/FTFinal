@@ -1,9 +1,10 @@
-<?php include "../header.php"; ?>
 <html>
 <body>
-<header class="bgimg-2">
+
 <?php
+    // Include SQL methods and header
     include "workoutSQL.php";
+    include "../header.php";
 
     if(!isset($_SESSION)) { session_start(); }
 
@@ -12,9 +13,7 @@
         header('Location: ../User/user.php');
         //exit("Sorry, the current session has expired. Please log in again.");
     }
-?>
 
-<?php
     $CurrentUser = $_SESSION['AccountID'];
 
     $DefaultTime = new DateTime();
@@ -72,6 +71,8 @@
     }
 ?>
 
+<header class="bgimg-2">
+<h1 class="w3-center title"><b><em>Workout Template Header</em></b></h1>
 <form method="POST">
     <label><b>Insert New Workout: </b></label>
     <br>
@@ -80,6 +81,7 @@
     <br>
     <label>Workout Type: </label>
     <select name="WorkoutType">
+
         <?php
             $WorkoutResult = SelectWorkout();
             foreach($WorkoutResult as $row) {
@@ -88,6 +90,7 @@
                 echo "</option>";
             }
         ?>
+
     </select>
     <input name="RoutineSubmit" type="submit" value="Create Routine">
 </form>
