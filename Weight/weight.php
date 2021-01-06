@@ -26,28 +26,28 @@
 
 <header class="bgimg-2">
 <h1 class="w3-center title"><b><em>Add Your Current Weight or Change Previous Entries</em></b></h1>
-<div class="w3-col m6" style="Padding: 0px 0px 0px 528px;">
-<form method="POST">
-    <h1>Update Weight</h1>
-    <label>New Weight </label>
-    <input type="text" name="Weight">
-    <br><label>Unit of Measurement: </label>
-    <select name="UnitMeasure">
-        <option value="Pounds">Pounds</option>
-        <option value="Kilograms">Kilograms</option>
-    </select>
-    <br><input type="submit" name="WeightSubmit" value="Submit Weight">
-</form>
+<div class="w3-col m6" style="Padding: 0px 0px 0px 428px;">
+    <form method="POST">
+        <h1>Update Weight</h1>
+        <label>New Weight </label>
+        <input type="text" name="Weight">
+        <br><label>Unit of Measurement: </label>
+        <select name="UnitMeasure">
+            <option value="Pounds">Pounds</option>
+            <option value="Kilograms">Kilograms</option>
+        </select>
+        <br><input type="submit" name="WeightSubmit" value="Submit Weight">
+    </form>
 
+        <?php
+            if(isset($_POST['WeightSubmit']) && !empty($_POST['Weight']) && is_numeric($_POST['Weight'])) {
+                $CurrentDate = date("Y-m-d H:i:s");
+                AddWeight($_SESSION['AccountID'], $CurrentDate, $_POST['UnitMeasure'], $_POST['Weight']);
+                echo "Weight added to " . $_SESSION['UserName'] . "'s account<br>";
+                PrintWeight($_SESSION['AccountID']);
+            } 
+        ?>
 
-    <?php
-        if(isset($_POST['WeightSubmit']) && !empty($_POST['Weight']) && is_numeric($_POST['Weight'])) {
-            $CurrentDate = date("Y-m-d H:i:s");
-            AddWeight($_SESSION['AccountID'], $CurrentDate, $_POST['UnitMeasure'], $_POST['Weight']);
-            echo "Weight added to " . $_SESSION['UserName'] . "'s account<br>";
-            PrintWeight($_SESSION['AccountID']);
-        } 
-    ?>
 </div>
 <div class="w3-col m6" style="Padding: 0px 128px 0px 0px;">
 <form method="POST">
