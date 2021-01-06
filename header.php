@@ -62,6 +62,7 @@ th {
 
 td {
   border: 1px solid #ddd;
+  background-color: #F0FFFF;
   padding: 8px;
 }
 

@@ -97,7 +97,7 @@
 </form>
 </div>
 
-<div class="w3-half">>
+<div class="w3-half">
 <form method="POST">
     <label><b>Filter Available Workout Routines</b></label>
     <br>
