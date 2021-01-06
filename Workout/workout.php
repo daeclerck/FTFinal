@@ -97,7 +97,7 @@
 </form>
 </div>
 
-<div class="w3-half" style="Padding: 0px 64px 0px 32px;">>
+<div class="w3-half" style="Padding: 0px 64px 0px 32px;">
 <form method="POST">
 <label><b>Log Workout</b></label>
 <br><label>Workout Routine </label>
