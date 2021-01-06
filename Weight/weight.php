@@ -26,7 +26,7 @@
 
 <header class="bgimg-2">
 <h1 class="w3-center title"><b><em>Add Your Current Weight or Change Previous Entries</em></b></h1>
-<div class="w3-col m6" style="Padding: 0px 0px 0px 64px;">
+<div class="w3-col m6" style="Padding: 0px 0px 0px 80px;">
 <form method="POST">
     <h1>Update Weight</h1>
     <label>New Weight </label>
@@ -49,7 +49,7 @@
         } 
     ?>
 
-<div class="w3-col m6" style="Padding: 0px 64px 0px 0px;">
+<div class="w3-col m6" style="Padding: 0px 80px 0px 0px;">
 <form method="POST">
     <h1>Change Previous Weight</h1>
     <label>Choose the weight to change: </label>
