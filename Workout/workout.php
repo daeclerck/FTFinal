@@ -10,9 +10,10 @@
 
     if(empty($_SESSION['AccountID']) || empty($_SESSION['UserName'])) {
         // A user needs to be selected first
-        alert('test');
-        header('Location: ../User/user.php');
-        //exit("Sorry, the current session has expired. Please log in again.");
+        // header('Location: ../User/user.php');
+        if(confirm('Please select a user!')) {
+            header('Location: ../User/user.php');
+        } else { header('Location: ../index.php'); }
     }
 
     $CurrentUser = $_SESSION['AccountID'];
