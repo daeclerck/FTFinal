@@ -26,12 +26,12 @@
 
 <header class="bgimg-2">
 <h1 class="w3-center title"><b><em>Add Your Current Weight or Change Previous Entries</em></b></h1>
-<div class="w3-col m6" style="Padding: 0px 0px 0px 80px;">
+<div class="w3-col m6" style="Padding: 0px 0px 0px 128px;">
 <form method="POST">
     <h1>Update Weight</h1>
     <label>New Weight </label>
     <input type="text" name="Weight">
-    <label>Unit of Measurement: </label>
+    <br><label>Unit of Measurement: </label>
     <select name="UnitMeasure">
         <option value="Pounds">Pounds</option>
         <option value="Kilograms">Kilograms</option>
@@ -49,7 +49,7 @@
         } 
     ?>
 
-<div class="w3-col m6" style="Padding: 0px 80px 0px 0px;">
+<div class="w3-col m6" style="Padding: 0px 128px 0px 0px;">
 <form method="POST">
     <h1>Change Previous Weight</h1>
     <label>Choose the weight to change: </label>
