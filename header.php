@@ -136,6 +136,11 @@ tr:last-of-type {
       ?>
 </nav>
 
+<?php
+  // Set the correct timezone
+  date_default_timezone_set('America/Chicago');
+?>
+
 <script>
 // Toggle between showing and hiding the sidebar when clicking the menu icon
 var mySidebar = document.getElementById("mySidebar");
