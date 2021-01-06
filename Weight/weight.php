@@ -26,6 +26,7 @@
 
 <header class="bgimg-2">
 <h1 class="w3-center title"><b><em>Add Your Current Weight or Change Previous Entries</em></b></h1>
+<div class="w3-col m6" style="Padding: 32px;">
 <form method="POST">
     <h1>Update Weight</h1>
     <label>New Weight </label>
@@ -35,8 +36,9 @@
         <option value="Pounds">Pounds</option>
         <option value="Kilograms">Kilograms</option>
     </select>
-    <input type="submit" name="WeightSubmit" value="Submit Weight">
+    <br><input type="submit" name="WeightSubmit" value="Submit Weight">
 </form>
+</div>
 
     <?php
         if(isset($_POST['WeightSubmit']) && !empty($_POST['Weight']) && is_numeric($_POST['Weight'])) {
@@ -47,6 +49,7 @@
         } 
     ?>
 
+<div class="w3-col m6" style="Padding: 32px;">
 <form method="POST">
     <h1>Change Previous Weight</h1>
     <label>Choose the weight to change: </label>
@@ -68,6 +71,7 @@
     <br><input type="submit" name="NewWeightSubmit" value="Submit New Weight">
 </form>
 
+
     <?php
         if(isset($_POST['NewWeightSubmit']) && !empty($_POST['NewWeight']) && is_numeric($_POST['NewWeight'])) {
             echo "Weight updated succesfully!";
@@ -75,7 +79,7 @@
             PrintWeight($_SESSION['AccountID']);
         } 
     ?>
-    
+</div>
 </header>
 </body>
 </html>
