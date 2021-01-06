@@ -11,9 +11,8 @@
     if(empty($_SESSION['AccountID']) || empty($_SESSION['UserName'])) {
         // A user needs to be selected first
         //header('Location: ../User/user.php');
-        $message = echo "<h5 class='w3-center'><b>Select a user!</b><h5>";
-        header('Refresh: 5; url=../User/user.php');
-        exit($message);
+        echo "<h5 class='w3-center'><b>Select a user!</b><h5>";
+        exit();
     }
 
     $CurrentUser = $_SESSION['AccountID'];
