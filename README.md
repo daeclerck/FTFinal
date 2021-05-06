@@ -1,37 +1,38 @@
 # Fitness Tracker 
 
-Server provided by XAMPP
+### Features
+  
+**User Page**
+  - New users can be added.
+  - Users can be deleted.
+  - Specific users can be selected.
 
-CSS provided by w3schools
+**Food Page**  
+  - Enter Food information
+  - Enter macro and micro nutrients
+  - Delete existing food
 
-Features:
-USERS
-New users can be added.
-Users can be deleted.
-Specific users can be selected.
+**Food Info Page**
+  - Provides information about a specific food
+  - Chart displaying the quantity of nutrients and recommended daily intake
 
-FOOD
-Enter Food information
-Enter macro and micro nutrients
-Delete existing food
+**Meal Page**
+  - Allows user to search individual foods and add to a particular meal
+  - Date/Time recorded per meal.
 
-FOOD INFO
-Provides information about a specific food
-Chart displaying the quantity of nutrients and recommended daily intake
+**Meal History Page**
+  - User can choose a date/time range to examine all macro/micro nutrients in a time period
 
-MEAL
-Allows user to search individual foods and add to a particular meal
-Date/Time recorded per meal.
+**Weight Page**
+  - User can update weight 
+  - Can change previous weight
 
-MEAL HISTORY
-User can choose a date/time range to examine all macro/micro nutrients in a time period
+**Workout Page**
+  - Insert New workout (Routine Name, Workout Type)
+  - Filter Available Workout ROutines
+  - Log Workout (Start/End Time, Workout Intensity, Calories Burned)
+  - Workout History
 
-WEIGHT
-User can update weight 
-Can change previous weight
+###### *Server provided by XAMPP*
 
-WORKOUT
-Insert New workout (Routine Name, Workout Type)
-Filter Available Workout ROutines
-Log Workout (Start/End Time, Workout Intensity, Calories Burned)
-Workout History
+###### *CSS provided by w3schools*
