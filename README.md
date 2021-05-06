@@ -1,37 +1,54 @@
-# Fitness Tracker 
+# Fitness Tracker Web Application
+
+<details>
+  <summary>Snapshots</summary>
+  <img src="https://i.imgur.com/oEKx0jD.png" name="home-page">
+  <img src="https://i.imgur.com/VypMArE.png" name="user-page">
+  <img src="https://i.imgur.com/wI1yMjX.png" name="food-page">
+  <img src="https://i.imgur.com/emqT6cM.png" name="food-info-page">
+  <img src="https://i.imgur.com/H0d6hzU.png" name="meal-page">
+  <img src="https://i.imgur.com/WtCMSDB.png" name="meal-history-page">
+  <img src="https://i.imgur.com/ahFDFn7.png" name"weight-page">
+  <img src="https://i.imgur.com/6fxOO6c.png" name="workout-page">
+</details>
 
 ### Features
-  
+
 **User Page**
-  - New users can be added.
-  - Users can be deleted.
-  - Specific users can be selected.
+  - New users can be added to database.
+  - Existing users can be deleted.
+  - Existing users can be selected for unique entries into database.
 
 **Food Page**  
-  - Enter Food information
-  - Enter macro and micro nutrients
-  - Delete existing food
+  - New foods can be added to database.
+  - Existing foods can be deleted.
+  - Includes Serving Size, Calories, Macro & Micronutrients.
 
 **Food Info Page**
-  - Provides information about a specific food
-  - Chart displaying the quantity of nutrients and recommended daily intake
+  - Search any existing foods that have been stored.
+  - Displays pertinent nutritional information on selected food.
+  - Chart showcasing the quantity of nutrients as well as the recommended daily intake.
 
 **Meal Page**
-  - Allows user to search individual foods and add to a particular meal
+  - Search and choose a food and add it to a particular meal
+  - Stores each meal in the database for detailed nutrient tracking 
   - Date/Time recorded per meal.
 
 **Meal History Page**
-  - User can choose a date/time range to examine all macro/micro nutrients in a time period
+  - Fetch a complete meal history with an inclusive start and end date
+  - Provides a rundown of every meal and nutrient associated with them. 
+  - Track micro nutrients and compare to the recommended amount.
 
 **Weight Page**
-  - User can update weight 
-  - Can change previous weight
+  - Update the database with the user's current weight.
+  - Submit the new weight to display all weight records.
+  - Change any previously recorded weights.
 
 **Workout Page**
-  - Insert New workout (Routine Name, Workout Type)
-  - Filter Available Workout ROutines
-  - Log Workout (Start/End Time, Workout Intensity, Calories Burned)
-  - Workout History
+  - Insert a new workout into the database.
+  - Filter available workout routines according to the type of workout.
+  - Log any workout sessions. (Including workout intensity and calories burned)
+  - Chart presenting all logged sessions.
 
 ###### *Server provided by XAMPP*
 
